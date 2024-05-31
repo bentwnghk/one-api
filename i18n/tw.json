@@ -1132,6 +1132,18 @@
     "本配置主要是用于使用cloudflare Zero Trust将端口暴露到公网时，需要配置的header": "本配置主要是用於使用cloudflare Zero Trust將端口暴露到公網時，需要配置的header",
     "免费": "免費",
     "仅支持聊天": "僅支持聊天",
-    "如果选择了仅支持聊天，那么遇到有函数调用的请求会跳过该渠道": "如果選擇了僅支持聊天，那麼遇到有函數調用的請求會跳過該渠道"
+    "如果选择了仅支持聊天，那么遇到有函数调用的请求会跳过该渠道": "如果選擇了僅支持聊天，那麼遇到有函數調用的請求會跳過該渠道",
+    "必须填写所有数据后才能获取模型列表": "必須填寫所有數據後才能獲取模型列表",
+    "从OpenAI获取模型列表": "從OpenAI獲取模型列表",
+    "从渠道获取模型列表": "從渠道獲取模型列表",
+    "从Gemini获取模型列表": "從Gemini獲取模型列表",
+    "从Deepseek获取模型列表": "從Deepseek獲取模型列表",
+    "从Moonshot获取模型列表": "從Moonshot獲取模型列表",
+    "从Mistral获取模型列表": "從Mistral獲取模型列表",
+    "从Groq获取模型列表": "從Groq獲取模型列表",
+    "从Cohere获取模型列表": "從Cohere獲取模型列表",
+    "替换 API 版本": "替換 API 版本",
+    "输入后，会替换请求地址中的v1，例如：freeapi，则请求chat时会变成https://xxx.com/freeapi/chat/completions,如果需要禁用版本号，请输入 disable": "輸入後，會替換請求地址中的v1，例如：freeapi，則請求chat時會變成https://xxx.com/freeapi/chat/completions,如果需要禁用版本號，請輸入 disable",
+    "请输入默认API版本，例如：2024-05-01-preview": "請輸入默認API版本，例如：2024-05-01-preview"
   }
   
