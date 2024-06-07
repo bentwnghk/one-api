@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
-import { Dialog, DialogContent, DialogTitle, IconButton, Stack, Typography } from '@mui/material';
+import { useState, useEffect, useCallback } from 'react';
+import { Button, Dialog, DialogContent, DialogTitle, IconButton, Stack, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTheme } from '@mui/material/styles';
 import { QRCode } from 'react-qrcode-logo';
@@ -22,11 +22,35 @@ const PayDialog = ({ open, onClose, amount, uuid }) => {
     siteInfo = JSON.parse(siteInfoStorage);
   }
   const useLogo = siteInfo.logo ? siteInfo.logo : defaultLogo;
+
+  const clearValue = () => {
+    setMessage('正在拉起支付中...');
+    setLoading(false);
+    setQrCodeUrl(null);
+    setSuccess(false);
+  };
+
+  const pollOrderStatus = useCallback((tradeNo) => {
+    const id = setInterval(() => {
+      API.get(`/api/user/order/status?trade_no=${tradeNo}`).then((response) => {
+        if (response.data.success) {
+          clearInterval(id);
+          setMessage('支付成功');
+          setLoading(false);
+          setSuccess(true);
+          setQrCodeUrl(null);
+          clearInterval(id);
+          setIntervalId(null);
+        }
+      });
+    }, 3000);
+    setIntervalId(id);
+  }, []);
+
   useEffect(() => {
     if (!open) {
       return;
     }
-
     setMessage('正在拉起支付中...');
     setLoading(true);
 
@@ -64,23 +88,14 @@ const PayDialog = ({ open, onClose, amount, uuid }) => {
       }
       pollOrderStatus(response.data.data.trade_no);
     });
-  }, [open, onClose, amount, uuid]);
+  }, [open, onClose, amount, uuid, pollOrderStatus]);
 
-  const pollOrderStatus = (tradeNo) => {
-    const id = setInterval(() => {
-      API.get(`/api/user/order/status?trade_no=${tradeNo}`).then((response) => {
-        if (response.data.success) {
-          setMessage('支付成功');
-          setLoading(false);
-          setSuccess(true);
-          clearInterval(id);
-          setIntervalId(null);
-        }
-      });
-    }, 3000);
-    setIntervalId(id);
+  //打开支付宝
+  const handleOpenAlipay = (alipayUrl) => {
+    if (alipayUrl && alipayUrl.startsWith('https://qr.alipay.com')) {
+      window.open(alipayUrl, '_blank');
+    }
   };
-
   return (
     <Dialog open={open} fullWidth maxWidth={'sm'} disableEscapeKeyDown>
       <DialogTitle sx={{ margin: '0px', fontWeight: 700, lineHeight: '1.55556', padding: '24px', fontSize: '1.125rem' }}>支付</DialogTitle>
@@ -91,6 +106,7 @@ const PayDialog = ({ open, onClose, amount, uuid }) => {
             clearInterval(intervalId);
             setIntervalId(null);
           }
+          clearValue();
           onClose();
         }}
         sx={{
@@ -118,6 +134,11 @@ const PayDialog = ({ open, onClose, amount, uuid }) => {
             )}
             {success && <img src={successSvg} alt="success" height="100" />}
             <Typography variant="h3">{message}</Typography>
+            {qrCodeUrl && qrCodeUrl.startsWith('https://qr.alipay.com') && !success && (
+              <Button variant="contained" color="primary" onClick={() => handleOpenAlipay(qrCodeUrl)}>
+                打开支付宝
+              </Button>
+            )}
           </Stack>
         </DialogContent>
       </DialogContent>
