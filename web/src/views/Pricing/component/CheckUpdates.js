@@ -20,7 +20,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import Label from 'ui-component/Label';
 
 export const CheckUpdates = ({ open, onCancel, onOk, row }) => {
-  const [url, setUrl] = useState('https://raw.githubusercontent.com/MartialBE/one-api/prices/prices.json');
+  const [url, setUrl] = useState('https://raw.githubusercontent.com/bentwnghk/one-api/prices/prices.json');
   const [loading, setLoading] = useState(false);
   const [updateLoading, setUpdateLoading] = useState(false);
   const [newPricing, setNewPricing] = useState([]);
