@@ -469,6 +469,13 @@
     "output": 0.45
   },
   {
+    "model": "Qwen/Qwen2-72B-Instruct",
+    "type": "tokens",
+    "channel_type": 17,
+    "input": 0.45,
+    "output": 0.45
+  },
+  {
     "model": "qwen-max",
     "type": "tokens",
     "channel_type": 17,
