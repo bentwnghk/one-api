@@ -282,12 +282,12 @@ const TopupCard = () => {
                 <>
                   <Grid item xs={6} md={9}>
                     <Typography variant="h6" style={{ textAlign: 'right', fontSize: '0.875rem' }}>
-                      手续费:
+                      手续费
                       {selectedPayment &&
                         (selectedPayment.fixed_fee > 0
-                          ? '(固定)'
+                          ? '(固定):'
                           : selectedPayment.percent_fee > 0
-                            ? `(${selectedPayment.percent_fee * 100}%)`
+                            ? `(${selectedPayment.percent_fee * 100}%):`
                             : '')}{' '}
                     </Typography>
                   </Grid>
