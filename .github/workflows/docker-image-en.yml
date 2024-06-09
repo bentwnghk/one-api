@@ -1,6 +1,7 @@
 name: one-api docker image en
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
