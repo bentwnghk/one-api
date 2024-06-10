@@ -17,7 +17,7 @@ func (w *WeChatPay) handleNativePay(config *types.PayConfig, wechatConfig *WeCha
 	req := native.PrepayRequest{
 		Appid:       core.String(wechatConfig.AppID),
 		Mchid:       core.String(wechatConfig.MchID),
-		Description: core.String(sysconfig.SystemName + "-Token充值:" + totalAmount),
+		Description: core.String(sysconfig.SystemName + " - 账户充值￥" + totalAmount),
 		OutTradeNo:  core.String(config.TradeNo),
 		NotifyUrl:   core.String(config.NotifyURL),
 		Amount: &native.Amount{

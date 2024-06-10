@@ -16,7 +16,7 @@ func (a *Alipay) handleTradePreCreate(config *types.PayConfig, alipayConfig *Ali
 	var p = alipay.TradePreCreate{}
 	p.OutTradeNo = config.TradeNo
 	p.TotalAmount = strconv.FormatFloat(config.Money, 'f', 2, 64)
-	p.Subject = sysconfig.SystemName + "-Token充值:" + p.TotalAmount
+	p.Subject = sysconfig.SystemName + " - 账户充值￥" + p.TotalAmount
 	p.NotifyURL = config.NotifyURL
 	p.ReturnURL = config.ReturnURL
 	p.TimeoutExpress = "15m"
@@ -46,7 +46,7 @@ func (a *Alipay) handlePagePay(config *types.PayConfig, alipayConfig *AlipayConf
 	var p = alipay.TradePagePay{}
 	p.OutTradeNo = config.TradeNo
 	p.TotalAmount = strconv.FormatFloat(config.Money, 'f', 2, 64)
-	p.Subject = sysconfig.SystemName + "-Token充值:" + p.TotalAmount
+	p.Subject = sysconfig.SystemName + " - 账户充值￥" + p.TotalAmount
 	p.NotifyURL = config.NotifyURL
 	p.ReturnURL = config.ReturnURL
 	p.ProductCode = "FAST_INSTANT_TRADE_PAY"
@@ -75,7 +75,7 @@ func (a *Alipay) handleWapPay(config *types.PayConfig, alipayConfig *AlipayConfi
 	var p = alipay.TradeWapPay{}
 	p.OutTradeNo = config.TradeNo
 	p.TotalAmount = strconv.FormatFloat(config.Money, 'f', 2, 64)
-	p.Subject = sysconfig.SystemName + "-Token充值:" + p.TotalAmount
+	p.Subject = sysconfig.SystemName + " - 账户充值￥" + p.TotalAmount
 	p.NotifyURL = config.NotifyURL
 	p.ReturnURL = config.ReturnURL
 	p.ProductCode = "QUICK_WAP_WAY"
