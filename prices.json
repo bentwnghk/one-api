@@ -952,39 +952,46 @@
     "output": 0.8571
   },
   {
+    "model": "yi-large",
+    "type": "tokens",
+    "channel_type": 33,
+    "input": 1.4286,
+    "output": 1.4286
+  },
+  {
     "model": "yi-large-turbo",
     "type": "tokens",
     "channel_type": 33,
-    "input": 6,
-    "output": 6
+    "input": 0.85715,
+    "output": 0.85715
   },
   {
     "model": "yi-medium",
     "type": "tokens",
     "channel_type": 33,
-    "input": 1.25,
-    "output": 1.25
+    "input": 0.1786,
+    "output": 0.1786
   },
   {
     "model": "yi-medium-200k",
     "type": "tokens",
     "channel_type": 33,
-    "input": 6,
-    "output": 6
+    "input": 0.85715,
+    "output": 0.85715
   },
   {
     "model": "yi-spark",
     "type": "tokens",
     "channel_type": 33,
-    "input": 0.5,
-    "output": 0.5
+    "input": 0.0714,
+    "output": 0.0714
   },
   {
     "model": "yi-vision",
     "type": "tokens",
     "channel_type": 33,
-    "input": 3,
-    "output": 3
+    "input": 0.4286,
+    "output": 0.4286
   },
   {
     "model": "yi-vl-plus",
