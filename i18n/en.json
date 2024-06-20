@@ -1110,7 +1110,7 @@
   "取消管理员": "Cancel administrator",
   "删除用户": "Delete User",
   "是否删除用户 {item.name}？": "Are you sure to delete user ${item.name}?",
-  "搜索用户的ID，用户名，显示名称，以及邮箱地址...": "Search user ID, username, display name, and email address...",
+  "搜索用户的ID，用户名，分组，显示名称，以及邮箱地址...": "Search user ID, username, group, display name, and email address...",
   "统计信息": "Statistics",
   "用户角色": "Role",
   "个人设置": "Account Settings",
