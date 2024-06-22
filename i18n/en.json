@@ -1076,7 +1076,7 @@
   "已复制到剪贴板！": "Copied to clipboard!",
   "删除Token": "Delete Token",
   "是否删除Token {item.name}？": "Delete Token ${item.name}?",
-  "将OpenAI API基础地址https://api.openai.com替换为<b>{siteInfo.server_address}</b>，复制下面的密钥即可使用。": "Replace the OpenAI API base address https://api.openai.com with <b>{siteInfo.server_address}</b>, and copy the key below to use.",
+  "将OpenAI API基础地址https://api.openai.com替换为<b>{siteInfo.server_address}</b>，复制下面的密钥即可使用。": "Replace the OpenAI API base URL https://api.openai.com with <b>{siteInfo.server_address}</b>, and copy the key below to use.",
   "搜索令牌的名称...": "Search for token name...",
   "已用额度": "Balance used",
   "剩余额度": "Remaining balance",
