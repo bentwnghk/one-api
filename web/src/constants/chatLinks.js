@@ -1,25 +1,25 @@
 export const CHAT_LINKS = [
   {
-    name: 'ChatGPT Next',
-    url: 'https://app.nextchat.dev/#/?settings={"key":"{key}","url":"{server}"}',
+    name: 'Mr.🆖 AI Chat 🔺️',
+    url: 'https://chat.mister5.net/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}',
     show: true,
     sort: 1
   },
   {
-    name: 'chatgpt-web-midjourney-proxy',
-    url: 'https://vercel.ddaiai.com/#/?settings={"key":"{key}","url":"{server}"}',
+    name: 'Mr.🆖 AI Chat 🆓️',
+    url: 'https://aichat.mister5.net/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}',
     show: true,
     sort: 2
   },
   {
-    name: 'AMA 问天',
-    url: 'ama://set-api-key?server={server}&key={key}',
+    name: 'Mr.🆖 AI English Tutor',
+    url: 'https://ai2.mister5.net/#/?settings={"key":"{key}","url":"{server}"}',
     show: false,
     sort: 3
   },
   {
-    name: 'OpenCat',
-    url: 'opencat://team/join?domain={server}&token={key}',
+    name: 'Mr.🆖 AI Creator',
+    url: 'https://create.mister5.net/#/?settings={"key":"{key}","url":"{server}"}',
     show: false,
     sort: 4
   }

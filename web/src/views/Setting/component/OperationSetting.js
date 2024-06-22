@@ -243,7 +243,7 @@ const OperationSetting = () => {
                 value={inputs.ChatLink}
                 onChange={handleInputChange}
                 label="聊天链接"
-                placeholder="例如 ChatGPT Next Web 的部署地址"
+                placeholder="例如 Mr.🆖 AI Chat 的部署地址"
                 disabled={loading}
               />
             </FormControl>
@@ -660,17 +660,17 @@ const OperationSetting = () => {
           <Alert severity="info">
             配置聊天链接，该配置在令牌中的聊天生效以及首页的Playground中的聊天生效. <br />
             链接中可以使{'{key}'}替换用户的令牌，{'{server}'}替换服务器地址。例如：
-            {'https://chat.oneapi.pro/#/?settings={"key":"sk-{key}","url":"{server}"}'}
+            {'https://chat.mister5.net/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}'}
             <br />
             如果未配置，会默认配置以下4个链接：
             <br />
-            ChatGPT Next ： {'https://chat.oneapi.pro/#/?settings={"key":"{key}","url":"{server}"}'}
+            Mr.🆖 AI Chat 🔺️ ： {'https://chat.mister5.net/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}'}
             <br />
-            chatgpt-web-midjourney-proxy ： {'https://vercel.ddaiai.com/#/?settings={"key":"{key}","url":"{server}"}'}
+            Mr.🆖 AI Chat 🆓️ ： {'https://aichat.mister5.net/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}'}
             <br />
-            AMA 问天 ： {'ama://set-api-key?server={server}&key={key}'}
+            Mr.🆖 AI English Tutor ： {'https://ai2.mister5.net/#/?settings={"key":"{key}","url":"{server}"}'}
             <br />
-            opencat ： {'opencat://team/join?domain={server}&token={key}'}
+            Mr.🆖 AI Creator ： {'https://create.mister5.net/#/?settings={"key":"{key}","url":"{server}"}'}
             <br />
             排序规则：值越大越靠前，值相同则按照配置顺序
           </Alert>

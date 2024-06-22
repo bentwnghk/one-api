@@ -238,10 +238,10 @@ export function getChatLinks(filterShow = false) {
   if (chatLinks.length === 0) {
     links = CHAT_LINKS;
     if (siteInfo?.chat_link) {
-      // 循环找到name为ChatGPT Next的链接
+      // 循环找到name为Mr.🆖 AI English Tutor的链接
       for (let i = 0; i < links.length; i++) {
-        if (links[i].name === 'ChatGPT Next') {
-          links[i].url = siteInfo.chat_link + `/#/?settings={"key":"sk-{key}","url":"{server}"}`;
+        if (links[i].name === 'Mr.🆖 AI English Tutor') {
+          links[i].url = siteInfo.chat_link + `/#/?settings={"key":"{key}","url":"{server}"}`;
           links[i].show = true;
           break;
         }

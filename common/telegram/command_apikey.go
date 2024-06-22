@@ -77,10 +77,10 @@ func getApikeyList(userId, page int) (message string, pageParams *paginationPara
 func getChatUrl() string {
 	serverAddress := strings.TrimSuffix(config.ServerAddress, "/")
 	chatNextUrl := fmt.Sprintf(`{"key":"setToken","url":"%s"}`, serverAddress)
-	chatNextUrl = "https://chat.oneapi.pro/#/?settings=" + url.QueryEscape(chatNextUrl)
+	chatNextUrl = "https://ai2.mister5.net/#/?settings=" + url.QueryEscape(chatNextUrl)
 	if config.ChatLink != "" {
 		chatLink := strings.TrimSuffix(config.ChatLink, "/")
-		chatNextUrl = strings.ReplaceAll(chatNextUrl, `https://chat.oneapi.pro`, chatLink)
+		chatNextUrl = strings.ReplaceAll(chatNextUrl, `https://ai2.mister5.net`, chatLink)
 	}
 
 	jumpUrl := fmt.Sprintf(`%s/jump?url=`, serverAddress)
