@@ -528,14 +528,14 @@
     "model": "qwen-max",
     "type": "tokens",
     "channel_type": 17,
-    "input": 2.8571,
+    "input": 2.85715,
     "output": 8.5714
   },
   {
     "model": "qwen-max-longcontext",
     "type": "tokens",
     "channel_type": 17,
-    "input": 2.8571,
+    "input": 2.85715,
     "output": 8.5714
   },
   {
@@ -543,13 +543,13 @@
     "type": "tokens",
     "channel_type": 17,
     "input": 0.2857,
-    "output": 0.8571
+    "output": 0.85715
   },
   {
     "model": "qwen-turbo",
     "type": "tokens",
     "channel_type": 17,
-    "input": 0.1429,
+    "input": 0.14285,
     "output": 0.4286
   },
   {
@@ -557,7 +557,7 @@
     "type": "tokens",
     "channel_type": 17,
     "input": 0.0357,
-    "output": 0.1429
+    "output": 0.14285
   },
   {
     "model": "qwen-vl-max",
@@ -570,8 +570,8 @@
     "model": "qwen-vl-plus",
     "type": "tokens",
     "channel_type": 17,
-    "input": 0.5715,
-    "output": 0.5715
+    "input": 0.57145,
+    "output": 0.57145
   },
   {
     "model": "text-embedding-v1",
@@ -794,15 +794,15 @@
     "model": "abab6.5-chat",
     "type": "tokens",
     "channel_type": 27,
-    "input": 2.1429,
-    "output": 2.1429
+    "input": 0.7143,
+    "output": 0.7143
   },
   {
     "model": "abab6.5s-chat",
     "type": "tokens",
     "channel_type": 27,
-    "input": 0.7143,
-    "output": 0.7143
+    "input": 2.1429,
+    "output": 2.1429
   },
   {
     "model": "embo-01",
@@ -823,14 +823,14 @@
     "type": "tokens",
     "channel_type": 28,
     "input": 0.0714,
-    "output": 0.1429
+    "output": 0.14285
   },
   {
     "model": "deepseek-coder",
     "type": "tokens",
     "channel_type": 28,
     "input": 0.0714,
-    "output": 0.1429
+    "output": 0.14285
   },
   {
     "model": "moonshot-v1-128k",
@@ -850,8 +850,8 @@
     "model": "moonshot-v1-8k",
     "type": "tokens",
     "channel_type": 29,
-    "input": 0.8572,
-    "output": 0.8572
+    "input": 0.85715,
+    "output": 0.85715
   },
   {
     "model": "mistral-embed",
@@ -969,8 +969,8 @@
     "model": "yi-34b-chat-200k",
     "type": "tokens",
     "channel_type": 33,
-    "input": 0.8571,
-    "output": 0.8571
+    "input": 0.85715,
+    "output": 0.85715
   },
   {
     "model": "yi-large",
