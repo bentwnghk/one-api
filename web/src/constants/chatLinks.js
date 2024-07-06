@@ -1,7 +1,7 @@
 export const CHAT_LINKS = [
   {
     name: 'Mr.🆖 AI Chat 🆓️',
-    url: 'https://aichat.mister5.net/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}',
+    url: 'https://mr5ai.com/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}',
     show: true,
     sort: 1
   },

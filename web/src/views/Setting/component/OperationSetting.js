@@ -660,11 +660,11 @@ const OperationSetting = () => {
           <Alert severity="info">
             配置聊天链接，该配置在令牌中的聊天生效以及首页的Playground中的聊天生效. <br />
             链接中可以使{'{key}'}替换用户的令牌，{'{server}'}替换服务器地址。例如：
-            {'https://chat.mister5.net/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}'}
+            {'https://mr5ai.com/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}'}
             <br />
             如果未配置，会默认配置以下链接：
             <br />
-            Mr.🆖 AI Chat 🆓️ ： {'https://aichat.mister5.net/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}'}
+            Mr.🆖 AI Chat 🆓️ ： {'https://mr5ai.com/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}'}
             <br />
             Mr.🆖 AI English Tutor ： {'https://ai2.mister5.net/#/?settings={"key":"{key}","url":"{server}"}'}
             <br />
