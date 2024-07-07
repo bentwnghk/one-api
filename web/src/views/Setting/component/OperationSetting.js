@@ -598,8 +598,8 @@ const OperationSetting = () => {
           <Stack spacing={2}>
             <Alert severity="info">
               固定金额充值折扣设置示例： <br />
-              为一个 JSON文本，键为充值金额，值为折扣，比如 &#123;&quot;10&quot;:0.9&#125; 表示充值10美元按照9折计算 <br />
-              计算公式：实际费用=（原始价值*折扣+原始价值*折扣*手续费率）*汇率
+              为一个JSON文本，键为充值金额，值为折扣，比如 &#123;&quot;10&quot;:0.9&#125; 表示充值10美元按照9折计算 <br />
+              计算公式：实际费用 =（原始价值*折扣 + 原始价值*折扣*手续费率）*汇率
             </Alert>
             <FormControl fullWidth>
               <TextField
@@ -659,7 +659,7 @@ const OperationSetting = () => {
         <Stack spacing={2}>
           <Alert severity="info">
             配置聊天链接，该配置在令牌中的聊天生效以及首页的Playground中的聊天生效. <br />
-            链接中可以使{'{key}'}替换用户的令牌，{'{server}'}替换服务器地址。例如：
+            链接中可以使用{'{key}'}替换用户的令牌，{'{server}'}替换服务器地址。例如：
             {'https://mr5ai.com/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}'}
             <br />
             如果未配置，会默认配置以下链接：
