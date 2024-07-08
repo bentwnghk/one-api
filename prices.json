@@ -413,6 +413,55 @@
     "output": 0.5714
   },
   {
+    "model": "ERNIE-3.5-8K-Preview",
+    "type": "tokens",
+    "channel_type": 15,
+    "input": 0.85715,
+    "output": 0.85715
+  },
+  {
+    "model": "ERNIE-3.5-128K",
+    "type": "tokens",
+    "channel_type": 15,
+    "input": 0.5714,
+    "output": 1.7143
+  },
+  {
+    "model": "ERNIE-4.0-8K",
+    "type": "tokens",
+    "channel_type": 15,
+    "input": 2.85715,
+    "output": 8.57145
+  },
+  {
+    "model": "ERNIE-4.0-8K-Latest",
+    "type": "tokens",
+    "channel_type": 15,
+    "input": 2.85715,
+    "output": 8.57145
+  },
+  {
+    "model": "ERNIE-4.0-8K-Preview",
+    "type": "tokens",
+    "channel_type": 15,
+    "input": 2.85715,
+    "output": 8.57145
+  },
+  {
+    "model": "ERNIE-4.0-Turbo-8K",
+    "type": "tokens",
+    "channel_type": 15,
+    "input": 2.14285,
+    "output": 4.2857
+  },
+  {
+    "model": "ERNIE-4.0-Turbo-8K-Preview",
+    "type": "tokens",
+    "channel_type": 15,
+    "input": 2.14285,
+    "output": 4.2857
+  },
+  {
     "model": "Embedding-V1",
     "type": "tokens",
     "channel_type": 15,
