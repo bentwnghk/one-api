@@ -68,18 +68,24 @@ func errorHandle(baiduError *BaiduError) *types.OpenAIError {
 // 获取完整请求 URL
 func (p *BaiduProvider) GetFullRequestURL(requestURL string, modelName string) string {
 	var modelNameMap = map[string]string{
-		"ERNIE-Bot":          "completions",
-		"ERNIE-Bot-turbo":    "eb-instant",
-		"ERNIE-Bot-4":        "completions_pro",
-		"BLOOMZ-7B":          "bloomz_7b1",
-		"Embedding-V1":       "embedding-v1",
-		"ERNIE-4.0":          "completions_pro",
-		"ERNIE-3.5-8K":       "completions",
-		"ERNIE-Speed":        "ernie_speed",
-		"ERNIE-Speed-128K":   "ernie-speed-128k",
-		"ERNIE-Lite-8K":      "eb-instant",
-		"ERNIE-Tiny-8K":      "ernie-tiny-8k",
-		"ERNIE-Functions-8K": "ernie-func-8k",
+		"ERNIE-Bot":                  "completions",
+		"ERNIE-Bot-turbo":            "eb-instant",
+		"ERNIE-Bot-4":                "completions_pro",
+		"BLOOMZ-7B":                  "bloomz_7b1",
+		"Embedding-V1":               "embedding-v1",
+		"ERNIE-4.0-8K":               "completions_pro",
+		"ERNIE-4.0-8K-Latest":        "ernie-4.0-8k-latest",
+		"ERNIE-4.0-8K-Preview":       "ernie-4.0-8k-preview",
+		"ERNIE-4.0-Turbo-8K":         "ernie-4.0-turbo-8k",
+		"ERNIE-4.0-Turbo-8K-Preview": "ernie-4.0-turbo-8k-preview",
+		"ERNIE-3.5-8K":               "completions",
+		"ERNIE-3.5-8K-Preview":       "ernie-3.5-8k-preview",
+		"ERNIE-3.5-128K":             "ernie-3.5-128k",
+		"ERNIE-Speed":                "ernie_speed",
+		"ERNIE-Speed-128K":           "ernie-speed-128k",
+		"ERNIE-Lite-8K":              "ernie-lite-8k",
+		"ERNIE-Tiny-8K":              "ernie-tiny-8k",
+		"ERNIE-Functions-8K":         "ernie-func-8k",
 	}
 
 	if modelNameConvert, ok := modelNameMap[modelName]; ok {
