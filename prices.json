@@ -346,15 +346,15 @@
     "model": "ERNIE-3.5-8K",
     "type": "tokens",
     "channel_type": 15,
-    "input": 0.8572,
-    "output": 0.8572
+    "input": 0.2857,
+    "output": 0.85715
   },
   {
     "model": "ERNIE-4.0",
     "type": "tokens",
     "channel_type": 15,
-    "input": 8.572,
-    "output": 8.572
+    "input": 2.85715,
+    "output": 8.57145
   },
   {
     "model": "ERNIE-Bot",
