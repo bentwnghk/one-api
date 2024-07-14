@@ -85,8 +85,8 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            ghcr.io/${{ github.repository }}-tw
-            docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/one-api-tw
+            ghcr.io/${{ vars.DOCKER_HUB_USERNAME }}/${{ vars.DOCKER_HUB_REPO_TW }}
+            docker.io/${{ vars.DOCKER_HUB_USERNAME }}/${{ vars.DOCKER_HUB_REPO_TW }}
           # generate Docker tags based on the following events/attributes
           tags: |
             type=raw,value=dev,enable=${{ github.ref == 'refs/heads/main' }}
