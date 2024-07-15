@@ -9,9 +9,11 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import ChatLinksDataGrid from './ChatLinksDataGrid';
 import dayjs from 'dayjs';
 import { LoadStatusContext } from 'contexts/StatusContext';
+import { useTranslation } from 'react-i18next';
 require('dayjs/locale/zh-cn');
 
 const OperationSetting = () => {
+  const { t } = useTranslation();
   let now = new Date();
   let [inputs, setInputs] = useState({
     QuotaForNewUser: 0,
@@ -220,66 +222,68 @@ const OperationSetting = () => {
 
   return (
     <Stack spacing={2}>
-      <SubCard title="通用设置">
+      <SubCard title={t('setting_index.operationSettings.generalSettings.title')}>
         <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
           <Stack direction={{ sm: 'column', md: 'row' }} spacing={{ xs: 3, sm: 2, md: 4 }}>
             <FormControl fullWidth>
-              <InputLabel htmlFor="TopUpLink">充值链接</InputLabel>
+              <InputLabel htmlFor="TopUpLink">{t('setting_index.operationSettings.generalSettings.topUpLink.label')}</InputLabel>
               <OutlinedInput
                 id="TopUpLink"
                 name="TopUpLink"
                 value={inputs.TopUpLink}
                 onChange={handleInputChange}
-                label="充值链接"
-                placeholder="例如发卡网站的购买链接"
+                label={t('setting_index.operationSettings.generalSettings.topUpLink.label')}
+                placeholder={t('setting_index.operationSettings.generalSettings.topUpLink.placeholder')}
                 disabled={loading}
               />
             </FormControl>
             <FormControl fullWidth>
-              <InputLabel htmlFor="ChatLink">聊天链接</InputLabel>
+              <InputLabel htmlFor="ChatLink">{t('setting_index.operationSettings.generalSettings.chatLink.label')}</InputLabel>
               <OutlinedInput
                 id="ChatLink"
                 name="ChatLink"
                 value={inputs.ChatLink}
                 onChange={handleInputChange}
-                label="聊天链接"
-                placeholder="例如 Mr.🆖 AI Chat 的部署地址"
+                label={t('setting_index.operationSettings.generalSettings.chatLink.label')}
+                placeholder={t('setting_index.operationSettings.generalSettings.chatLink.placeholder')}
                 disabled={loading}
               />
             </FormControl>
             <FormControl fullWidth>
-              <InputLabel htmlFor="QuotaPerUnit">单位额度</InputLabel>
+              <InputLabel htmlFor="QuotaPerUnit">{t('setting_index.operationSettings.generalSettings.quotaPerUnit.label')}</InputLabel>
               <OutlinedInput
                 id="QuotaPerUnit"
                 name="QuotaPerUnit"
                 value={inputs.QuotaPerUnit}
                 onChange={handleInputChange}
-                label="单位额度"
-                placeholder="一单位货币能兑换的额度"
+                label={t('setting_index.operationSettings.generalSettings.quotaPerUnit.label')}
+                placeholder={t('setting_index.operationSettings.generalSettings.quotaPerUnit.placeholder')}
                 disabled={loading}
               />
             </FormControl>
             <FormControl fullWidth>
-              <InputLabel htmlFor="RetryTimes">重试次数</InputLabel>
+              <InputLabel htmlFor="RetryTimes">{t('setting_index.operationSettings.generalSettings.retryTimes.label')}</InputLabel>
               <OutlinedInput
                 id="RetryTimes"
                 name="RetryTimes"
                 value={inputs.RetryTimes}
                 onChange={handleInputChange}
-                label="重试次数"
-                placeholder="重试次数"
+                label={t('setting_index.operationSettings.generalSettings.retryTimes.label')}
+                placeholder={t('setting_index.operationSettings.generalSettings.retryTimes.placeholder')}
                 disabled={loading}
               />
             </FormControl>
             <FormControl fullWidth>
-              <InputLabel htmlFor="RetryCooldownSeconds">重试间隔(秒)</InputLabel>
+              <InputLabel htmlFor="RetryCooldownSeconds">
+                {t('setting_index.operationSettings.generalSettings.retryCooldownSeconds.label')}
+              </InputLabel>
               <OutlinedInput
                 id="RetryCooldownSeconds"
                 name="RetryCooldownSeconds"
                 value={inputs.RetryCooldownSeconds}
                 onChange={handleInputChange}
-                label="重试间隔(秒)"
-                placeholder="重试间隔(秒)"
+                label={t('setting_index.operationSettings.generalSettings.retryCooldownSeconds.label')}
+                placeholder={t('setting_index.operationSettings.generalSettings.retryCooldownSeconds.placeholder')}
                 disabled={loading}
               />
             </FormControl>
@@ -292,7 +296,7 @@ const OperationSetting = () => {
           >
             <FormControlLabel
               sx={{ marginLeft: '0px' }}
-              label="以货币形式显示额度"
+              label={t('setting_index.operationSettings.generalSettings.displayInCurrency')}
               control={
                 <Checkbox
                   checked={inputs.DisplayInCurrencyEnabled === 'true'}
@@ -303,14 +307,14 @@ const OperationSetting = () => {
             />
 
             <FormControlLabel
-              label="Billing 相关 API 显示令牌额度而非用户额度"
+              label={t('setting_index.operationSettings.generalSettings.displayTokenStat')}
               control={
                 <Checkbox checked={inputs.DisplayTokenStatEnabled === 'true'} onChange={handleInputChange} name="DisplayTokenStatEnabled" />
               }
             />
 
             <FormControlLabel
-              label="使用近似的方式估算 token 数以减少计算量"
+              label={t('setting_index.operationSettings.generalSettings.approximateToken')}
               control={
                 <Checkbox checked={inputs.ApproximateTokenEnabled === 'true'} onChange={handleInputChange} name="ApproximateTokenEnabled" />
               }
@@ -322,11 +326,11 @@ const OperationSetting = () => {
               submitConfig('general').then();
             }}
           >
-            保存通用设置
+            {t('setting_index.operationSettings.generalSettings.saveButton')}
           </Button>
         </Stack>
       </SubCard>
-      <SubCard title="其他设置">
+      <SubCard title={t('setting_index.operationSettings.otherSettings.title')}>
         <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
           <Stack
             direction={{ sm: 'column', md: 'row' }}
@@ -336,45 +340,44 @@ const OperationSetting = () => {
           >
             <FormControlLabel
               sx={{ marginLeft: '0px' }}
-              label="Midjourney 允许回调（会泄露服务器ip地址）"
+              label={t('setting_index.operationSettings.otherSettings.mjNotify')}
               control={<Checkbox checked={inputs.MjNotifyEnabled === 'true'} onChange={handleInputChange} name="MjNotifyEnabled" />}
             />
             <FormControlLabel
               sx={{ marginLeft: '0px' }}
-              label="是否开启聊天缓存(如果没有启用Redis，将会存储在数据库中)"
+              label={t('setting_index.operationSettings.otherSettings.chatCache')}
               control={<Checkbox checked={inputs.ChatCacheEnabled === 'true'} onChange={handleInputChange} name="ChatCacheEnabled" />}
             />
           </Stack>
           <Stack direction={{ sm: 'column', md: 'row' }} spacing={{ xs: 3, sm: 2, md: 4 }}>
             <FormControl>
-              <InputLabel htmlFor="ChatCacheExpireMinute">缓存时间(分钟)</InputLabel>
+              <InputLabel htmlFor="ChatCacheExpireMinute">
+                {t('setting_index.operationSettings.otherSettings.chatCacheExpireMinute.label')}
+              </InputLabel>
               <OutlinedInput
                 id="ChatCacheExpireMinute"
                 name="ChatCacheExpireMinute"
                 value={inputs.ChatCacheExpireMinute}
                 onChange={handleInputChange}
-                label="缓存时间(分钟)"
-                placeholder="开启缓存时，数据缓存的时间"
+                label={t('setting_index.operationSettings.otherSettings.chatCacheExpireMinute.label')}
+                placeholder={t('setting_index.operationSettings.otherSettings.chatCacheExpireMinute.placeholder')}
                 disabled={loading}
               />
             </FormControl>
           </Stack>
-
           <Stack spacing={2}>
-            <Alert severity="info">
-              当用户使用vision模型并提供了图片链接时，我们的服务器需要下载这些图片并计算 tokens。为了在下载图片时保护服务器的 IP
-              地址不被泄露，可以在下方配置一个代理。这个代理配置使用的是 HTTP 或 SOCKS5
-              代理。如果你是个人用户，这个配置可以不用理会。代理格式为 http://127.0.0.1:1080 或 socks5://127.0.0.1:1080
-            </Alert>
+            <Alert severity="info">{t('setting_index.operationSettings.otherSettings.alert')}</Alert>
             <FormControl>
-              <InputLabel htmlFor="ChatImageRequestProxy">图片检测代理</InputLabel>
+              <InputLabel htmlFor="ChatImageRequestProxy">
+                {t('setting_index.operationSettings.otherSettings.chatImageRequestProxy.label')}
+              </InputLabel>
               <OutlinedInput
                 id="ChatImageRequestProxy"
                 name="ChatImageRequestProxy"
                 value={inputs.ChatImageRequestProxy}
                 onChange={handleInputChange}
-                label="图片检测代理"
-                placeholder="聊天图片检测代理设置，如果不设置可能会泄漏服务器ip"
+                label={t('setting_index.operationSettings.otherSettings.chatImageRequestProxy.label')}
+                placeholder={t('setting_index.operationSettings.otherSettings.chatImageRequestProxy.placeholder')}
                 disabled={loading}
               />
             </FormControl>
@@ -385,22 +388,21 @@ const OperationSetting = () => {
               submitConfig('other').then();
             }}
           >
-            保存其他设置
+            {t('setting_index.operationSettings.otherSettings.saveButton')}
           </Button>
         </Stack>
       </SubCard>
-      <SubCard title="日志设置">
+      <SubCard title={t('setting_index.operationSettings.logSettings.title')}>
         <Stack direction="column" justifyContent="flex-start" alignItems="flex-start" spacing={2}>
           <FormControlLabel
-            label="启用日志消费"
+            label={t('setting_index.operationSettings.logSettings.logConsume')}
             control={<Checkbox checked={inputs.LogConsumeEnabled === 'true'} onChange={handleInputChange} name="LogConsumeEnabled" />}
           />
-
           <FormControl>
             <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={'zh-cn'}>
               <DateTimePicker
-                label="日志清理时间"
-                placeholder="日志清理时间"
+                label={t('setting_index.operationSettings.logSettings.logCleanupTime.label')}
+                placeholder={t('setting_index.operationSettings.logSettings.logCleanupTime.placeholder')}
                 ampm={false}
                 name="historyTimestamp"
                 value={historyTimestamp === null ? null : dayjs.unix(historyTimestamp)}
@@ -422,42 +424,46 @@ const OperationSetting = () => {
               deleteHistoryLogs().then();
             }}
           >
-            清理历史日志
+            {t('setting_index.operationSettings.logSettings.clearLogs')}
           </Button>
         </Stack>
       </SubCard>
-      <SubCard title="监控设置">
+      <SubCard title={t('setting_index.operationSettings.monitoringSettings.title')}>
         <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
           <Stack direction={{ sm: 'column', md: 'row' }} spacing={{ xs: 3, sm: 2, md: 4 }}>
             <FormControl fullWidth>
-              <InputLabel htmlFor="ChannelDisableThreshold">最长响应时间</InputLabel>
+              <InputLabel htmlFor="ChannelDisableThreshold">
+                {t('setting_index.operationSettings.monitoringSettings.channelDisableThreshold.label')}
+              </InputLabel>
               <OutlinedInput
                 id="ChannelDisableThreshold"
                 name="ChannelDisableThreshold"
                 type="number"
                 value={inputs.ChannelDisableThreshold}
                 onChange={handleInputChange}
-                label="最长响应时间"
-                placeholder="单位秒，当运行通道全部测试时，超过此时间将自动禁用通道"
+                label={t('setting_index.operationSettings.monitoringSettings.channelDisableThreshold.label')}
+                placeholder={t('setting_index.operationSettings.monitoringSettings.channelDisableThreshold.placeholder')}
                 disabled={loading}
               />
             </FormControl>
             <FormControl fullWidth>
-              <InputLabel htmlFor="QuotaRemindThreshold">额度提醒阈值</InputLabel>
+              <InputLabel htmlFor="QuotaRemindThreshold">
+                {t('setting_index.operationSettings.monitoringSettings.quotaRemindThreshold.label')}
+              </InputLabel>
               <OutlinedInput
                 id="QuotaRemindThreshold"
                 name="QuotaRemindThreshold"
                 type="number"
                 value={inputs.QuotaRemindThreshold}
                 onChange={handleInputChange}
-                label="额度提醒阈值"
-                placeholder="低于此额度时将发送邮件提醒用户"
+                label={t('setting_index.operationSettings.monitoringSettings.quotaRemindThreshold.label')}
+                placeholder={t('setting_index.operationSettings.monitoringSettings.quotaRemindThreshold.placeholder')}
                 disabled={loading}
               />
             </FormControl>
           </Stack>
           <FormControlLabel
-            label="失败时自动禁用通道"
+            label={t('setting_index.operationSettings.monitoringSettings.automaticDisableChannel')}
             control={
               <Checkbox
                 checked={inputs.AutomaticDisableChannelEnabled === 'true'}
@@ -467,7 +473,7 @@ const OperationSetting = () => {
             }
           />
           <FormControlLabel
-            label="成功时自动启用通道"
+            label={t('setting_index.operationSettings.monitoringSettings.automaticEnableChannel')}
             control={
               <Checkbox
                 checked={inputs.AutomaticEnableChannelEnabled === 'true'}
@@ -482,63 +488,65 @@ const OperationSetting = () => {
               submitConfig('monitor').then();
             }}
           >
-            保存监控设置
+            {t('setting_index.operationSettings.monitoringSettings.saveMonitoringSettings')}
           </Button>
         </Stack>
       </SubCard>
-      <SubCard title="额度设置">
+      <SubCard title={t('setting_index.operationSettings.quotaSettings.title')}>
         <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
           <Stack direction={{ sm: 'column', md: 'row' }} spacing={{ xs: 3, sm: 2, md: 4 }}>
             <FormControl fullWidth>
-              <InputLabel htmlFor="QuotaForNewUser">新用户初始额度</InputLabel>
+              <InputLabel htmlFor="QuotaForNewUser">{t('setting_index.operationSettings.quotaSettings.quotaForNewUser.label')}</InputLabel>
               <OutlinedInput
                 id="QuotaForNewUser"
                 name="QuotaForNewUser"
                 type="number"
                 value={inputs.QuotaForNewUser}
                 onChange={handleInputChange}
-                label="新用户初始额度"
-                placeholder="例如：100"
+                label={t('setting_index.operationSettings.quotaSettings.quotaForNewUser.label')}
+                placeholder={t('setting_index.operationSettings.quotaSettings.quotaForNewUser.placeholder')}
                 disabled={loading}
               />
             </FormControl>
             <FormControl fullWidth>
-              <InputLabel htmlFor="PreConsumedQuota">请求预扣费额度</InputLabel>
+              <InputLabel htmlFor="PreConsumedQuota">
+                {t('setting_index.operationSettings.quotaSettings.preConsumedQuota.label')}
+              </InputLabel>
               <OutlinedInput
                 id="PreConsumedQuota"
                 name="PreConsumedQuota"
                 type="number"
                 value={inputs.PreConsumedQuota}
                 onChange={handleInputChange}
-                label="请求预扣费额度"
-                placeholder="请求结束后多退少补"
+                label={t('setting_index.operationSettings.quotaSettings.preConsumedQuota.label')}
+                placeholder={t('setting_index.operationSettings.quotaSettings.preConsumedQuota.placeholder')}
                 disabled={loading}
               />
             </FormControl>
             <FormControl fullWidth>
-              <InputLabel htmlFor="QuotaForInviter">邀请新用户奖励额度</InputLabel>
+              <InputLabel htmlFor="QuotaForInviter">{t('setting_index.operationSettings.quotaSettings.quotaForInviter.label')}</InputLabel>
               <OutlinedInput
                 id="QuotaForInviter"
                 name="QuotaForInviter"
                 type="number"
-                label="邀请新用户奖励额度"
+                label={t('setting_index.operationSettings.quotaSettings.quotaForInviter.label')}
                 value={inputs.QuotaForInviter}
                 onChange={handleInputChange}
-                placeholder="例如：2000"
+                placeholder={t('setting_index.operationSettings.quotaSettings.quotaForInviter.placeholder')}
                 disabled={loading}
               />
             </FormControl>
             <FormControl fullWidth>
-              <InputLabel htmlFor="QuotaForInvitee">新用户使用邀请码奖励额度</InputLabel>
+              <InputLabel htmlFor="QuotaForInvitee">{t('setting_index.operationSettings.quotaSettings.quotaForInvitee.label')}</InputLabel>
               <OutlinedInput
                 id="QuotaForInvitee"
                 name="QuotaForInvitee"
                 type="number"
-                label="新用户使用邀请码奖励额度"
+                label={t('setting_index.operationSettings.quotaSettings.quotaForInvitee.label')}
                 value={inputs.QuotaForInvitee}
                 onChange={handleInputChange}
                 autoComplete="new-password"
-                placeholder="例如：1000"
+                placeholder={t('setting_index.operationSettings.quotaSettings.quotaForInvitee.placeholder')}
                 disabled={loading}
               />
             </FormControl>
@@ -549,70 +557,59 @@ const OperationSetting = () => {
               submitConfig('quota').then();
             }}
           >
-            保存额度设置
+            {t('setting_index.operationSettings.quotaSettings.saveQuotaSettings')}
           </Button>
         </Stack>
       </SubCard>
-      <SubCard title="支付设置">
+      <SubCard title={t('setting_index.operationSettings.paymentSettings.title')}>
         <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
           <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
             <FormControl fullWidth>
-              <Alert severity="info">
-                支付设置： <br />
-                1. 美元汇率：用于计算充值金额的美元金额 <br />
-                2. 最低充值金额（美元）：最低充值金额，单位为美元，填写整数 <br />
-                3. 页面都以美元为单位计算，实际用户支付的货币，按照支付网关设置的货币进行转换 <br />
-                例如： A 网关设置货币为 CNY，用户支付 100 美元，那么实际支付金额为 100 * 美元汇率 <br />B 网关设置货币为 USD，用户支付 100
-                美元，那么实际支付金额为 100 美元
-              </Alert>
+              <Alert severity="info">{t('setting_index.operationSettings.paymentSettings.alert')}</Alert>
             </FormControl>
             <Stack direction={{ sm: 'column', md: 'row' }} spacing={{ xs: 3, sm: 2, md: 4 }}>
               <FormControl fullWidth>
-                <InputLabel htmlFor="PaymentUSDRate">美元汇率</InputLabel>
+                <InputLabel htmlFor="PaymentUSDRate">{t('setting_index.operationSettings.paymentSettings.usdRate.label')}</InputLabel>
                 <OutlinedInput
                   id="PaymentUSDRate"
                   name="PaymentUSDRate"
                   type="number"
                   value={inputs.PaymentUSDRate}
                   onChange={handleInputChange}
-                  label="美元汇率"
-                  placeholder="例如：7.3"
+                  label={t('setting_index.operationSettings.paymentSettings.usdRate.label')}
+                  placeholder={t('setting_index.operationSettings.paymentSettings.usdRate.placeholder')}
                   disabled={loading}
                 />
               </FormControl>
               <FormControl fullWidth>
-                <InputLabel htmlFor="PaymentMinAmount">最低充值金额（美元）</InputLabel>
+                <InputLabel htmlFor="PaymentMinAmount">{t('setting_index.operationSettings.paymentSettings.minAmount.label')}</InputLabel>
                 <OutlinedInput
                   id="PaymentMinAmount"
                   name="PaymentMinAmount"
                   type="number"
                   value={inputs.PaymentMinAmount}
                   onChange={handleInputChange}
-                  label="最低充值金额（美元）"
-                  placeholder="例如：1，那么最低充值金额为1美元，请填写整数"
+                  label={t('setting_index.operationSettings.paymentSettings.minAmount.label')}
+                  placeholder={t('setting_index.operationSettings.paymentSettings.minAmount.placeholder')}
                   disabled={loading}
                 />
               </FormControl>
             </Stack>
           </Stack>
           <Stack spacing={2}>
-            <Alert severity="info">
-              固定金额充值折扣设置示例： <br />
-              为一个JSON文本，键为充值金额，值为折扣，比如 &#123;&quot;10&quot;:0.9&#125; 表示充值10美元按照9折计算 <br />
-              计算公式：实际费用 =（原始价值*折扣 + 原始价值*折扣*手续费率）*汇率
-            </Alert>
+            <Alert severity="info">{t('setting_index.operationSettings.paymentSettings.discountInfo')}</Alert>
             <FormControl fullWidth>
               <TextField
                 multiline
                 maxRows={15}
                 id="channel-RechargeDiscount-label"
-                label="固定金额充值折扣"
+                label={t('setting_index.operationSettings.paymentSettings.discount.label')}
                 value={inputs.RechargeDiscount}
                 name="RechargeDiscount"
                 onChange={handleInputChange}
                 aria-describedby="helper-text-channel-RechargeDiscount-label"
                 minRows={5}
-                placeholder="为一个 JSON 文本，键为充值金额，值为折扣"
+                placeholder={t('setting_index.operationSettings.paymentSettings.discount.placeholder')}
                 disabled={loading}
               />
             </FormControl>
@@ -623,24 +620,24 @@ const OperationSetting = () => {
               submitConfig('payment').then();
             }}
           >
-            保存支付设置
+            {t('setting_index.operationSettings.paymentSettings.save')}
           </Button>
         </Stack>
       </SubCard>
-      <SubCard title="倍率设置">
+      <SubCard title={t('setting_index.operationSettings.rateSettings.title')}>
         <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
           <FormControl fullWidth>
             <TextField
               multiline
               maxRows={15}
               id="channel-GroupRatio-label"
-              label="分组倍率"
+              label={t('setting_index.operationSettings.rateSettings.groupRatio.label')}
               value={inputs.GroupRatio}
               name="GroupRatio"
               onChange={handleInputChange}
               aria-describedby="helper-text-channel-GroupRatio-label"
               minRows={5}
-              placeholder="为一个 JSON 文本，键为分组名称，值为倍率"
+              placeholder={t('setting_index.operationSettings.rateSettings.groupRatio.placeholder')}
             />
           </FormControl>
 
@@ -650,28 +647,14 @@ const OperationSetting = () => {
               submitConfig('ratio').then();
             }}
           >
-            保存倍率设置
+            {t('setting_index.operationSettings.rateSettings.save')}
           </Button>
         </Stack>
       </SubCard>
 
-      <SubCard title="聊天链接设置">
+      <SubCard title={t('setting_index.operationSettings.chatLinkSettings.title')}>
         <Stack spacing={2}>
-          <Alert severity="info">
-            配置聊天链接，该配置在令牌中的聊天生效以及首页的Playground中的聊天生效. <br />
-            链接中可以使用{'{key}'}替换用户的令牌，{'{server}'}替换服务器地址。例如：
-            {'https://mr5ai.com/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}'}
-            <br />
-            如果未配置，会默认配置以下链接：
-            <br />
-            Mr.🆖 AI Chat 🆓️ ： {'https://mr5ai.com/?settings={"keyVaults":{"openai":{"apiKey":"{key}","baseURL":"{server}/v1"}}}'}
-            <br />
-            Mr.🆖 AI English Tutor ： {'https://ai2.mister5.net/#/?settings={"key":"{key}","url":"{server}"}'}
-            <br />
-            Mr.🆖 AI Creator ： {'https://create.mister5.net/#/?settings={"key":"{key}","url":"{server}"}'}
-            <br />
-            排序规则：值越大越靠前，值相同则按照配置顺序
-          </Alert>
+          <Alert severity="info">{t('setting_index.operationSettings.chatLinkSettings.info')}</Alert>
           <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
             <ChatLinksDataGrid links={inputs.ChatLinks || '[]'} onChange={handleInputChange} />
 
@@ -681,7 +664,7 @@ const OperationSetting = () => {
                 submitConfig('chatlinks').then();
               }}
             >
-              保存聊天链接设置
+              {t('setting_index.operationSettings.chatLinkSettings.save')}
             </Button>
           </Stack>
         </Stack>
