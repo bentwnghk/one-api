@@ -340,7 +340,7 @@
     "bindWechatAccount": "綁定微信賬號",
     "bindGitHubAccount": "綁定GitHub賬號",
     "bindLarkAccount": "綁定飛書賬號",
-    "changeEmail": "更換郵箱",
+    "changeEmail": "更改電郵地址",
     "bindEmail": "綁定郵箱",
     "telegramBot": "Telegram 機器人",
     "telegramStep1": "1. 點擊下方按鈕，將會在 Telegram 中打開機器人，點擊 /start 開始。",
@@ -432,9 +432,9 @@
       "gatewayNo": "網關訂單號"
     },
     "statusOptions": {
-      "status1": "狀態1",
-      "status2": "狀態2",
-      "status3": "狀態3"
+      "status1": "待支付",
+      "status2": "支付成功",
+      "status3": "已關閉"
     }
   },
   "setting_index": {
@@ -463,7 +463,7 @@
           "placeholder": "重試間隔(秒)"
         },
         "displayInCurrency": "以貨幣形式顯示額度",
-        "displayTokenStat": "Billing 相關 API 顯示金鑰額度而非用戶額度",
+        "displayTokenStat": "計費相關 API 顯示金鑰額度而非用戶額度",
         "approximateToken": "使用近似的方式估算 token 數以減少計算量",
         "saveButton": "保存通用設置"
       },
@@ -527,7 +527,7 @@
       },
       "paymentSettings": {
         "title": "支付設置",
-        "alert": "支付設置： <br />1. 美元匯率：用於計算充值金額的美元金額 <br />2. 最低充值金額（美元）：最低充值金額，單位為美元，填寫整數 <br />3. 頁面都以美元為單位計算，實際用戶支付的貨幣，按照支付網關設置的貨幣進行轉換 <br />例如： A 網關設置貨幣為 CNY，用戶支付 100 美元，那麼實際支付金額為 100*美元匯率 <br />B 網關設置貨幣為 USD，用戶支付 100 美元，那麼實際支付金額為 100 美元",
+        "alert": "支付設置：1. 美元匯率：用於計算充值金額的美元金額。2. 最低充值金額（美元）：最低充值金額，單位為美元，填寫整數。3. 頁面都以美元為單位計算，實際用戶支付的貨幣，按照支付網關設置的貨幣進行轉換。例如： A 網關設置貨幣為 CNY，用戶支付 100 美元，那麼實際支付金額為 100*美元匯率。B 網關設置貨幣為 USD，用戶支付 100 美元，那麼實際支付金額為 100 美元。",
         "usdRate": {
           "label": "美元匯率",
           "placeholder": "例如：7.3"
@@ -536,7 +536,7 @@
           "label": "最低充值金額（美元）",
           "placeholder": "例如：1，請填寫整數"
         },
-        "discountInfo": "固定金額充值折扣設置示例： <br />為一個JSON文本，鍵為充值金額（美元），值為折扣，比如 {\"10\":0.9} 表示充值10美元按照9折計算 <br />計算公式：實際費用 =（原始價值*折扣 + 原始價值*折扣*手續費率）*匯率",
+        "discountInfo": "固定金額充值折扣設置示例：為一個JSON文本，鍵為充值金額（美元），值為折扣，比如 {\"10\":0.9} 表示充值 10 美元按照 9 折計算。計算公式：實際費用 =（原始價值*折扣 + 原始價值*折扣*手續費率）*匯率。",
         "discount": {
           "label": "固定金額充值折扣",
           "placeholder": "為一個JSON文本，鍵為充值金額，值為折扣"
@@ -553,7 +553,7 @@
       },
       "chatLinkSettings": {
         "title": "聊天鏈接設置",
-        "info": "配置聊天鏈接，該配置在金鑰中的聊天生效以及首頁的Playground中的聊天生效. <br />鏈接中可以使用{key}替換用戶的密鑰，{server}替換伺服器地址。例如：{'https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}'}<br />如果未配置，會默認配置以下鏈接：<br />Mr.🆖 AI Chat 🆓️： {'https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}'}<br />Mr.🆖 AI English Tutor： {'https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}'}<br />Mr.🆖 AI Creator： {'https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}'}<br />排序規則：值越大越靠前，值相同則按照配置順序",
+        "info": "配置聊天鏈接，該配置在金鑰中的聊天生效以及首頁的 Playground 中的聊天生效。鏈接中可以使用{key}替換用戶的密鑰，{server}替換伺服器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，會默認配置以下鏈接：Mr.🆖 AI Chat 🆓️：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI English Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序規則：值越大越靠前，值相同則按照配置順序。",
         "save": "保存聊天鏈接設置"
       }
     },
@@ -674,7 +674,7 @@
         "aboutLabel": "關於",
         "aboutPlaceholder": "在此輸入新的關於內容，支持 Markdown & HTML 代碼。如果輸入的是一個鏈接，則會使用該鏈接作為 iframe 的 src 屬性，這允許你設置任意網頁作為關於頁面。",
         "saveAbout": "保存關於",
-        "copyrightWarning": "本項目維護需要花費大量精力，如果本項目對你有意義，請主動支持本項目。",
+        "copyrightWarning": "本项目维护需要花费大量精力，如果本项目对你有意义，请主动支持本项目。",
         "footerLabel": "頁腳設置",
         "footerPlaceholder": "在此輸入新的頁腳，留空則使用默認頁腳，支持 HTML 代碼",
         "setFooter": "設置頁腳"
@@ -996,6 +996,36 @@
   "代码执行": "代碼執行",
   "使用代码执行功能，开启后，计算tokens不准确，建议个人使用开启": "使用代碼執行功能，開啟後，計算tokens不准確，建議個人使用開啟",
   "是否启用代码执行": "是否啟用代碼執行",
+  "总消费": "總消費",
+  "总Tokens": "總Tokens",
+  "平均延迟": "平均延遲",
+  "总请求数": "總請求數",
+  "总注册人数": "總註冊人數",
+  "兑换金额($)": "兌換金額($)",
+  "独立用户(人)": "獨立用戶(人)",
+  "直接注册": "直接註冊",
+  "邀请注册": "邀請註冊",
+  "全部": "全部",
+  "自定义渠道": "自定義渠道",
+  "百度文心千帆": "百度文心千帆",
+  "智谱 ChatGLM": "智譜 ChatGLM",
+  "阿里通义千问": "阿里通義千問",
+  "讯飞星火认知": "訊飛星火認知",
+  "360 智脑": "360 智腦",
+  "腾讯混元(旧)": "騰訊混元(舊)",
+  "百川": "百川",
+  "零一万物": "零一萬物",
+  "腾讯混元": "騰訊混元",
+  "充值": "充值",
+  "消费": "消費",
+  "管理": "管理",
+  "系统": "系統",
+  "错误": "錯誤",
+  "按Token收费": "按Token收費",
+  "按次收费": "按次收費",
+  "待支付": "待支付",
+  "支付成功": "支付成功",
+  "已关闭": "已關閉",
   "taskPage": {
     "title": "任務",
     "task": "任務ID",

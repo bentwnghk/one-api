@@ -340,8 +340,8 @@
     "bindWechatAccount": "绑定微信账号",
     "bindGitHubAccount": "绑定Github账号",
     "bindLarkAccount": "绑定飞书账号",
-    "changeEmail": "更换邮箱",
-    "bindEmail": "绑定邮箱",
+    "changeEmail": "更改电邮地址",
+    "bindEmail": "绑定电邮地址",
     "telegramBot": "Telegram 机器人",
     "telegramStep1": "1. 点击下方按钮，将会在 Telegram 中打开机器人，点击 /start 开始。",
     "telegramStep2": "2. 向机器人发送/bind命令后，输入下方的访问令牌即可绑定。(如果没有生成，请点击下方按钮生成)",
@@ -432,9 +432,9 @@
       "gatewayNo": "网关订单号"
     },
     "statusOptions": {
-      "status1": "状态1",
-      "status2": "状态2",
-      "status3": "状态3"
+      "status1": "待支付",
+      "status2": "支付成功",
+      "status3": "已关闭"
     }
   },
   "setting_index": {
@@ -463,13 +463,13 @@
           "placeholder": "重试间隔(秒)"
         },
         "displayInCurrency": "以货币形式显示额度",
-        "displayTokenStat": "Billing 相关 API 显示令牌额度而非用户额度",
+        "displayTokenStat": "计费相关 API 显示令牌额度而非用户额度",
         "approximateToken": "使用近似的方式估算 token 数以减少计算量",
         "saveButton": "保存通用设置"
       },
       "otherSettings": {
         "title": "其他设置",
-        "mjNotify": "Midjourney 允许回调（会泄露服务器ip地址）",
+        "mjNotify": "Midjourney 允许回调（会泄露服务器IP地址）",
         "chatCache": "是否开启聊天缓存(如果没有启用Redis，将会存储在数据库中)",
         "chatCacheExpireMinute": {
           "label": "缓存时间(分钟)",
@@ -478,7 +478,7 @@
         "alert": "当用户使用vision模型并提供了图片链接时，我们的服务器需要下载这些图片并计算 tokens。为了在下载图片时保护服务器的 IP 地址不被泄露，可以在下方配置一个代理。这个代理配置使用的是 HTTP 或 SOCKS5 代理。如果你是个人用户，这个配置可以不用理会。代理格式为 http://127.0.0.1:1080 或 socks5://127.0.0.1:1080",
         "chatImageRequestProxy": {
           "label": "图片检测代理",
-          "placeholder": "聊天图片检测代理设置，如果不设置可能会泄漏服务器ip"
+          "placeholder": "聊天图片检测代理设置，如果不设置可能会泄漏服务器IP"
         },
         "saveButton": "保存其他设置"
       },
@@ -509,37 +509,37 @@
         "title": "额度设置",
         "quotaForNewUser": {
           "label": "新用户初始额度",
-          "placeholder": "例如：100"
+          "placeholder": "例如：69000"
         },
         "preConsumedQuota": {
           "label": "请求预扣费额度",
-          "placeholder": "请求结束后多退少补"
+          "placeholder": "例如：1000"
         },
         "quotaForInviter": {
           "label": "邀请新用户奖励额度",
-          "placeholder": "例如：2000"
+          "placeholder": "例如：69000"
         },
         "quotaForInvitee": {
           "label": "新用户使用邀请码奖励额度",
-          "placeholder": "例如：1000"
+          "placeholder": "例如：69000"
         },
         "saveQuotaSettings": "保存额度设置"
       },
       "paymentSettings": {
         "title": "支付设置",
-        "alert": "支付设置： <br />1. 美元汇率：用于计算充值金额的美元金额 <br />2. 最低充值金额（美元）：最低充值金额，单位为美元，填写整数 <br />3. 页面都以美元为单位计算，实际用户支付的货币，按照支付网关设置的货币进行转换 <br />例如： A 网关设置货币为 CNY，用户支付 100 美元，那么实际支付金额为 100 * 美元汇率 <br />B 网关设置货币为 USD，用户支付 100 美元，那么实际支付金额为 100 美元",
+        "alert": "支付设置：1. 美元汇率：用于计算充值金额的美元金额。2. 最低充值金额（美元）：最低充值金额，单位为美元，填写整数。3. 页面都以美元为单位计算，实际用户支付的货币，按照支付网关设置的货币进行转换。例如： A 网关设置货币为 CNY，用户支付 100 美元，那么实际支付金额为 100*美元汇率。B 网关设置货币为 USD，用户支付 100 美元，那么实际支付金额为 100 美元。",
         "usdRate": {
           "label": "美元汇率",
           "placeholder": "例如：7.3"
         },
         "minAmount": {
           "label": "最低充值金额（美元）",
-          "placeholder": "例如：1，那么最低充值金额为1美元，请填写整数"
+          "placeholder": "例如：1，请填写整数"
         },
-        "discountInfo": "固定金额充值折扣设置示例： <br />为一个 JSON文本，键为充值金额，值为折扣，比如 &#123;&quot;10&quot;:0.9&#125; 表示充值10美元按照9折计算 <br />计算公式：实际费用=（原始价值*折扣+原始价值*折扣*手续费率）*汇率",
+        "discountInfo": "固定金额充值折扣设置示例：为一个JSON文本，键为充值金额，值为折扣，比如 {\"10\":0.9} 表示充值 10 美元按照 9 折计算。计算公式：实际费用 =（原始价值*折扣 + 原始价值*折扣*手续费率）*汇率。",
         "discount": {
           "label": "固定金额充值折扣",
-          "placeholder": "为一个 JSON 文本，键为充值金额，值为折扣"
+          "placeholder": "为一个JSON文本，键为充值金额，值为折扣"
         },
         "save": "保存支付设置"
       },
@@ -547,13 +547,13 @@
         "title": "倍率设置",
         "groupRatio": {
           "label": "分组倍率",
-          "placeholder": "为一个 JSON 文本，键为分组名称，值为倍率"
+          "placeholder": "为一个JSON文本，键为分组名称，值为倍率"
         },
         "save": "保存倍率设置"
       },
       "chatLinkSettings": {
         "title": "聊天链接设置",
-        "info": "配置聊天链接，该配置在令牌中的聊天生效以及首页的Playground中的聊天生效. <br />链接中可以使&#123;key&#125;替换用户的令牌，&#123;server&#125;替换服务器地址。例如：{'https://chat.oneapi.pro/#/?settings={\"key\":\"sk-{key}\",\"url\":\"{server}\"}'}<br />如果未配置，会默认配置以下4个链接：<br />ChatGPT Next ： {'https://chat.oneapi.pro/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}'}<br />chatgpt-web-midjourney-proxy ： {'https://vercel.ddaiai.com/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}'}<br />AMA 问天 ： {'ama://set-api-key?server={server}&key={key}'}<br />opencat ： {'opencat://team/join?domain={server}&token={key}'}<br />排序规则：值越大越靠前，值相同则按照配置顺序",
+        "info": "配置聊天链接，该配置在令牌中的聊天生效以及首页的 Playground 中的聊天生效。链接中可以使用{key}替换用户的令牌，{server}替换服务器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，会默认配置以下链接：Mr.🆖 AI Chat 🆓️：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI English Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序规则：值越大越靠前，值相同则按照配置顺序。",
         "save": "保存聊天链接设置"
       }
     },
@@ -588,7 +588,7 @@
         "subTitle": "用以支持系统的邮件发送",
         "alert": "请注意，有些邮箱服务商发送邮件时会携带你的服务器IP地址，非个人使用时建议使用专业的邮件服务商",
         "smtpServer": "SMTP 服务器地址",
-        "smtpServerPlaceholder": "例如：smtp.qq.com",
+        "smtpServerPlaceholder": "例如：smtp.gmail.com",
         "smtpPort": "SMTP 端口",
         "smtpPortPlaceholder": "默认: 587",
         "smtpAccount": "SMTP 账户",
@@ -674,7 +674,7 @@
         "aboutLabel": "关于",
         "aboutPlaceholder": "在此输入新的关于内容，支持 Markdown & HTML 代码。如果输入的是一个链接，则会使用该链接作为 iframe 的 src 属性，这允许你设置任意网页作为关于页面。",
         "saveAbout": "保存关于",
-        "copyrightWarning": "移除 One Hub 的版权标识必须首先获得授权，项目维护需要花费大量精力，如果本项目对你有意义，请主动支持本项目。",
+        "copyrightWarning": "项目维护需要花费大量精力，如果本项目对你有意义，请主动支持本项目。",
         "footerLabel": "页脚设置",
         "footerPlaceholder": "在此输入新的页脚，留空则使用默认页脚，支持 HTML 代码",
         "setFooter": "设置页脚"
@@ -996,6 +996,36 @@
   "代码执行": "代码执行",
   "使用代码执行功能，开启后，计算tokens不准确，建议个人使用开启": "使用代码执行功能，开启后，计算tokens不准确，建议个人使用开启",
   "是否启用代码执行": "是否启用代码执行",
+  "总消费": "总消费",
+  "总Tokens": "总Tokens",
+  "平均延迟": "平均延迟",
+  "总请求数": "总请求数",
+  "总注册人数": "总注册人数",
+  "兑换金额($)": "兑换金额($)",
+  "独立用户(人)": "独立用户(人)",
+  "直接注册": "直接注册",
+  "邀请注册": "邀请注册",
+  "全部": "全部",
+  "自定义渠道": "自定义渠道",
+  "百度文心千帆": "百度文心千帆",
+  "智谱 ChatGLM": "智谱 ChatGLM",
+  "阿里通义千问": "阿里通义千问",
+  "讯飞星火认知": "讯飞星火认知",
+  "360 智脑": "360 智脑",
+  "腾讯混元(旧)": "腾讯混元(旧)",
+  "百川": "百川",
+  "零一万物": "零一万物",
+  "腾讯混元": "腾讯混元",
+  "充值": "充值",
+  "消费": "消费",
+  "管理": "管理",
+  "系统": "系统",
+  "错误": "错误",
+  "按Token收费": "按Token收费",
+  "按次收费": "按次收费",
+  "待支付": "待支付",
+  "支付成功": "支付成功",
+  "已关闭": "已关闭",
   "taskPage": {
     "title": "任务",
     "task": "任务ID",

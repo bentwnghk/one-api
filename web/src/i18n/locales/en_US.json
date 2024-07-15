@@ -320,9 +320,9 @@
       "gatewayNo": "Gateway Order Number"
     },
     "statusOptions": {
-      "status1": "Status 1",
-      "status2": "Status 2",
-      "status3": "Status 3"
+      "status1": "Pending",
+      "status2": "Paid",
+      "status3": "Closed"
     }
   },
   "pricing": "Pricing",
@@ -365,8 +365,8 @@
     "bindWechatAccount": "Bind WeChat Account",
     "bindGitHubAccount": "Bind GitHub Account",
     "bindLarkAccount": "Bind Lark Account",
-    "changeEmail": "Change Email",
-    "bindEmail": "Bind Email",
+    "changeEmail": "Change Email Address",
+    "bindEmail": "Bind Email Address",
     "generateToken": "Generate Access Token",
     "resetToken": "Reset Access Token",
     "lark": "Lark",
@@ -383,7 +383,7 @@
     "operationSettings": {
       "chatLinkSettings": {
         "title": "Chat Link Settings",
-        "info": "Configure chat links, which take effect in the chat of the token and in the chat of the Playground on the homepage. <br />In the link, &#123;key&#125; can replace the user's token, and &#123;server&#125; can replace the server address. For example: {'https://chat.oneapi.pro/#/?settings={\"key\":\"sk-{key}\",\"url\":\"{server}\"}'}<br />If not configured, the following 4 links will be configured by default:<br />ChatGPT Next ： {'https://chat.oneapi.pro/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}'}<br />chatgpt-web-midjourney-proxy ： {'https://vercel.ddaiai.com/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}'}<br />AMA ： {'ama://set-api-key?server={server}&key={key}'}<br />opencat ： {'opencat://team/join?domain={server}&token={key}'}<br />Sorting rules: The larger the value, the higher the ranking, and the same value is sorted according to the configuration order",
+        "info": "Configure chat links, which take effect in the chat of the token and in the chat of the Playground on the homepage. In the link, {key} can replace the user's token, and {server} can replace the server address. For example: https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}. If not configured, the following links will be configured by default: Mr.🆖 AI Chat 🆓️：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}; Mr.🆖 AI English Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}; Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}. Sorting rules: The larger the value, the higher the ranking, and the same value is sorted according to the configuration order.",
         "save": "Save Chat Link Settings"
       },
       "generalSettings": {
@@ -453,7 +453,7 @@
       },
       "paymentSettings": {
         "title": "Payment Settings",
-        "alert": "Payment Settings: <br />1. USD Exchange Rate: Used to calculate the amount of recharge in USD <br />2. Minimum Recharge Amount (USD): Minimum recharge amount, in USD, enter an integer <br />3. All pages are calculated in USD, and the actual currency paid by the user is converted according to the currency set by the payment gateway <br />For example: A gateway sets the currency as CNY, the user pays 100 USD, then the actual payment amount is 100 * USD exchange rate <br />B gateway sets the currency as USD, the user pays 100 USD, then the actual payment amount is 100 USD",
+        "alert": "Payment Settings: 1. USD Exchange Rate: Used to calculate the amount of recharge in USD. 2. Minimum Recharge Amount (USD): Minimum recharge amount, in USD, enter an integer. 3. All pages are calculated in USD, and the actual currency paid by the user is converted according to the currency set by the payment gateway. For example: A gateway sets the currency as CNY, the user pays 100 USD, then the actual payment amount is 100 * USD exchange rate. B gateway sets the currency as USD, the user pays 100 USD, then the actual payment amount is 100 USD.",
         "usdRate": {
           "label": "USD Exchange Rate",
           "placeholder": "e.g., 7.3"
@@ -462,7 +462,7 @@
           "label": "Minimum Recharge Amount (USD)",
           "placeholder": "e.g., 1, then the minimum recharge amount is 1 USD, please enter an integer"
         },
-        "discountInfo": "Fixed Amount Recharge Discount Example: <br />It is a JSON text, the key is the recharge amount, and the value is the discount. For example, &#123;&quot;10&quot;:0.9&#125; means that a recharge of 10 USD is calculated at a 10% discount <br />Calculation formula: actual cost = (original value * discount + original value * discount * fee rate) * exchange rate",
+        "discountInfo": "Fixed Amount Recharge Discount Example: It is a JSON text, the key is the recharge amount, and the value is the discount. For example, {\"10\":0.9} means that a recharge of 10 USD is calculated at a 10% discount. Calculation formula: actual cost = (original value * discount + original value * discount * fee rate) * exchange rate.",
         "discount": {
           "label": "Fixed Amount Recharge Discount",
           "placeholder": "It is a JSON text, the key is the recharge amount, and the value is the discount"
@@ -996,6 +996,36 @@
   "默认 zh-CN-YunxiNeural|boy": "Default zh-CN-YunxiNeural|boy",
   "默认 zh-CN-YunyangNeural": "Default zh-CN-YunyangNeural",
   "默认 zh-CN-YunyeNeural": "Default zh-CN-YunyeNeural",
+  "总消费": "Total Consumption",
+  "总Tokens": "Total Tokens",
+  "平均延迟": "Average Delay",
+  "总请求数": "Total Requests",
+  "总注册人数": "Total Registrations",
+  "兑换金额($)": "Amount Redeemed ($)",
+  "独立用户(人)": "Users (No.)",
+  "直接注册": "Self Registration",
+  "邀请注册": "Invited Registration",
+  "全部": "All",
+  "自定义渠道": "Custom",
+  "百度文心千帆": "Baidu ERNIE",
+  "智谱 ChatGLM": "Zhipu ChatGLM",
+  "阿里通义千问": "Ali Qwen",
+  "讯飞星火认知": "XF Spark",
+  "360 智脑": "360 AI",
+  "腾讯混元(旧)": "Tencent (Old)",
+  "百川": "Baichuan",
+  "零一万物": "01 AI",
+  "腾讯混元": "Tencent",
+  "充值": "Top-up",
+  "消费": "Consume",
+  "管理": "Manage",
+  "系统": "System",
+  "错误": "Error",
+  "按Token收费": "Token-based ",
+  "按次收费": "Time-based",
+  "待支付": "Pending",
+  "支付成功": "Paid",
+  "已关闭": "Closed",
   "suno": {
     "lyrics": "lyrics",
     "music": "Audio",
