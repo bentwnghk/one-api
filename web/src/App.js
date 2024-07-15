@@ -28,7 +28,7 @@ import i18n from 'i18n/i18n';
 const App = () => {
   const dispatch = useDispatch();
   const customization = useSelector((state) => state.customization);
-  const storedLanguage = localStorage.getItem('appLanguage') || 'zh_CN';
+  const storedLanguage = localStorage.getItem('appLanguage') || 'zh_TW';
   i18n.changeLanguage(storedLanguage);
 
   useEffect(() => {

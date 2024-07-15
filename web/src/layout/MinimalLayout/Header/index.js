@@ -40,7 +40,7 @@ const Header = () => {
 
   const handleOpenMenu = (event) => {
     setOpen(open ? null : event.currentTarget);
-    i18n.changeLanguage('ja_JP');
+    i18n.changeLanguage('zh_TW');
   };
 
   const handleCloseMenu = () => {
