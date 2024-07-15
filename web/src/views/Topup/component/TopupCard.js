@@ -301,7 +301,7 @@ const TopupCard = () => {
                 {calculateTotal()}{' '}
                 {selectedPayment &&
                   (selectedPayment.currency === 'CNY'
-                    ? `CNY (${t('topupCard.exchangeRate')}: ${siteInfo.PaymentUSDRate})`
+                    ? `人民幣 (${t('topupCard.exchangeRate')}: ${siteInfo.PaymentUSDRate})`
                     : selectedPayment.currency)}
               </Grid>
             </Grid>
