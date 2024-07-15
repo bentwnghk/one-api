@@ -220,13 +220,13 @@ function getBarChartOptions(data, dateRange) {
   let channelData = {};
 
   channelData.costs = generateBarChartOptions(dates, Array.from(result.costs.data.values()), '美元', 3);
-  channelData.costs.options.title.text = '总消费：$' + renderChartNumber(result.costs.total, 3);
+  channelData.costs.options.title.text = {t('analytics_index.总消费')} + renderChartNumber(result.costs.total, 3);
 
   channelData.tokens = generateBarChartOptions(dates, Array.from(result.tokens.data.values()), '', 0);
-  channelData.tokens.options.title.text = '总Tokens：' + renderChartNumber(result.tokens.total, 0);
+  channelData.tokens.options.title.text = {t('analytics_index.总Tokens')} + renderChartNumber(result.tokens.total, 0);
 
   channelData.requests = generateBarChartOptions(dates, Array.from(result.requests.data.values()), '次', 0);
-  channelData.requests.options.title.text = '总请求数：' + renderChartNumber(result.requests.total, 0);
+  channelData.requests.options.title.text = {t('analytics_index.总请求数')} + renderChartNumber(result.requests.total, 0);
 
   // 获取每天所有渠道的平均延迟
   let latency = Array.from(result.latency.data.values());
