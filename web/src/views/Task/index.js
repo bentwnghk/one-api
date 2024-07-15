@@ -124,7 +124,7 @@ export default function Task() {
   return (
     <>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h4">任务</Typography>
+        <Typography variant="h4">t('taskPage.title')</Typography>
       </Stack>
       <Card>
         <Box component="form" noValidate>
