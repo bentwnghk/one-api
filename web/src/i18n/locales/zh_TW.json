@@ -77,7 +77,16 @@
     "testDisabled": "測試禁用",
     "redeemCodeIssued": "兌換碼發行量 (美元)",
     "used": "已使用",
-    "unused": "未使用"
+    "unused": "未使用",
+    "总消费": "總消費",
+    "总Tokens": "總Tokens",
+    "平均延迟": "平均延遲",
+    "总请求数": "總請求數",
+    "总注册人数": "總註冊人數",
+    "兑换金额($)": "兌換金額($)",
+    "独立用户(人)": "獨立用戶(人)",
+    "直接注册": "直接註冊",
+    "邀请注册": "邀請註冊"
   },
   "channel_index": {
     "channelList": "渠道列表",
@@ -469,16 +478,16 @@
       },
       "otherSettings": {
         "title": "其他設置",
-        "mjNotify": "Midjourney允許回調（會泄露服務器IP地址）",
-        "chatCache": "是否開啟聊天緩存(如果沒有啟用Redis，將會存儲在數據庫中)",
+        "mjNotify": "Midjourney 允許回調（會泄露服務器IP地址）",
+        "chatCache": "是否開啟聊天緩存 (如果沒有啟用 Redis，將會存儲在數據庫中)",
         "chatCacheExpireMinute": {
           "label": "緩存時間(分鐘)",
           "placeholder": "開啟緩存時，數據緩存的時間"
         },
-        "alert": "當用戶使用vision模型並提供了圖片鏈接時，我們的服務器需要下載這些圖片並計算tokens。為了在下載圖片時保護服務器的IP地址不被泄露，可以在下方配置一個代理。這個代理配置使用的是HTTP或SOCKS5代理。如果你是個人用戶，這個配置可以不用理會。代理格式為 http://127.0.0.1:1080 或 socks5://127.0.0.1:1080",
+        "alert": "當用戶使用 vision 模型並提供了圖片鏈接時，我們的服務器需要下載這些圖片並計算 tokens。為了在下載圖片時保護服務器的 IP 地址不被泄露，可以在下方配置一個代理。這個代理配置使用的是 HTTP 或 SOCKS5 代理。如果你是個人用戶，這個配置可以不用理會。代理格式為 http://127.0.0.1:1080 或 socks5://127.0.0.1:1080",
         "chatImageRequestProxy": {
           "label": "圖片檢測代理",
-          "placeholder": "聊天圖片檢測代理設置，如果不設置可能會泄漏服務器IP"
+          "placeholder": "聊天圖片檢測代理設置，如果不設置可能會泄漏服務器 IP"
         },
         "saveButton": "保存其他設置"
       },
@@ -536,10 +545,10 @@
           "label": "最低充值金額（美元）",
           "placeholder": "例如：1，請填寫整數"
         },
-        "discountInfo": "固定金額充值折扣設置示例：為一個JSON文本，鍵為充值金額（美元），值為折扣，比如 {\"10\":0.9} 表示充值 10 美元按照 9 折計算。計算公式：實際費用 =（原始價值*折扣 + 原始價值*折扣*手續費率）*匯率。",
+        "discountInfo": "固定金額充值折扣設置示例：為一個JSON文本，鍵為充值金額（美元），值為折扣，比如 {\"10\":0.9} 表示充值 10 美元按照 9 折計算。計算公式：實際費用 = (原始價值*折扣 + 原始價值*折扣*手續費率)*匯率。",
         "discount": {
           "label": "固定金額充值折扣",
-          "placeholder": "為一個JSON文本，鍵為充值金額，值為折扣"
+          "placeholder": "為一個 JSON 文本，鍵為充值金額，值為折扣"
         },
         "save": "保存支付設置"
       },
@@ -547,13 +556,13 @@
         "title": "倍率設置",
         "groupRatio": {
           "label": "分組倍率",
-          "placeholder": "為一個JSON文本，鍵為分組名稱，值為倍率"
+          "placeholder": "為一個 JSON 文本，鍵為分組名稱，值為倍率"
         },
         "save": "保存倍率設置"
       },
       "chatLinkSettings": {
         "title": "聊天鏈接設置",
-        "info": "配置聊天鏈接，該配置在金鑰中的聊天生效以及首頁的 Playground 中的聊天生效。鏈接中可以使用{key}替換用戶的密鑰，{server}替換伺服器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，會默認配置以下鏈接：Mr.🆖 AI Chat 🆓️：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI English Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序規則：值越大越靠前，值相同則按照配置順序。",
+        "info": "配置聊天鏈接，該配置在金鑰中的聊天生效以及首頁的 Playground 中的聊天生效。鏈接中可以使用 {key} 替換用戶的密鑰，{server} 替換伺服器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，會默認配置以下鏈接：Mr.🆖 AI Chat 🆓️：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI English Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序規則：值越大越靠前，值相同則按照配置順序。",
         "save": "保存聊天鏈接設置"
       }
     },
@@ -584,9 +593,9 @@
         "save": "保存郵箱域名白名單設置"
       },
       "configureSMTP": {
-        "title": "配置SMTP",
+        "title": "配置 SMTP",
         "subTitle": "用以支持系統的郵件發送",
-        "alert": "請注意，有些郵箱服務商發送郵件時會攜帶你的伺服器IP地址，非個人使用時建議使用專業的郵箱服務商",
+        "alert": "請注意，有些郵箱服務商發送郵件時會攜帶你的伺服器 IP 地址，非個人使用時建議使用專業的郵箱服務商",
         "smtpServer": "SMTP 伺服器地址",
         "smtpServerPlaceholder": "例如：smtp.gmail.com",
         "smtpPort": "SMTP 端口",
@@ -608,7 +617,7 @@
         "alert2": "，Authorization callback URL 填",
         "clientId": "GitHub Client ID",
         "clientSecret": "GitHub Client Secret",
-        "clientIdPlaceholder": "輸入你註冊的 GitHub OAuth APP 的 ID",
+        "clientIdPlaceholder": "輸入你註冊的 GitHub OAuth APP ID",
         "clientSecretPlaceholder": "敏感信息不會發送到前端顯示",
         "saveButton": "保存 GitHub OAuth 設置"
       },
@@ -682,15 +691,15 @@
       "updateDialog": {
         "newVersion": "新版本",
         "close": "關閉",
-        "viewGitHub": "去GitHub查看"
+        "viewGitHub": "去 GitHub 查看"
       }
     }
   },
   "telegramPage": {
-    "title": "Telegram Bot菜單",
+    "title": "Telegram Bot 菜單",
     "createMenu": "新建",
     "reloadMenu": "重新載入菜單",
-    "searchPlaceholder": "搜索ID和命令...",
+    "searchPlaceholder": "搜索 ID 和命令...",
     "refresh": "刷新",
     "online": "在線",
     "offline": "離線",
@@ -995,16 +1004,7 @@
   "本配置主要是用于使用cloudflare Zero Trust将端口暴露到公网时，需要配置的header": "本配置主要是用於使用cloudflare Zero Trust將端口暴露到公網時，需要配置的header",
   "代码执行": "代碼執行",
   "使用代码执行功能，开启后，计算tokens不准确，建议个人使用开启": "使用代碼執行功能，開啟後，計算tokens不准確，建議個人使用開啟",
-  "是否启用代码执行": "是否啟用代碼執行",
-  "总消费": "總消費",
-  "总Tokens": "總Tokens",
-  "平均延迟": "平均延遲",
-  "总请求数": "總請求數",
-  "总注册人数": "總註冊人數",
-  "兑换金额($)": "兌換金額($)",
-  "独立用户(人)": "獨立用戶(人)",
-  "直接注册": "直接註冊",
-  "邀请注册": "邀請註冊",
+  "是否启用代码执行": "是否啟用代碼執行",  
   "全部": "全部",
   "自定义渠道": "自定義渠道",
   "百度文心千帆": "百度文心千帆",
