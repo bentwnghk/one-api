@@ -11,15 +11,15 @@ import { showError } from 'utils/common';
 
 function validation(row) {
   if (row.name === '') {
-    return '名称不能为空';
+    return '名稱不能為空';
   }
 
   if (row.url === '') {
-    return 'URL不能为空';
+    return 'URL不能為空';
   }
 
   if (row.sort != '' && !/^[0-9]\d*$/.test(row.sort)) {
-    return '排序必须为正整数';
+    return '排序必須為整數';
   }
 
   return false;
@@ -138,7 +138,7 @@ const ChatLinksDataGrid = ({ links, onChange }) => {
       {
         field: 'name',
         sortable: true,
-        headerName: '名称',
+        headerName: '名稱',
         flex: 1,
         minWidth: 220,
         editable: true,
@@ -147,7 +147,7 @@ const ChatLinksDataGrid = ({ links, onChange }) => {
       {
         field: 'url',
         sortable: false,
-        headerName: '链接',
+        headerName: '鏈接',
         flex: 1,
         minWidth: 300,
         editable: true,
@@ -156,7 +156,7 @@ const ChatLinksDataGrid = ({ links, onChange }) => {
       {
         field: 'show',
         sortable: false,
-        headerName: '是否显示在playground',
+        headerName: '於 Playground 顯示',
         flex: 1,
         minWidth: 200,
         type: 'boolean',

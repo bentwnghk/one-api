@@ -8,8 +8,8 @@ import Label from 'ui-component/Label';
 const StatusType = {
   pending: { name: '待支付', value: 'pending', color: 'primary' },
   success: { name: '支付成功', value: 'success', color: 'success' },
-  failed: { name: '支付失败', value: 'failed', color: 'error' },
-  closed: { name: '已关闭', value: 'closed', color: 'default' }
+  failed: { name: '支付失敗', value: 'failed', color: 'error' },
+  closed: { name: '已關閉', value: 'closed', color: 'default' }
 };
 
 function statusLabel(status) {

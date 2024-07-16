@@ -1,6 +1,6 @@
 export const priceType = [
-  { value: 'tokens', label: '按Token收费' },
-  { value: 'times', label: '按次收费' }
+  { value: 'tokens', label: '按Token收費' },
+  { value: 'times', label: '按次收費' }
 ];
 
 export function ValueFormatter(value) {
@@ -8,7 +8,7 @@ export function ValueFormatter(value) {
     return '';
   }
   if (value === 0) {
-    return '免费';
+    return '免費';
   }
   return `$${parseFloat(value * 0.002).toFixed(6)} / ￥${parseFloat(value * 0.014).toFixed(6)}`;
 }

@@ -39,7 +39,7 @@ func (s *StmpConfig) Send(to, subject, body string) error {
 	message.Subject(subject)
 	message.SetGenHeader("References", s.getReferences())
 	message.SetBodyString(mail.TypeTextHTML, body)
-	message.SetUserAgent(fmt.Sprintf("Mr.🆖 AI API %s // https://github.com/bentwnghk/one-api", config.Version))
+	message.SetUserAgent(fmt.Sprintf("Mr.🆖 AI API %s // https://api.mr5ai.com", config.Version))
 
 	client, err := mail.NewClient(
 		s.Host,
@@ -95,19 +95,19 @@ func SendPasswordResetEmail(userName, email, link string) error {
 
 	contentTemp := `<p style="font-size: 30px">Hi <strong>%s,</strong></p>
 	<p>
-		您正在进行密码重置。点击下方按钮以重置密码。
+		您正在進行密碼重置。點擊下方按鈕以重置密碼。
 	</p>
 	
 	<p style="text-align: center; font-size: 13px;">
-		<a target="__blank" href="%s" class="button" style="color: #ffffff;">重置密码</a>
+		<a target="__blank" href="%s" class="button" style="color: #ffffff;">重置密碼</a>
 	</p>
 	
 	<p style="color: #858585; padding-top: 15px;">
-		如果链接无法点击，请尝试点击下面的链接或将其复制到浏览器中打开<br> %s
+		如果鏈接無法點擊，請嘗試點擊下面的鏈接或將其複製到瀏覽器中打開<br> %s
 	</p>
-	<p style="color: #858585;">重置链接 %d 分钟内有效，如果不是本人操作，请忽略。</p>`
+	<p style="color: #858585;">重置鏈接 %d 分鐘內有效，如果不是本人操作，請忽略。</p>`
 
-	subject := fmt.Sprintf("%s密码重置", config.SystemName)
+	subject := fmt.Sprintf("%s密碼重置", config.SystemName)
 	content := fmt.Sprintf(contentTemp, userName, link, link, common.VerificationValidMinutes)
 
 	return stmp.Render(email, subject, content)
@@ -122,7 +122,7 @@ func SendVerificationCodeEmail(email, code string) error {
 
 	contentTemp := `
 	<p>
-		您正在进行邮箱验证。您的验证码为: 
+		您正在進行電郵地址驗証。您的驗証碼為: 
 	</p>
 	
 	<p style="text-align: center; font-size: 30px; color: #58a6ff;">
@@ -130,10 +130,10 @@ func SendVerificationCodeEmail(email, code string) error {
 	</p>
 	
 	<p style="color: #858585; padding-top: 15px;">
-		验证码 %d 分钟内有效，如果不是本人操作，请忽略。
+		驗証碼 %d 分鐘內有效，如果不是本人操作，請忽略。
 	</p>`
 
-	subject := fmt.Sprintf("%s邮箱验证邮件", config.SystemName)
+	subject := fmt.Sprintf("%s電郵地址驗証", config.SystemName)
 	content := fmt.Sprintf(contentTemp, code, common.VerificationValidMinutes)
 
 	return stmp.Render(email, subject, content)
@@ -148,20 +148,20 @@ func SendQuotaWarningCodeEmail(userName, email string, quota int, noMoreQuota bo
 
 	contentTemp := `<p style="font-size: 30px">Hi <strong>%s,</strong></p>
 		<p>
-			%s，当前剩余额度为 %d，为了不影响您的使用，请及时充值。
+			%s，當前剩餘額度為 %d，為了不影響您的使用，請及時充值。
 		</p>
 		
 		<p style="text-align: center; font-size: 13px;">
-			<a target="__blank" href="%s" class="button" style="color: #ffffff;">点击充值</a>
+			<a target="__blank" href="%s" class="button" style="color: #ffffff;">點擊充值</a>
 		</p>
 		
 		<p style="color: #858585; padding-top: 15px;">
-			如果链接无法点击，请尝试点击下面的链接或将其复制到浏览器中打开<br> %s
+			如果鏈接無法點擊，請嘗試點擊下面的鏈接或將其複製到瀏覽器中打開<br> %s
 		</p>`
 
-	subject := "您的额度即将用尽"
+	subject := "您的額度即將用盡"
 	if noMoreQuota {
-		subject = "您的额度已用尽"
+		subject = "您的額度已用盡"
 	}
 	topUpLink := fmt.Sprintf("%s/topup", config.ServerAddress)
 

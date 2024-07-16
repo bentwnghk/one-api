@@ -43,35 +43,35 @@ export const CHANNEL_OPTIONS = {
   },
   17: {
     key: 17,
-    text: '阿里通义千问',
+    text: '阿里通義千問',
     value: 17,
     color: 'default',
     url: 'https://dashscope.console.aliyun.com/overview'
   },
   18: {
     key: 18,
-    text: '讯飞星火认知',
+    text: '訊飛星火認知',
     value: 18,
     color: 'default',
     url: 'https://console.xfyun.cn/'
   },
   16: {
     key: 16,
-    text: '智谱 ChatGLM',
+    text: '智譜 ChatGLM',
     value: 16,
     color: 'default',
     url: 'https://open.bigmodel.cn/overview'
   },
   19: {
     key: 19,
-    text: '360 智脑',
+    text: '360 智腦',
     value: 19,
     color: 'default',
     url: 'https://ai.360.com/open'
   },
   23: {
     key: 23,
-    text: '腾讯混元(旧)',
+    text: '騰訊混元(舊)',
     value: 23,
     color: 'default',
     url: 'https://cloud.tencent.com/product/hunyuan'
@@ -127,7 +127,7 @@ export const CHANNEL_OPTIONS = {
   },
   33: {
     key: 33,
-    text: '零一万物',
+    text: '零一萬物',
     value: 33,
     color: 'primary',
     url: 'https://platform.lingyiwanwu.com/details'
@@ -176,7 +176,7 @@ export const CHANNEL_OPTIONS = {
   },
   40: {
     key: 40,
-    text: '腾讯混元',
+    text: '騰訊混元',
     value: 40,
     color: 'default',
     url: 'https://cloud.tencent.com/product/hunyuan'
@@ -203,7 +203,7 @@ export const CHANNEL_OPTIONS = {
   },
   8: {
     key: 8,
-    text: '自定义渠道',
+    text: '自定義渠道',
     value: 8,
     color: 'primary',
     url: ''

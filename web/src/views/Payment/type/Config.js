@@ -5,7 +5,7 @@ const PaymentType = {
 };
 
 const CurrencyType = {
-  CNY: '人民币',
+  CNY: '人民幣',
   USD: '美元'
 };
 
@@ -18,25 +18,25 @@ const PaymentConfig = {
       value: ''
     },
     partner_id: {
-      name: '商户号',
-      description: '商户号',
+      name: '商戶號',
+      description: '商戶號',
       type: 'text',
       value: ''
     },
     key: {
-      name: '密钥',
-      description: '密钥',
+      name: '密鑰',
+      description: '密鑰',
       type: 'text',
       value: ''
     },
     pay_type: {
-      name: '支付类型',
-      description: '支付类型,如果需要跳转到易支付收银台,请选择收银台',
+      name: '支付類型',
+      description: '支付類型，如果需要跳轉到易支付收銀台，請選擇收銀台',
       type: 'select',
       value: '',
       options: [
         {
-          name: '收银台',
+          name: '收銀台',
           value: ''
         },
         {
@@ -52,15 +52,15 @@ const PaymentConfig = {
           value: 'qqpay'
         },
         {
-          name: '京东',
+          name: '京東',
           value: 'jdpay'
         },
         {
-          name: '银联',
+          name: '銀聯',
           value: 'bank'
         },
         {
-          name: 'Paypal',
+          name: 'PayPal',
           value: 'paypal'
         },
         {
@@ -72,39 +72,39 @@ const PaymentConfig = {
   },
   alipay: {
     app_id: {
-      name: '应用ID',
-      description: '支付宝应用ID',
+      name: '應用ID',
+      description: '支付宝應用ID',
       type: 'text',
       value: ''
     },
     private_key: {
-      name: '应用私钥',
-      description: '应用私钥，开发者自己生成，详细参考官方文档 https://opendocs.alipay.com/common/02kipl?pathHash=84adb0fd',
+      name: '應用私鑰',
+      description: '應用私鑰，開發者自己生成，詳細參考官方文檔 https://opendocs.alipay.com/common/02kipl?pathHash=84adb0fd',
       type: 'text',
       value: ''
     },
     public_key: {
-      name: '支付宝公钥',
-      description: '支付宝公钥，详细参考官方文档 https://opendocs.alipay.com/common/02kdnc?pathHash=fb0c752a',
+      name: '支付宝公鑰',
+      description: '支付宝公鑰，詳細參考官方文檔 https://opendocs.alipay.com/common/02kdnc?pathHash=fb0c752a',
       type: 'text',
       value: ''
     },
     pay_type: {
-      name: '支付类型',
-      description: '支付类型,需要您再支付宝开发者中心开通相关权限才可以使用对应类型支付方式',
+      name: '支付類型',
+      description: '支付類型，需要您再支付宝開發者中心開通相關權限才可以使用對應類型支付方式',
       type: 'select',
       value: '',
       options: [
         {
-          name: '当面付',
+          name: '當面付',
           value: 'facepay'
         },
         {
-          name: '电脑网站支付',
+          name: '電腦網站支付',
           value: 'pagepay'
         },
         {
-          name: '手机网站支付',
+          name: '手機網站支付',
           value: 'wappay'
         }
       ]
@@ -113,42 +113,42 @@ const PaymentConfig = {
   wxpay: {
     app_id: {
       name: 'AppID',
-      description: '应用ID 详见https://pay.weixin.qq.com/wiki/doc/apiv3/open/pay/chapter2_7_1.shtml',
+      description: '應用ID 詳見 https://pay.weixin.qq.com/wiki/doc/apiv3/open/pay/chapter2_7_1.shtml',
       type: 'text',
       value: ''
     },
     mch_id: {
-      name: '商户号',
-      description: '微信商户号 详见https://pay.weixin.qq.com/wiki/doc/apiv3/open/pay/chapter2_7_1.shtml',
+      name: '商戶號',
+      description: '微信商戶號 詳見 https://pay.weixin.qq.com/wiki/doc/apiv3/open/pay/chapter2_7_1.shtml',
       type: 'text',
       value: ''
     },
     mch_certificate_serial_number: {
-      name: '商户证书序列号',
-      description: '商户证书序列号 详见https://pay.weixin.qq.com/wiki/doc/apiv3/open/pay/chapter2_7_1.shtml',
+      name: '商戶証書序列號',
+      description: '商戶証書序列號 詳見 https://pay.weixin.qq.com/wiki/doc/apiv3/open/pay/chapter2_7_1.shtml',
       type: 'text',
       value: ''
     },
     mch_apiv3_key: {
-      name: '商户APIv3密钥',
-      description: '商户APIv3密钥 详见https://pay.weixin.qq.com/wiki/doc/apiv3/open/pay/chapter2_7_1.shtml',
+      name: '商戶APIv3密鑰',
+      description: '商戶APIv3密鑰 詳見 https://pay.weixin.qq.com/wiki/doc/apiv3/open/pay/chapter2_7_1.shtml',
       type: 'text',
       value: ''
     },
     mch_private_key: {
-      name: '商户私钥',
-      description: '商户私钥 详见https://pay.weixin.qq.com/wiki/doc/apiv3/open/pay/chapter2_7_1.shtml',
+      name: '商戶私鑰',
+      description: '商戶私鑰 詳見 https://pay.weixin.qq.com/wiki/doc/apiv3/open/pay/chapter2_7_1.shtml',
       type: 'text',
       value: ''
     },
     pay_type: {
-      name: '支付类型',
-      description: '支付类型',
+      name: '支付類型',
+      description: '支付類型',
       type: 'select',
       value: '',
       options: [
         {
-          name: 'Native支付',
+          name: 'Native 支付',
           value: 'Native'
         }
       ]

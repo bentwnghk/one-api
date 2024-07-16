@@ -151,7 +151,7 @@
   "token_index": {
     "token": "金鑰",
     "createToken": "新建金鑰",
-    "replaceApiAddress1": "將 OpenAI API 接口地址 (base URL) 'https://api.openai.com' 替換為",
+    "replaceApiAddress1": "將 OpenAI API 接口地址 (base URL) 'https://api.openai.com' 替換為 ",
     "replaceApiAddress2": "，並複製下面的密鑰即可使用。",
     "searchTokenName": "搜索金鑰名稱...",
     "refresh": "刷新",

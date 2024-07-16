@@ -185,7 +185,7 @@ function getBarDataGroup(data) {
   }
 
   let chartData = generateBarChartOptions(lastSevenDays, result, '美元', 3);
-  chartData.options.title.text = '7日总消费：$' + renderChartNumber(totalCosts, 3);
+  chartData.options.title.text = '7日總消費：$' + renderChartNumber(totalCosts, 3);
 
   return chartData;
 }

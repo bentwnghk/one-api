@@ -158,7 +158,7 @@ const OperationSetting = () => {
         break;
       case 'general':
         if (inputs.QuotaPerUnit < 0 || inputs.RetryTimes < 0 || inputs.RetryCooldownSeconds < 0) {
-          showError('单位额度、重试次数、冷却时间不能为负数');
+          showError('單位額度、重試次數、冷卻時間不能為負數');
           return;
         }
 
