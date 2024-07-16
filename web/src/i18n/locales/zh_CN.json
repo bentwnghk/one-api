@@ -77,16 +77,7 @@
     "testDisabled": "测试禁用",
     "redeemCodeIssued": "兑换码发行量",
     "used": "已使用",
-    "unused": "未使用",
-    "TotalConsume": "总消费：$",
-    "TotalTokens": "总Tokens：",
-    "平均延迟": "平均延迟",
-    "TotalRequests": "总请求数：",
-    "总注册人数": "总注册人数",
-    "兑换金额($)": "兑换金额($)",
-    "独立用户(人)": "独立用户(人)",
-    "直接注册": "直接注册",
-    "邀请注册": "邀请注册"
+    "unused": "未使用"
   },
   "channel_index": {
     "channelList": "渠道列表",

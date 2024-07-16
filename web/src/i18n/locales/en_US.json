@@ -149,16 +149,7 @@
     "totalUserSpending": "Total User Spending",
     "totalUsers": "Total Users",
     "unused": "Unused",
-    "used": "Used",
-    "TotalConsume": "Total Consumption: $",
-    "TotalTokens": "Total Tokens:",
-    "平均延迟": "Average Delay",
-    "TotalRequests": "Total Requests:",
-    "总注册人数": "Total Registrations",
-    "兑换金额($)": "Amount Redeemed ($)",
-    "独立用户(人)": "Users (No.)",
-    "直接注册": "Self Registration",
-    "邀请注册": "Invited Registration"
+    "used": "Used"
   },
   "channel": "Channel",
   "channel_index": {

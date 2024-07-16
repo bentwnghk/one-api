@@ -220,13 +220,13 @@ function getBarChartOptions(data, dateRange) {
   let channelData = {};
 
   channelData.costs = generateBarChartOptions(dates, Array.from(result.costs.data.values()), '美元', 3);
-  channelData.costs.options.title.text = t('analytics_index.TotalConsume') + renderChartNumber(result.costs.total, 3);
+  channelData.costs.options.title.text = '總消費：$' + renderChartNumber(result.costs.total, 3);
 
   channelData.tokens = generateBarChartOptions(dates, Array.from(result.tokens.data.values()), '', 0);
-  channelData.tokens.options.title.text = t('analytics_index.TotalTokens') + renderChartNumber(result.tokens.total, 0);
+  channelData.tokens.options.title.text = '總Tokens：' + renderChartNumber(result.tokens.total, 0);
 
   channelData.requests = generateBarChartOptions(dates, Array.from(result.requests.data.values()), '次', 0);
-  channelData.requests.options.title.text = t('analytics_index.TotalRequests') + renderChartNumber(result.requests.total, 0);
+  channelData.requests.options.title.text = '總請求數：' + renderChartNumber(result.requests.total, 0);
 
   // 获取每天所有渠道的平均延迟
   let latency = Array.from(result.latency.data.values());
@@ -246,7 +246,7 @@ function getBarChartOptions(data, dateRange) {
 
   // 追加latency列表后面
   latency[latency.length] = {
-    name: '平均延迟',
+    name: '平均延遲',
     data: sums.map((sum, i) => Number(counts[i] ? sum / counts[i] : 0).toFixed(3))
   };
 
@@ -274,12 +274,12 @@ function getRedemptionData(data, dateRange) {
   const dates = getDates(dateRange.start, dateRange.end);
   const result = [
     {
-      name: '兑换金额($)',
+      name: '兌換金額($)',
       type: 'column',
       data: new Array(dates.length).fill(0)
     },
     {
-      name: '独立用户(人)',
+      name: '獨立用戶(人)',
       type: 'line',
       data: new Array(dates.length).fill(0)
     }
@@ -314,13 +314,13 @@ function getRedemptionData(data, dateRange) {
       yaxis: [
         {
           title: {
-            text: '兑换金额($)'
+            text: '兌換金額($)'
           }
         },
         {
           opposite: true,
           title: {
-            text: '独立用户(人)'
+            text: '獨立用戶(人)'
           }
         }
       ],
@@ -338,11 +338,11 @@ function getUsersData(data, dateRange) {
   const dates = getDates(dateRange.start, dateRange.end);
   const result = [
     {
-      name: '直接注册',
+      name: '直接註冊',
       data: new Array(dates.length).fill(0)
     },
     {
-      name: '邀请注册',
+      name: '邀請註冊',
       data: new Array(dates.length).fill(0)
     }
   ];
@@ -360,7 +360,7 @@ function getUsersData(data, dateRange) {
   }
 
   let chartData = generateBarChartOptions(dates, result, '人', 0);
-  chartData.options.title.text = '总注册人数：' + total;
+  chartData.options.title.text = '總註冊人數：' + total;
 
   return chartData;
 }
