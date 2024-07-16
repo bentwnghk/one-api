@@ -6,7 +6,7 @@ module.exports = defineConfig({
   output: 'src/i18n/locales',
   outputLocales: ['zh_TW', 'en_US'],
   temperature: 0,
-  modelName: 'gpt-3.5-turbo',
+  modelName: 'gpt-35-turbo',
   splitToken: 2048,
   experimental: {
     jsonMode: true
