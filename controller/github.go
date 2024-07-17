@@ -31,7 +31,7 @@ type GitHubUser struct {
 
 func getGitHubUserInfoByCode(code string) (*GitHubUser, error) {
 	if code == "" {
-		return nil, errors.New("无效的参数")
+		return nil, errors.New("無效的參數")
 	}
 	values := map[string]string{"client_id": config.GitHubClientId, "client_secret": config.GitHubClientSecret, "code": code}
 	jsonData, err := json.Marshal(values)
@@ -49,8 +49,8 @@ func getGitHubUserInfoByCode(code string) (*GitHubUser, error) {
 	}
 	res, err := client.Do(req)
 	if err != nil {
-		logger.SysError("无法连接至 GitHub 服务器, err:" + err.Error())
-		return nil, errors.New("无法连接至 GitHub 服务器，请稍后重试！")
+		logger.SysError("無法連接至 GitHub 服務器, err:" + err.Error())
+		return nil, errors.New("無法連接至 GitHub 服務器，請稍後重試！")
 	}
 	defer res.Body.Close()
 	var oAuthResponse GitHubOAuthResponse
@@ -65,8 +65,8 @@ func getGitHubUserInfoByCode(code string) (*GitHubUser, error) {
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", oAuthResponse.AccessToken))
 	res2, err := client.Do(req)
 	if err != nil {
-		logger.SysError("无法连接至 GitHub 服务器, err:" + err.Error())
-		return nil, errors.New("无法连接至 GitHub 服务器，请稍后重试！")
+		logger.SysError("無法連接至 GitHub 服務器, err:" + err.Error())
+		return nil, errors.New("無法連接至 GitHub 服務器，請稍後重試！")
 	}
 	defer res2.Body.Close()
 	var githubUser GitHubUser
@@ -75,7 +75,7 @@ func getGitHubUserInfoByCode(code string) (*GitHubUser, error) {
 		return nil, err
 	}
 	if githubUser.Login == "" {
-		return nil, errors.New("返回值非法，用户字段为空，请稍后重试！")
+		return nil, errors.New("返回值非法，用戶字段為空，請稍後重試！")
 	}
 	return &githubUser, nil
 }
@@ -99,7 +99,7 @@ func GitHubOAuth(c *gin.Context) {
 	if !config.GitHubOAuthEnabled {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "管理员未开启通过 GitHub 登录以及注册",
+			"message": "管理員未開通 GitHub 登錄及注冊",
 		})
 		return
 	}
@@ -146,7 +146,7 @@ func GitHubOAuth(c *gin.Context) {
 		} else {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "管理员关闭了新用户注册",
+				"message": "管理員關閉了新用戶注冊",
 			})
 			return
 		}
@@ -154,7 +154,7 @@ func GitHubOAuth(c *gin.Context) {
 
 	if user.Status != config.UserStatusEnabled {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "用户已被封禁",
+			"message": "用戶已被封禁",
 			"success": false,
 		})
 		return
@@ -166,7 +166,7 @@ func GitHubBind(c *gin.Context) {
 	if !config.GitHubOAuthEnabled {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "管理员未开启通过 GitHub 登录以及注册",
+			"message": "管理員未開通 GitHub 登錄及注冊",
 		})
 		return
 	}
@@ -185,7 +185,7 @@ func GitHubBind(c *gin.Context) {
 	if model.IsGitHubIdAlreadyTaken(user.GitHubId) {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "该 GitHub 账户已被绑定",
+			"message": "該 GitHub 賬戶已被綁定",
 		})
 		return
 	}

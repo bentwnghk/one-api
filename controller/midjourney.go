@@ -61,7 +61,7 @@ func UpdateMidjourneyTaskBulk() {
 			return
 		}
 
-		logger.LogWarn(ctx, fmt.Sprintf("检测到未完成的任务数有: %v", len(tasks)))
+		logger.LogWarn(ctx, fmt.Sprintf("檢測到未完成的任務數目有: %v", len(tasks)))
 		taskChannelM := make(map[int][]string)
 		taskM := make(map[string]*model.Midjourney)
 		nullTaskIds := make([]int, 0)
@@ -90,14 +90,14 @@ func UpdateMidjourneyTaskBulk() {
 		}
 
 		for channelId, taskIds := range taskChannelM {
-			logger.LogWarn(ctx, fmt.Sprintf("渠道 #%d 未完成的任务有: %d", channelId, len(taskIds)))
+			logger.LogWarn(ctx, fmt.Sprintf("渠道 #%d 未完成的任務有: %d", channelId, len(taskIds)))
 			if len(taskIds) == 0 {
 				continue
 			}
 			midjourneyChannel := model.ChannelGroup.GetChannel(channelId)
 			if midjourneyChannel == nil {
 				err := model.MjBulkUpdate(taskIds, map[string]any{
-					"fail_reason": fmt.Sprintf("获取渠道信息失败，请联系管理员，渠道ID：%d", channelId),
+					"fail_reason": fmt.Sprintf("獲取渠道信息失敗，請聯系管理員，渠道ID：%d", channelId),
 					"status":      "FAILURE",
 					"progress":    "100%",
 				})
@@ -151,7 +151,7 @@ func UpdateMidjourneyTaskBulk() {
 				useTime := (time.Now().UnixNano() / int64(time.Millisecond)) - task.SubmitTime
 				// 如果时间超过一小时，且进度不是100%，则认为任务失败
 				if useTime > 3600000 && task.Progress != "100%" {
-					responseItem.FailReason = "上游任务超时（超过1小时）"
+					responseItem.FailReason = "上游任務超時（超過1小時）"
 					responseItem.Status = "FAILURE"
 				}
 				if !checkMjTaskNeedUpdate(task, responseItem) {
@@ -177,7 +177,7 @@ func UpdateMidjourneyTaskBulk() {
 				}
 
 				if (task.Progress != "100%" && responseItem.FailReason != "") || (task.Progress == "100%" && task.Status == "FAILURE") {
-					logger.LogError(ctx, task.MjId+" 构建失败，"+task.FailReason)
+					logger.LogError(ctx, task.MjId+" 構建失敗，"+task.FailReason)
 					task.Progress = "100%"
 					err = model.CacheUpdateUserQuota(task.UserId)
 					if err != nil {
@@ -189,7 +189,7 @@ func UpdateMidjourneyTaskBulk() {
 							if err != nil {
 								logger.LogError(ctx, "fail to increase user quota: "+err.Error())
 							}
-							logContent := fmt.Sprintf("构图失败 %s，补偿 %s", task.MjId, common.LogQuota(quota))
+							logContent := fmt.Sprintf("構圖失敗 %s，補償 %s", task.MjId, common.LogQuota(quota))
 							model.RecordLog(task.UserId, model.LogTypeSystem, logContent)
 						}
 					}

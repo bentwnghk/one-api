@@ -23,7 +23,7 @@ import (
 
 func testChannel(channel *model.Channel, testModel string) (err error, openaiErr *types.OpenAIErrorWithStatusCode) {
 	if channel.TestModel == "" {
-		return errors.New("请填写测速模型后再试"), nil
+		return errors.New("請填寫測速模型後再試"), nil
 	}
 
 	// 创建一个 http.Request
@@ -71,7 +71,7 @@ func testChannel(channel *model.Channel, testModel string) (err error, openaiErr
 
 	// 转换为JSON字符串
 	jsonBytes, _ := json.Marshal(response)
-	logger.SysLog(fmt.Sprintf("测试渠道 %s : %s 返回内容为：%s", channel.Name, request.Model, string(jsonBytes)))
+	logger.SysLog(fmt.Sprintf("測試渠道 %s : %s 返回內容為：%s", channel.Name, request.Model, string(jsonBytes)))
 
 	return nil, nil
 }
@@ -119,16 +119,16 @@ func TestChannel(c *gin.Context) {
 	msg := ""
 	if openaiErr != nil {
 		if ShouldDisableChannel(channel.Type, openaiErr) {
-			msg = fmt.Sprintf("测速失败，已被禁用，原因：%s", err.Error())
+			msg = fmt.Sprintf("測速失敗，已被禁用，原因：%s", err.Error())
 			DisableChannel(channel.Id, channel.Name, err.Error(), false)
 		} else {
-			msg = fmt.Sprintf("测速失败，原因：%s", err.Error())
+			msg = fmt.Sprintf("測速失敗，原因：%s", err.Error())
 		}
 	} else if err != nil {
-		msg = fmt.Sprintf("测速失败，原因：%s", err.Error())
+		msg = fmt.Sprintf("測速失敗，原因：%s", err.Error())
 	} else {
 		success = true
-		msg = "测速成功"
+		msg = "測速成功"
 		go channel.UpdateResponseTime(milliseconds)
 	}
 
@@ -146,7 +146,7 @@ func testAllChannels(isNotify bool) error {
 	testAllChannelsLock.Lock()
 	if testAllChannelsRunning {
 		testAllChannelsLock.Unlock()
-		return errors.New("测试已在运行中")
+		return errors.New("測試已在運行中")
 	}
 	testAllChannelsRunning = true
 	testAllChannelsLock.Unlock()
@@ -172,11 +172,11 @@ func testAllChannels(isNotify bool) error {
 			// 通道为禁用状态，并且还是请求错误 或者 响应时间超过阈值 直接跳过，也不需要更新响应时间。
 			if !isChannelEnabled {
 				if err != nil {
-					sendMessage += fmt.Sprintf("- 测试报错: %s \n\n- 无需改变状态，跳过\n\n", utils.EscapeMarkdownText(err.Error()))
+					sendMessage += fmt.Sprintf("- 測試報錯: %s \n\n- 無需改變狀態，跳過\n\n", utils.EscapeMarkdownText(err.Error()))
 					continue
 				}
 				if milliseconds > disableThreshold {
-					sendMessage += fmt.Sprintf("- 响应时间 %.2fs 超过阈值 %.2fs \n\n- 无需改变状态，跳过\n\n", float64(milliseconds)/1000.0, float64(disableThreshold)/1000.0)
+					sendMessage += fmt.Sprintf("- 響應時間 %.2fs 超過閾值 %.2fs \n\n- 無需改變狀態，跳過\n\n", float64(milliseconds)/1000.0, float64(disableThreshold)/1000.0)
 					continue
 				}
 				// 如果已被禁用，但是请求成功，需要判断是否需要恢复
@@ -184,15 +184,15 @@ func testAllChannels(isNotify bool) error {
 				if shouldEnableChannel(err, &openaiErr.OpenAIError) {
 					if channel.Status == config.ChannelStatusAutoDisabled {
 						EnableChannel(channel.Id, channel.Name, false)
-						sendMessage += "- 已被启用 \n\n"
+						sendMessage += "- 已被啟用 \n\n"
 					} else {
-						sendMessage += "- 手动禁用的通道，不会自动恢复 \n\n"
+						sendMessage += "- 手動禁用的通道，不會自動恢復 \n\n"
 					}
 				}
 			} else {
 				// 如果通道启用状态，但是返回了错误 或者 响应时间超过阈值，需要判断是否需要禁用
 				if milliseconds > disableThreshold {
-					errMsg := fmt.Sprintf("响应时间 %.2fs 超过阈值 %.2fs ", float64(milliseconds)/1000.0, float64(disableThreshold)/1000.0)
+					errMsg := fmt.Sprintf("響應時間 %.2fs 超過閾值 %.2fs ", float64(milliseconds)/1000.0, float64(disableThreshold)/1000.0)
 					sendMessage += fmt.Sprintf("- %s \n\n- 禁用\n\n", errMsg)
 					DisableChannel(channel.Id, channel.Name, errMsg, false)
 					continue
@@ -205,18 +205,18 @@ func testAllChannels(isNotify bool) error {
 				}
 
 				if err != nil {
-					sendMessage += fmt.Sprintf("- 测试报错: %s \n\n", utils.EscapeMarkdownText(err.Error()))
+					sendMessage += fmt.Sprintf("- 測試報錯: %s \n\n", utils.EscapeMarkdownText(err.Error()))
 					continue
 				}
 			}
 			channel.UpdateResponseTime(milliseconds)
-			sendMessage += fmt.Sprintf("- 测试完成，耗时 %.2fs\n\n", float64(milliseconds)/1000.0)
+			sendMessage += fmt.Sprintf("- 測試完成，耗時 %.2fs\n\n", float64(milliseconds)/1000.0)
 		}
 		testAllChannelsLock.Lock()
 		testAllChannelsRunning = false
 		testAllChannelsLock.Unlock()
 		if isNotify {
-			notify.Send("通道测试完成", sendMessage)
+			notify.Send("通道測試完成", sendMessage)
 		}
 	}()
 	return nil

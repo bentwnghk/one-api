@@ -155,14 +155,14 @@ func (t *SunoTask) UpdateTaskStatus(ctx context.Context, taskChannelM map[int][]
 	for channelId, taskIds := range taskChannelM {
 		err := updateSunoTaskAll(ctx, channelId, taskIds, taskM)
 		if err != nil {
-			logger.LogError(ctx, fmt.Sprintf("渠道 #%d 更新异步任务失败: %s", channelId, err.Error()))
+			logger.LogError(ctx, fmt.Sprintf("渠道 #%d 更新異步任務失敗: %s", channelId, err.Error()))
 		}
 	}
 	return nil
 }
 
 func updateSunoTaskAll(ctx context.Context, channelId int, taskIds []string, taskM map[string]*model.Task) error {
-	logger.LogWarn(ctx, fmt.Sprintf("渠道 #%d 未完成的任务有: %d", channelId, len(taskIds)))
+	logger.LogWarn(ctx, fmt.Sprintf("渠道 #%d 未完成的任務有: %d", channelId, len(taskIds)))
 	if len(taskIds) == 0 {
 		return nil
 	}
@@ -170,7 +170,7 @@ func updateSunoTaskAll(ctx context.Context, channelId int, taskIds []string, tas
 	channel := model.ChannelGroup.GetChannel(channelId)
 	if channel == nil {
 		err := model.TaskBulkUpdate(taskIds, map[string]any{
-			"fail_reason": fmt.Sprintf("获取渠道信息失败，请联系管理员，渠道ID：%d", channelId),
+			"fail_reason": fmt.Sprintf("獲取渠道信息失敗，請聯系管理員，渠道ID：%d", channelId),
 			"status":      "FAILURE",
 			"progress":    100,
 		})
@@ -184,7 +184,7 @@ func updateSunoTaskAll(ctx context.Context, channelId int, taskIds []string, tas
 	sunoProvider, ok := providers.(*sunoProvider.SunoProvider)
 	if !ok {
 		err := model.TaskBulkUpdate(taskIds, map[string]any{
-			"fail_reason": "获取供应商失败，请联系管理员",
+			"fail_reason": "獲取供應商失敗，請聯系管理員",
 			"status":      "FAILURE",
 			"progress":    100,
 		})
@@ -200,7 +200,7 @@ func updateSunoTaskAll(ctx context.Context, channelId int, taskIds []string, tas
 	}
 
 	if !resp.IsSuccess() {
-		return fmt.Errorf("渠道 #%d 未完成的任务有: %d, 报错: %s", channelId, len(taskIds), resp.Message)
+		return fmt.Errorf("渠道 #%d 未完成的任務有: %d, 報錯: %s", channelId, len(taskIds), resp.Message)
 	}
 
 	for _, responseItem := range *resp.Data {
@@ -216,7 +216,7 @@ func updateSunoTaskAll(ctx context.Context, channelId int, taskIds []string, tas
 		task.FinishTime = lo.If(responseItem.FinishTime != 0, responseItem.FinishTime).Else(task.FinishTime)
 
 		if responseItem.FailReason != "" || task.Status == model.TaskStatusFailure {
-			logger.LogError(ctx, task.TaskID+" 构建失败，"+task.FailReason)
+			logger.LogError(ctx, task.TaskID+" 構建失敗，"+task.FailReason)
 			task.Progress = 100
 			quota := task.Quota
 			if quota > 0 {
@@ -224,7 +224,7 @@ func updateSunoTaskAll(ctx context.Context, channelId int, taskIds []string, tas
 				if err != nil {
 					logger.LogError(ctx, "fail to increase user quota: "+err.Error())
 				}
-				logContent := fmt.Sprintf("异步任务执行失败 %s，补偿 %s", task.TaskID, common.LogQuota(quota))
+				logContent := fmt.Sprintf("異步任務執行失敗 %s，補償 %s", task.TaskID, common.LogQuota(quota))
 				model.RecordLog(task.UserId, model.LogTypeSystem, logContent)
 			}
 		}
