@@ -39,7 +39,7 @@ func (s *StmpConfig) Send(to, subject, body string) error {
 	message.Subject(subject)
 	message.SetGenHeader("References", s.getReferences())
 	message.SetBodyString(mail.TypeTextHTML, body)
-	message.SetUserAgent(fmt.Sprintf("Mr.🆖 AI API %s // https://api.mr5ai.com", config.Version))
+	message.SetUserAgent(fmt.Sprintf("Mr.🆖 AI Hub %s // https://api.mr5ai.com", config.Version))
 
 	client, err := mail.NewClient(
 		s.Host,
