@@ -383,7 +383,7 @@
     "operationSettings": {
       "chatLinkSettings": {
         "title": "Chat Link Settings",
-        "info": "Configure chat links, which take effect in the chat of the token and in the chat of the Playground on the homepage. In the link, {key} can replace the user's token, and {server} can replace the server address. For example: https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}. If not configured, the following links will be configured by default: Mr.🆖 AI Chat 🆓️：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}; Mr.🆖 AI English Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}; Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}. Sorting rules: The larger the value, the higher the ranking, and the same value is sorted according to the configuration order.",
+        "info": "Configure chat links, which take effect in the chat of the token and in the chat of the Playground on the homepage. In the link, {key} can replace the user's token, and {server} can replace the server address. For example: https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}. If not configured, the following links will be configured by default: Mr.🆖 AI：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}; Mr.🆖 AI Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}; Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}. Sorting rules: The larger the value, the higher the ranking, and the same value is sorted according to the configuration order.",
         "save": "Save Chat Link Settings"
       },
       "generalSettings": {
@@ -912,6 +912,7 @@
   "task": "Asynchronous tasks",
   "AZURE_OPENAI_ENDPOINT": "AZURE_OPENAI_ENDPOINT",
   "仅支持聊天": "Chat only",
+  "预计费选项": "Estimated fees",
   "从Cohere获取模型列表": "Get list of models from Cohere",
   "从Deepseek获取模型列表": "Get model list from Deepseek",
   "从Gemini获取模型列表": "Get model list from Gemini",
@@ -923,6 +924,7 @@
   "代理地址": "proxy address",
   "位置/区域": "location/area",
   "你可以为你的渠道打一个标签，打完标签后，可以通过标签进行批量管理渠道": "You can add a label to your channel. After labeling, you can manage channels in batches through the label.",
+  "这里选择预计费选项，用于预估费用，如果你觉得计算图片占用太多资源，可以选择关闭图片计费。但是请注意：有些渠道在stream下是不会返回tokens的，这会导致输入tokens计算错误。": "Select the estimated fee option here to estimate the fee. If you feel that calculating pictures takes up too many resources, you can choose to turn off picture billing. Please note that some channels will not return tokens under the stream, which will cause input tokens to be calculated incorrectly.",
   "其他参数": "Other parameters",
   "单独设置代理地址，支持http和socks5，例如：http://127.0.0.1:1080": "Set the proxy address separately, support http and socks5, for example: http://127.0.0.1:1080",
   "可空，请输入中转API地址，例如通过cloudflare中转": "Can be left empty, please enter the transfer API address, for example, through cloudflare transfer",

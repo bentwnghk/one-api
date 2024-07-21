@@ -558,7 +558,7 @@
       },
       "chatLinkSettings": {
         "title": "聊天链接设置",
-        "info": "配置聊天链接，该配置在令牌中的聊天生效以及首页的 Playground 中的聊天生效。链接中可以使用{key}替换用户的令牌，{server}替换服务器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，会默认配置以下链接：Mr.🆖 AI Chat 🆓️：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI English Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序规则：值越大越靠前，值相同则按照配置顺序。",
+        "info": "配置聊天链接，该配置在令牌中的聊天生效以及首页的 Playground 中的聊天生效。链接中可以使用{key}替换用户的令牌，{server}替换服务器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，会默认配置以下链接：Mr.🆖 AI：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序规则：值越大越靠前，值相同则按照配置顺序。",
         "save": "保存聊天链接设置"
       }
     },
@@ -921,6 +921,7 @@
   "模型映射关系": "模型映射关系",
   "用户组": "用户组",
   "仅支持聊天": "仅支持聊天",
+  "预计费选项": "预计费选项",
   "标签": "标签",
   "请选择渠道类型": "请选择渠道类型",
   "请为渠道命名": "请为渠道命名",
@@ -934,6 +935,7 @@
   "如果选择了仅支持聊天，那么遇到有函数调用的请求会跳过该渠道": "如果选择了仅支持聊天，那么遇到有函数调用的请求会跳过该渠道",
   "必须填写所有数据后才能获取模型列表": "必须填写所有数据后才能获取模型列表",
   "你可以为你的渠道打一个标签，打完标签后，可以通过标签进行批量管理渠道": "你可以为你的渠道打一个标签，打完标签后，可以通过标签进行批量管理渠道",
+  "这里选择预计费选项，用于预估费用，如果你觉得计算图片占用太多资源，可以选择关闭图片计费。但是请注意：有些渠道在stream下是不会返回tokens的，这会导致输入tokens计算错误。": "这里选择预计费选项，用于预估费用，如果你觉得计算图片占用太多资源，可以选择关闭图片计费。但是请注意：有些渠道在stream下是不会返回tokens的，这会导致输入tokens计算错误。",
   "从OpenAI获取模型列表": "从OpenAI获取模型列表",
   "从渠道获取模型列表": "从渠道获取模型列表",
   "替换 API 版本": "替换 API 版本",

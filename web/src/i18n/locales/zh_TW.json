@@ -448,7 +448,7 @@
         },
         "chatLink": {
           "label": "聊天鏈接",
-          "placeholder": "例如 Mr.🆖 AI Chat 的部署地址"
+          "placeholder": "例如 Mr.🆖 AI 的部署地址"
         },
         "quotaPerUnit": {
           "label": "單位額度",
@@ -479,6 +479,11 @@
         "chatImageRequestProxy": {
           "label": "圖片檢測代理",
           "placeholder": "聊天圖片檢測代理設置，如果不設置可能會泄漏服務器 IP"
+        },
+        "CFWorkerImageUrl": {
+          "label": "Cloudflare Worker 圖片代理",
+          "key": "Cloudflare Worker 圖片代理 Key，如果沒有配置請忽略",
+          "alert": "這裡是 Cloudflare Worker 的圖片代理地址，你可以通過部署 https://github.com/MartialBE/get-image-by-cf 來使用，它和圖片檢測代理只可以設置其中一個。注意有些圖片鏈接可能會拒絕 CF 的訪問導致檢測失敗。"
         },
         "saveButton": "保存其他設置"
       },
@@ -553,7 +558,7 @@
       },
       "chatLinkSettings": {
         "title": "聊天鏈接設置",
-        "info": "配置聊天鏈接，該配置在金鑰中的聊天生效以及首頁的 Playground 中的聊天生效。鏈接中可以使用 {key} 替換用戶的密鑰，{server} 替換伺服器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，會默認配置以下鏈接：Mr.🆖 AI Chat 🆓️：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI English Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序規則：值越大越靠前，值相同則按照配置順序。",
+        "info": "配置聊天鏈接，該配置在金鑰中的聊天生效以及首頁的 Playground 中的聊天生效。鏈接中可以使用 {key} 替換用戶的密鑰，{server} 替換伺服器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，會默認配置以下鏈接：Mr.🆖 AI：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序規則：值越大越靠前，值相同則按照配置順序。",
         "save": "保存聊天鏈接設置"
       }
     },
@@ -916,6 +921,7 @@
   "模型映射关系": "模型映射關系",
   "用户组": "用戶組",
   "仅支持聊天": "僅支持聊天",
+  "预计费选项": "預計費選項",
   "标签": "標籤",
   "请选择渠道类型": "請選擇渠道類型",
   "请为渠道命名": "請為渠道命名",
@@ -929,6 +935,7 @@
   "如果选择了仅支持聊天，那么遇到有函数调用的请求会跳过该渠道": "如果選擇了僅支持聊天，那麼遇到有函數調用的請求會跳過該渠道",
   "必须填写所有数据后才能获取模型列表": "必須填寫所有數據後才能獲取模型列表",
   "你可以为你的渠道打一个标签，打完标签后，可以通过标签进行批量管理渠道": "你可以為你的渠道打一個標籤，打完標籤後，可以通過標籤進行批量管理渠道",
+  "这里选择预计费选项，用于预估费用，如果你觉得计算图片占用太多资源，可以选择关闭图片计费。但是请注意：有些渠道在stream下是不会返回tokens的，这会导致输入tokens计算错误。": "這裡選擇預計費選項，用於預估費用，如果你覺得計算圖片佔用太多資源，可以選擇關閉圖片計費。但是請注意：有些渠道在stream下是不會返回tokens的，這會導致輸入tokens計算錯誤。",
   "从OpenAI获取模型列表": "從OpenAI獲取模型列表",
   "从渠道获取模型列表": "從渠道獲取模型列表",
   "替换 API 版本": "替換 API 版本",
