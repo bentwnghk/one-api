@@ -938,6 +938,20 @@
     "output": 0.85715
   },
   {
+    "model": "codestral-latest",
+    "type": "tokens",
+    "channel_type": 30,
+    "input": 0.5,
+    "output": 1.5
+  },
+  {
+    "model": "codestral-mamba-latest",
+    "type": "tokens",
+    "channel_type": 30,
+    "input": 0.125,
+    "output": 0.125
+  },
+  {
     "model": "mistral-embed",
     "type": "tokens",
     "channel_type": 30,
@@ -948,8 +962,8 @@
     "model": "mistral-large-latest",
     "type": "tokens",
     "channel_type": 30,
-    "input": 4,
-    "output": 12
+    "input": 2,
+    "output": 6
   },
   {
     "model": "mistral-medium-latest",
@@ -962,8 +976,8 @@
     "model": "mistral-small-latest",
     "type": "tokens",
     "channel_type": 30,
-    "input": 1,
-    "output": 3
+    "input": 0.5,
+    "output": 1.5
   },
   {
     "model": "mistralai/Mixtral-8x22B-Instruct-v0.1",
@@ -994,6 +1008,13 @@
     "output": 0.125
   },
   {
+    "model": "open-mistral-nemo",
+    "type": "tokens",
+    "channel_type": 30,
+    "input": 0.15,
+    "output": 0.15
+  },
+  {
     "model": "open-mixtral-8x7b",
     "type": "tokens",
     "channel_type": 30,
@@ -1004,8 +1025,8 @@
     "model": "open-mixtral-8x22b",
     "type": "tokens",
     "channel_type": 30,
-    "input": 4,
-    "output": 12
+    "input": 1,
+    "output": 3
   },
   {
     "model": "gemma-7b-it",
