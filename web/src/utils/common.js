@@ -5,7 +5,7 @@ import { CHAT_LINKS } from 'constants/chatLinks';
 
 export function getSystemName() {
   let system_name = localStorage.getItem('system_name');
-  if (!system_name) return 'One Hub';
+  if (!system_name) return 'Mr.🆖 AI Hub';
   return system_name;
 }
 
@@ -32,21 +32,21 @@ export function showError(error) {
     if (error.name === 'AxiosError') {
       switch (error.response.status) {
         case 429:
-          enqueueSnackbar('错误：请求次数过多，请稍后再试！', getSnackbarOptions('ERROR'));
+          enqueueSnackbar('錯誤：請求次數過多，請稍後再試！', getSnackbarOptions('ERROR'));
           break;
         case 500:
-          enqueueSnackbar('错误：服务器内部错误，请联系管理员！', getSnackbarOptions('ERROR'));
+          enqueueSnackbar('錯誤：伺服器內部錯誤，請聯絡管理員！', getSnackbarOptions('ERROR'));
           break;
         case 405:
-          enqueueSnackbar('本站仅作演示之用，无服务端！', getSnackbarOptions('INFO'));
+          enqueueSnackbar('本站僅供示範之用，無服務端！', getSnackbarOptions('INFO'));
           break;
         default:
-          enqueueSnackbar('错误：' + error.message, getSnackbarOptions('ERROR'));
+          enqueueSnackbar('錯誤：' + error.message, getSnackbarOptions('ERROR'));
       }
       return;
     }
   } else {
-    enqueueSnackbar('错误：' + error, getSnackbarOptions('ERROR'));
+    enqueueSnackbar('錯誤：' + error, getSnackbarOptions('ERROR'));
   }
 }
 
@@ -74,11 +74,11 @@ export function copy(text, name = '') {
   try {
     navigator.clipboard.writeText(text);
   } catch (error) {
-    text = `复制${name}失败，请手动复制：<br /><br />${text}`;
+    text = `複製${name}失敗，請手動複製：<br /><br />${text}`;
     enqueueSnackbar(<SnackbarHTMLContent htmlContent={text} />, getSnackbarOptions('COPY'));
     return;
   }
-  showSuccess(`复制${name}成功！`);
+  showSuccess(`複製${name}成功！`);
 }
 
 export async function getOAuthState() {

@@ -68,9 +68,9 @@ const EditModal = ({ open, tokenId, onCancel, onOk }) => {
       const { success, message } = res.data;
       if (success) {
         if (values.is_edit) {
-          showSuccess('令牌更新成功！');
+          showSuccess('金鑰更新成功！');
         } else {
-          showSuccess('令牌创建成功，请在列表页面点击复制获取令牌！');
+          showSuccess('金鑰創建成功，請在列表頁面點擊 [複製金鑰]！');
         }
         setSubmitting(false);
         setStatus({ success: true });
