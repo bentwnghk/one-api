@@ -1026,7 +1026,7 @@
   "已关闭": "已关闭",
   "taskPage": {
     "title": "任务",
-    "task": "任务ID",
+    "task": "任务 ID",
     "subTime": "提交时间",
     "finishTime": "完成时间",
     "channel": "渠道",
