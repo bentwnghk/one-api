@@ -223,10 +223,10 @@ function getBarChartOptions(data, dateRange) {
   channelData.costs.options.title.text = '總消費：$' + renderChartNumber(result.costs.total, 3);
 
   channelData.tokens = generateBarChartOptions(dates, Array.from(result.tokens.data.values()), '', 0);
-  channelData.tokens.options.title.text = '總 Tokens：' + renderChartNumber(result.tokens.total, 0);
+  channelData.tokens.options.title.text = '總 Token 用量：' + renderChartNumber(result.tokens.total, 0);
 
   channelData.requests = generateBarChartOptions(dates, Array.from(result.requests.data.values()), '次', 0);
-  channelData.requests.options.title.text = '總請求數：' + renderChartNumber(result.requests.total, 0);
+  channelData.requests.options.title.text = '總請求次數：' + renderChartNumber(result.requests.total, 0);
 
   // 获取每天所有渠道的平均延迟
   let latency = Array.from(result.latency.data.values());
