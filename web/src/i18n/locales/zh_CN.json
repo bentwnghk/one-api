@@ -151,8 +151,9 @@
   "token_index": {
     "token": "API 金钥",
     "createToken": "新建 API 金钥",
-    "replaceApiAddress1": "将 OpenAI API 接口地址 (Endpoint URL) 'https://api.openai.com' 替换为 ",
-    "replaceApiAddress2": "，并复制下面的密钥即可使用。",
+    "instruction": "1. 按右上角【+ 新建 API 金钥】建立一条属於你的私人 API 金钥。",
+    "replaceApiAddress1": "2. 按【複製】将 API 金钥複製，然後在你的 AI 应用中贴上该 API 金钥即可。",
+    "replaceApiAddress2": "3. 如有需要，将 OpenAI API 接口地址 (Endpoint URL) 'https://api.openai.com' 替换为 ",
     "searchTokenName": "搜索 API 金钥名称...",
     "refresh": "刷新",
     "name": "金钥名称",

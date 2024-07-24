@@ -32,7 +32,7 @@ require('dayjs/locale/zh-cn');
 
 const validationSchema = Yup.object().shape({
   is_edit: Yup.boolean(),
-  name: Yup.string().required('金鑰名稱 不能為空'),
+  name: Yup.string().required('金鑰名稱可隨意填寫'),
   remain_quota: Yup.number().min(0, '必須大於或等於 0'),
   expired_time: Yup.number(),
   unlimited_quota: Yup.boolean()
@@ -43,7 +43,7 @@ const originInputs = {
   name: '',
   remain_quota: 0,
   expired_time: -1,
-  unlimited_quota: false,
+  unlimited_quota: true,
   chat_cache: false
 };
 

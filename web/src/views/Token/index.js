@@ -168,9 +168,11 @@ export default function Token() {
       </Stack>
       <Stack mb={5}>
         <Alert severity="info">
+          {t('token_index.instruction')}
+          <br />
           {t('token_index.replaceApiAddress1')}
-          <b>{siteInfo.server_address}</b>
           {t('token_index.replaceApiAddress2')}
+          <b>{siteInfo.server_address}</b>
         </Alert>
       </Stack>
       <Card>
