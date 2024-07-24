@@ -32,8 +32,8 @@ require('dayjs/locale/zh-cn');
 
 const validationSchema = Yup.object().shape({
   is_edit: Yup.boolean(),
-  name: Yup.string().required('名称 不能为空'),
-  remain_quota: Yup.number().min(0, '必须大于等于0'),
+  name: Yup.string().required(t('validation.requiredName')),
+  remain_quota: Yup.number().min(0, '必須大於或等於 0'),
   expired_time: Yup.number(),
   unlimited_quota: Yup.boolean()
 });
@@ -70,7 +70,7 @@ const EditModal = ({ open, tokenId, onCancel, onOk }) => {
         if (values.is_edit) {
           showSuccess('金鑰更新成功！');
         } else {
-          showSuccess('金鑰創建成功，請在列表頁面點擊 [複製金鑰]！');
+          showSuccess('金鑰創建成功，請在列表頁面點擊 [複製]！');
         }
         setSubmitting(false);
         setStatus({ success: true });
