@@ -100,19 +100,19 @@ func ConvertFromChatOpenai(request *types.ChatCompletionRequest) (*GeminiChatReq
 		SafetySettings: []GeminiChatSafetySettings{
 			{
 				Category:  "HARM_CATEGORY_HARASSMENT",
-				Threshold: "BLOCK_NONE",
+				Threshold: "BLOCK_ONLY_HIGH",
 			},
 			{
 				Category:  "HARM_CATEGORY_HATE_SPEECH",
-				Threshold: "BLOCK_NONE",
+				Threshold: "BLOCK_ONLY_HIGH",
 			},
 			{
 				Category:  "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-				Threshold: "BLOCK_NONE",
+				Threshold: "BLOCK_ONLY_HIGH",
 			},
 			{
 				Category:  "HARM_CATEGORY_DANGEROUS_CONTENT",
-				Threshold: "BLOCK_NONE",
+				Threshold: "BLOCK_ONLY_HIGH",
 			},
 		},
 		GenerationConfig: GeminiChatGenerationConfig{
