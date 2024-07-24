@@ -30,7 +30,7 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 require('dayjs/locale/zh-cn');
 
-const validationSchema = Yup.object().shape({
+const validationSchema = (t) => Yup.object().shape({
   is_edit: Yup.boolean(),
   name: Yup.string().required(t('validation.requiredName')),
   remain_quota: Yup.number().min(0, '必須大於或等於 0'),
