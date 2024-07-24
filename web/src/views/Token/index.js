@@ -171,6 +171,7 @@ export default function Token() {
           {t('token_index.instruction')}
           <br />
           {t('token_index.replaceApiAddress1')}
+          <br />
           {t('token_index.replaceApiAddress2')}
           <b>{siteInfo.server_address}</b>
         </Alert>
