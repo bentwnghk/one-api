@@ -1071,6 +1071,20 @@
     "output": 0
   },
   {
+    "model": "llama-3.1-8b-instant",
+    "type": "times",
+    "channel_type": 31,
+    "input": 0,
+    "output": 0
+  },
+  {
+    "model": "llama-3.1-70b-versatile",
+    "type": "times",
+    "channel_type": 31,
+    "input": 0,
+    "output": 0
+  },
+  {
     "model": "yi-34b-chat-0205",
     "type": "tokens",
     "channel_type": 33,
