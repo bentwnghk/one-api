@@ -976,8 +976,8 @@
     "model": "mistral-large-latest",
     "type": "tokens",
     "channel_type": 30,
-    "input": 2,
-    "output": 6
+    "input": 1.5,
+    "output": 4.5
   },
   {
     "model": "mistral-medium-latest",
