@@ -41,9 +41,6 @@ func GetModelName(modelName string) string {
 		"claude-2.1":                 "anthropic.claude-v2:1",
 		"claude-2.0":                 "anthropic.claude-v2",
 		"claude-instant-1.2":         "anthropic.claude-instant-v1",
-		"llama-3.1-8b-instant":       "meta.llama3-1-8b-instruct-v1:0",
-		"llama-3.1-70b-versatile":    "meta.llama3-1-70b-instruct-v1:0",
-		"llama-3.1-405b-reasoning":   "meta.llama3-1-405b-instruct-v1:0",
 	}
 
 	if value, exists := bedrockMap[modelName]; exists {
