@@ -23,6 +23,11 @@ func init() {
 		ResponseChatComplete:      ConvertClaudeToChatOpenai,
 		ResponseChatCompleteStrem: ClaudeChatCompleteStrem,
 	}
+	CategoryMap["meta"] = Category{
+		ChatComplete:              ConvertClaudeFromChatOpenai,
+		ResponseChatComplete:      ConvertClaudeToChatOpenai,
+		ResponseChatCompleteStrem: ClaudeChatCompleteStrem,
+	}
 }
 
 func ConvertClaudeFromChatOpenai(request *types.ChatCompletionRequest) (any, *types.OpenAIErrorWithStatusCode) {
