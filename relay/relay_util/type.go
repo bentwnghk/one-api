@@ -13,7 +13,7 @@ func init() {
 		config.ChannelTypeAnthropic:    "Anthropic",
 		config.ChannelTypeBaidu:        "Baidu",
 		config.ChannelTypePaLM:         "Google PaLM",
-		config.ChannelTypeGemini:       "Google Gemini",
+		config.ChannelTypeGemini:       "Google",
 		config.ChannelTypeZhipu:        "Zhipu",
 		config.ChannelTypeAli:          "Ali",
 		config.ChannelTypeXunfei:       "Xunfei",
