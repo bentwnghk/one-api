@@ -23,7 +23,7 @@ func authHelper(c *gin.Context, minRole int) {
 		if accessToken == "" {
 			c.JSON(http.StatusUnauthorized, gin.H{
 				"success": false,
-				"message": "无权进行此操作，未登录且未提供 access token",
+				"message": "無權進行此操作，未登入且未提供 access token",
 			})
 			c.Abort()
 			return
@@ -38,7 +38,7 @@ func authHelper(c *gin.Context, minRole int) {
 		} else {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "无权进行此操作，access token 无效",
+				"message": "無權進行此操作，access token 無效",
 			})
 			c.Abort()
 			return
@@ -55,7 +55,7 @@ func authHelper(c *gin.Context, minRole int) {
 	if role.(int) < minRole {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无权进行此操作，权限不足",
+			"message": "無權進行此操作，權限不足",
 		})
 		c.Abort()
 		return
@@ -89,7 +89,7 @@ func tokenAuth(c *gin.Context, key string) {
 	key = strings.TrimPrefix(key, "sk-")
 
 	if len(key) < 48 {
-		abortWithMessage(c, http.StatusUnauthorized, "无效的令牌")
+		abortWithMessage(c, http.StatusUnauthorized, "無效的 API 金鑰")
 		return
 	}
 
@@ -121,7 +121,7 @@ func tokenAuth(c *gin.Context, key string) {
 			} else {
 				channelId := utils.String2Int(parts[1])
 				if channelId == 0 {
-					abortWithMessage(c, http.StatusForbidden, "无效的渠道 Id")
+					abortWithMessage(c, http.StatusForbidden, "無效的渠道 ID")
 					return
 				}
 				c.Set("specific_channel_id", channelId)
@@ -130,7 +130,7 @@ func tokenAuth(c *gin.Context, key string) {
 				}
 			}
 		} else {
-			abortWithMessage(c, http.StatusForbidden, "普通用户不支持指定渠道")
+			abortWithMessage(c, http.StatusForbidden, "普通用戶不支持指定渠道")
 			return
 		}
 	}
@@ -164,7 +164,7 @@ func SpecifiedChannel() func(c *gin.Context) {
 		c.Set("specific_channel_id_ignore", false)
 
 		if channelId <= 0 {
-			abortWithMessage(c, http.StatusForbidden, "必须指定渠道")
+			abortWithMessage(c, http.StatusForbidden, "必須指定渠道")
 			return
 		}
 		c.Next()
