@@ -1452,8 +1452,8 @@
     "model": "llama-3-sonar-large-32k-online",
     "type": "tokens",
     "channel_type": 39,
-    "input": 3,
-    "output": 3
+    "input": 6,
+    "output": 6
   },
   {
     "model": "llama-3-sonar-small-32k-chat",
@@ -1466,8 +1466,8 @@
     "model": "llama-3-sonar-small-32k-online",
     "type": "tokens",
     "channel_type": 39,
-    "input": 2.5,
-    "output": 2.5
+    "input": 5,
+    "output": 5
   },
   {
     "model": "meta-llama/Llama-3-70b-chat-hf",
