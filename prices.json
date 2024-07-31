@@ -1442,28 +1442,28 @@
     "output": 0
   },
   {
-    "model": "llama-3-sonar-large-32k-chat",
+    "model": "llama-3.1-sonar-large-128k-chat",
     "type": "tokens",
     "channel_type": 39,
     "input": 0.5,
     "output": 0.5
   },
   {
-    "model": "llama-3-sonar-large-32k-online",
+    "model": "llama-3.1-sonar-large-128k-online",
     "type": "tokens",
     "channel_type": 39,
     "input": 6,
     "output": 6
   },
   {
-    "model": "llama-3-sonar-small-32k-chat",
+    "model": "llama-3.1-sonar-small-128k-chat",
     "type": "tokens",
     "channel_type": 39,
     "input": 0.1,
     "output": 0.1
   },
   {
-    "model": "llama-3-sonar-small-32k-online",
+    "model": "llama-3.1-sonar-small-128k-online",
     "type": "tokens",
     "channel_type": 39,
     "input": 5,
