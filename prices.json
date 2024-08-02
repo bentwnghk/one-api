@@ -959,6 +959,13 @@
     "output": 0.125
   },
   {
+    "model": "open-codestral-mamba",
+    "type": "tokens",
+    "channel_type": 30,
+    "input": 0.125,
+    "output": 0.125
+  },
+  {
     "model": "mistral-embed",
     "type": "tokens",
     "channel_type": 30,
