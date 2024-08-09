@@ -158,11 +158,11 @@ export default function Overview() {
       <Grid item lg={3} xs={12}>
         <DataCard
           isLoading={rechargeLoading}
-          title={'充值统计'}
+          title={'充值統計'}
           content={rechargeStatistics.total}
           subContent={
             <>
-              兑换码: {rechargeStatistics.Redemption} <br /> 订单: {rechargeStatistics.Oder} / {rechargeStatistics.OderContent}
+              兌換碼: {rechargeStatistics.Redemption} <br /> 訂單: {rechargeStatistics.Oder} / {rechargeStatistics.OderContent}
             </>
           }
         />

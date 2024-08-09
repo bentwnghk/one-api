@@ -364,7 +364,7 @@ function getOrdersData(data, dateRange) {
   }
 
   let chartData = generateBarChartOptions(dates, result, 'CNY', 0);
-  chartData.options.title.text = '总充值数：' + total;
+  chartData.options.title.text = '總充值數：' + total;
 
   return chartData;
 }
