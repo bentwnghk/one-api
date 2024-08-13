@@ -56,7 +56,7 @@
     },
     "code_interpreter": {
       "name": "代码工具 ",
-      "description": "使用代码工具 功能，仅glm-4-alltools有效",
+      "description": "使用代码工具功能，仅glm-4-alltools有效",
       "params": {
         "sandbox": {
           "name": "沙盒模式",
