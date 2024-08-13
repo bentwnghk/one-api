@@ -67,7 +67,7 @@ func errorHandle(geminiError *GeminiErrorResponse) *types.OpenAIError {
 func cleaningError(errorInfo *GeminiError) {
 	if strings.Contains(errorInfo.Message, "Publisher Model") || strings.Contains(errorInfo.Message, "api_key") {
 		logger.SysError(fmt.Sprintf("Gemini Error: %s", errorInfo.Message))
-		errorInfo.Message = "上游错误，请联系管理员."
+		errorInfo.Message = "上游錯誤，請聯繫管理員"
 	}
 }
 

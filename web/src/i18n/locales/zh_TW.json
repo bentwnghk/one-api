@@ -485,7 +485,7 @@
         "CFWorkerImageUrl": {
           "label": "Cloudflare Worker 圖片代理",
           "key": "Cloudflare Worker 圖片代理 Key，如果沒有配置請忽略",
-          "alert": "這裡是 Cloudflare Worker 的圖片代理地址，你可以通過部署 https://github.com/MartialBE/get-image-by-cf 來使用，它和圖片檢測代理只可以設置其中一個。注意有些圖片鏈接可能會拒絕 CF 的訪問導致檢測失敗。"
+          "alert": "這裡是 Cloudflare Worker 的圖片代理地址，你可以通過部署 https://github.com/bentwnghk/get-image-by-cf 來使用，它和圖片檢測代理只可以設置其中一個。注意有些圖片鏈接可能會拒絕 CF 的訪問導致檢測失敗。"
         },
         "saveButton": "保存其他設置"
       },
@@ -975,7 +975,7 @@
   "按照如下格式输入：SecretId|SecretKey": "按照如下格式輸入：SecretId|SecretKey",
   "密钥填写Suno-API的密钥，如果没有设置密钥，可以随便填": "密鑰填寫 Suno-API 的密鑰，如果沒有設置密鑰，可以隨便填",
   "地址填写Suno-API部署的地址": "地址填寫 Suno-API 部署的地址",
-  "请参考wiki中的文档获取key. https://github.com/MartialBE/one-hub/wiki/VertexAI": "請參考 wiki 中的文檔獲取 Key: https://github.com/MartialBE/one-hub/wiki/VertexAI",
+  "请参考wiki中的文档获取key. https://github.com/bentwnghk/one-api/wiki/VertexAI": "請參考 wiki 中的文檔獲取 Key: https://github.com/bentwnghk/one-api/wiki/VertexAI",
   "知识库": "知識庫",
   "请前往开放平台的知识库上传文档，然后使用知识库功能进行检索。": "請前往開放平台的知識庫上傳文檔，然後使用知識庫功能進行檢索。",
   "知识库ID": "知識庫 ID",

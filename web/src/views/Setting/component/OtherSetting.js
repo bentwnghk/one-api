@@ -116,7 +116,7 @@ const OtherSetting = () => {
   };
 
   const openGitHubRelease = () => {
-    window.location = 'https://github.com/MartialBE/one-hub/releases/latest';
+    window.location = 'https://github.com/bentwnghk/one-api/releases/latest';
   };
 
   const checkUpdate = async () => {

@@ -396,7 +396,7 @@ const typeConfig = {
       models: ['claude-3-opus-20240229', 'claude-3-sonnet-20240229', 'claude-3-haiku-20240307']
     },
     prompt: {
-      key: '请参考wiki中的文档获取key. https://github.com/MartialBE/one-hub/wiki/VertexAI',
+      key: '请参考wiki中的文档获取key. https://github.com/bentwnghk/one-api/wiki/VertexAI',
       other: 'Region|ProjectID',
       base_url: ''
     },

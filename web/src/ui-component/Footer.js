@@ -17,11 +17,11 @@ const Footer = () => {
           <div className="custom-footer" dangerouslySetInnerHTML={{ __html: siteInfo.footer_html }}></div>
         ) : (
           <>
-            <Link href="https://github.com/MartialBE/one-hub" target="_blank">
+            <Link href="https://github.com/bentwnghk/one-api" target="_blank">
               {siteInfo.system_name} {process.env.REACT_APP_VERSION}{' '}
             </Link>
             {t('footer.developedBy')}{' '}
-            <Link href="https://github.com/MartialBE" target="_blank">
+            <Link href="https://github.com/bentwnghk" target="_blank">
               MartialBE
             </Link>
             ，{t('footer.basedOn')}{' '}

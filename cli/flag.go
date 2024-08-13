@@ -60,6 +60,6 @@ func help() {
 	fmt.Println("One Hub " + config.Version + " - All in one Hub service for OpenAI API.")
 	fmt.Println("Copyright (C) 2024 MartialBE. All rights reserved.")
 	fmt.Println("Original copyright holder: JustSong")
-	fmt.Println("GitHub: https://github.com/MartialBE/one-hub")
+	fmt.Println("GitHub: https://github.com/bentwnghk/one-api")
 	fmt.Println("Usage: one-api [--port <port>] [--log-dir <log directory>] [--config <config.yaml path>] [--version] [--help]")
 }
