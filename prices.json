@@ -700,6 +700,13 @@
     "output": 0.57145
   },
   {
+    "model": "qwen-vl-chat-v1",
+    "type": "tokens",
+    "channel_type": 17,
+    "input": 0,
+    "output": 0
+  },
+  {
     "model": "text-embedding-v1",
     "type": "tokens",
     "channel_type": 17,
