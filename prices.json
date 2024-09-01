@@ -602,6 +602,55 @@
     "output": 0.45
   },
   {
+    "model": "glm-4-plus",
+    "type": "tokens",
+    "channel_type": 16,
+    "input": 3.5714,
+    "output": 3.5714
+  },
+  {
+    "model": "glm-4-0520",
+    "type": "tokens",
+    "channel_type": 16,
+    "input": 7.1429,
+    "output": 7.1429
+  },
+  {
+    "model": "glm-4-air",
+    "type": "tokens",
+    "channel_type": 16,
+    "input": 0.0714,
+    "output": 0.0714
+  },
+  {
+    "model": "glm-4-airx",
+    "type": "tokens",
+    "channel_type": 16,
+    "input": 0.7143,
+    "output": 0.7143
+  },
+  {
+    "model": "glm-4-long",
+    "type": "tokens",
+    "channel_type": 16,
+    "input": 0.0714,
+    "output": 0.0714
+  },
+  {
+    "model": "glm-4-flash",
+    "type": "tokens",
+    "channel_type": 16,
+    "input": 0,
+    "output": 0
+  },
+  {
+    "model": "glm-4-alltools",
+    "type": "tokens",
+    "channel_type": 16,
+    "input": 7.1429,
+    "output": 7.1429
+  },
+  {
     "model": "qwen-max",
     "type": "tokens",
     "channel_type": 17,
@@ -784,6 +833,27 @@
     "output": 2.8125
   },
   {
+    "model": "gemini-1.5-pro-exp-0827",
+    "type": "tokens",
+    "channel_type": 25,
+    "input": 0.9375,
+    "output": 2.8125
+  },
+  {
+    "model": "gemini-1.5-pro-exp-0801",
+    "type": "tokens",
+    "channel_type": 25,
+    "input": 0.9375,
+    "output": 2.8125
+  },
+  {
+    "model": "gemini-1.5-flash-latest",
+    "type": "tokens",
+    "channel_type": 25,
+    "input": 0.09375,
+    "output": 0.28125
+  },
+  {
     "model": "gemini-1.5-flash",
     "type": "tokens",
     "channel_type": 25,
@@ -798,7 +868,14 @@
     "output": 0.28125
   },
   {
-    "model": "gemini-1.5-flash-latest",
+    "model": "gemini-1.5-flash-exp-0827",
+    "type": "tokens",
+    "channel_type": 25,
+    "input": 0.09375,
+    "output": 0.28125
+  },
+  {
+    "model": "gemini-1.5-flash-8b-exp-0827",
     "type": "tokens",
     "channel_type": 25,
     "input": 0.09375,
