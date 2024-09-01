@@ -539,69 +539,6 @@
     "output": 7.14285
   },
   {
-    "model": "glm-4-flash",
-    "type": "tokens",
-    "channel_type": 16,
-    "input": 0.00714,
-    "output": 0.00714
-  },
-  {
-    "model": "glm-4-air",
-    "type": "tokens",
-    "channel_type": 16,
-    "input": 0.0714,
-    "output": 0.0714
-  },
-  {
-    "model": "glm-4-airx",
-    "type": "tokens",
-    "channel_type": 16,
-    "input": 0.7143,
-    "output": 0.7143
-  },
-  {
-    "model": "glm-4-0520",
-    "type": "tokens",
-    "channel_type": 16,
-    "input": 7.14285,
-    "output": 7.14285
-  },
-  {
-    "model": "Qwen/Qwen1.5-7B-Chat",
-    "type": "tokens",
-    "channel_type": 17,
-    "input": 0.1,
-    "output": 0.1
-  },
-  {
-    "model": "Qwen/Qwen1.5-14B-Chat",
-    "type": "tokens",
-    "channel_type": 17,
-    "input": 0.15,
-    "output": 0.15
-  },
-  {
-    "model": "Qwen/Qwen1.5-32B-Chat",
-    "type": "tokens",
-    "channel_type": 17,
-    "input": 0.4,
-    "output": 0.4
-  },
-  {
-    "model": "Qwen/Qwen1.5-72B-Chat",
-    "type": "tokens",
-    "channel_type": 17,
-    "input": 0.45,
-    "output": 0.45
-  },
-  {
-    "model": "Qwen/Qwen2-72B-Instruct",
-    "type": "tokens",
-    "channel_type": 17,
-    "input": 0.45,
-    "output": 0.45
-  },
-  {
     "model": "glm-4-plus",
     "type": "tokens",
     "channel_type": 16,
@@ -649,6 +586,41 @@
     "channel_type": 16,
     "input": 7.1429,
     "output": 7.1429
+  },
+  {
+    "model": "Qwen/Qwen1.5-7B-Chat",
+    "type": "tokens",
+    "channel_type": 17,
+    "input": 0.1,
+    "output": 0.1
+  },
+  {
+    "model": "Qwen/Qwen1.5-14B-Chat",
+    "type": "tokens",
+    "channel_type": 17,
+    "input": 0.15,
+    "output": 0.15
+  },
+  {
+    "model": "Qwen/Qwen1.5-32B-Chat",
+    "type": "tokens",
+    "channel_type": 17,
+    "input": 0.4,
+    "output": 0.4
+  },
+  {
+    "model": "Qwen/Qwen1.5-72B-Chat",
+    "type": "tokens",
+    "channel_type": 17,
+    "input": 0.45,
+    "output": 0.45
+  },
+  {
+    "model": "Qwen/Qwen2-72B-Instruct",
+    "type": "tokens",
+    "channel_type": 17,
+    "input": 0.45,
+    "output": 0.45
   },
   {
     "model": "qwen-max",
