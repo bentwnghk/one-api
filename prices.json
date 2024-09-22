@@ -668,15 +668,15 @@
     "model": "qwen-plus",
     "type": "tokens",
     "channel_type": 17,
-    "input": 0.0571,
-    "output": 0.1429
+    "input": 0.05715,
+    "output": 0.14285
   },
   {
     "model": "qwen-turbo",
     "type": "tokens",
     "channel_type": 17,
     "input": 0.0214,
-    "output": 0.0429
+    "output": 0.04285
   },
   {
     "model": "qwen-long",
