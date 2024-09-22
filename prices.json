@@ -654,8 +654,8 @@
     "model": "qwen-max",
     "type": "tokens",
     "channel_type": 17,
-    "input": 2.85715,
-    "output": 8.5714
+    "input": 1.4286,
+    "output": 4.2857
   },
   {
     "model": "qwen-max-longcontext",
@@ -668,15 +668,15 @@
     "model": "qwen-plus",
     "type": "tokens",
     "channel_type": 17,
-    "input": 0.2857,
-    "output": 0.85715
+    "input": 0.0571,
+    "output": 0.1429
   },
   {
     "model": "qwen-turbo",
     "type": "tokens",
     "channel_type": 17,
-    "input": 0.14285,
-    "output": 0.4286
+    "input": 0.0214,
+    "output": 0.0429
   },
   {
     "model": "qwen-long",
