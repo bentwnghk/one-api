@@ -146,7 +146,10 @@
     "requiredModels": "模型 不能為空",
     "requiredGroup": "用戶組 不能為空",
     "requiredBaseUrl": "渠道 API 地址 不能為空",
-    "validJson": "必須是有效的 JSON 字符串"
+    "validJson": "必須是有效的 JSON 字符串",
+    "modelMappingKey": "用戶請求模型",
+    "modelMappingValue": "實際轉發模型",
+    "addModelMapping": "添加模型映射"
   },
   "token_index": {
     "token": "API 金鑰",
