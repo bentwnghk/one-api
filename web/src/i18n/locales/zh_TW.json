@@ -581,6 +581,7 @@
         "passwordRegister": "允許通過密碼進行註冊",
         "emailVerification": "通過密碼註冊時需要進行郵箱驗証",
         "gitHubOAuth": "允許通過 GitHub 賬戶登錄和註冊",
+        "oidcAuth": "允許通過 OIDC 賬戶登錄和註冊",
         "weChatAuth": "允許通過微信登錄和註冊",
         "larkAuth": "允許通過飛書登錄和註冊",
         "registerEnabled": "允許新用戶註冊（此項為否時，新用戶將無法以任何方式進行註冊）",
@@ -621,6 +622,23 @@
         "clientIdPlaceholder": "輸入你註冊的 GitHub OAuth APP ID",
         "clientSecretPlaceholder": "敏感信息不會發送到前端顯示",
         "saveButton": "保存 GitHub OAuth 設置"
+      },
+      "configureOIDCAuthorization": {
+        "title": "配置OIDC統一授權系統",
+        "subTitle": "用以配置標准OIDC授權登錄系統",
+        "alert1": "主頁鏈接填",
+        "alert2": "，重定向 URL 填 ",
+        "clientId": "客戶端ID (Client ID)",
+        "clientIdPlaceholder": "請輸入客戶端ID",
+        "clientSecret": "客戶端密鑰 (Secret)",
+        "clientSecretPlaceholder": "敏感信息不會發送到前端顯示",
+        "issuer": "OIDC發行者 (Issuer)",
+        "issuerPlaceholder": "請輸入OIDC發行者",
+        "scopes": "權限范圍 (Scopes)",
+        "scopesPlaceholder": "請輸入權限范圍 (用英文逗號分隔), 通常為 'openid,email,profile'",
+        "usernameClaims": "用戶名聲明 (Claims)",
+        "usernameClaimsPlaceholder": "請輸入用戶名聲明 (例如 username)",
+        "saveButton": "保存OIDC設置"
       },
       "configureWeChatServer": {
         "title": "配置 WeChat 伺服器",
