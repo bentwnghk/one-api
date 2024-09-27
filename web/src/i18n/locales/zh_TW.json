@@ -149,7 +149,10 @@
     "validJson": "必須是有效的 JSON 字符串",
     "modelMappingKey": "用戶請求模型",
     "modelMappingValue": "實際轉發模型",
-    "addModelMapping": "添加模型映射"
+    "addModelMapping": "添加模型映射",
+    "modelHeaderKey": "自定義 Header Key",
+    "modelHeaderValue": "自定義 Header Value",
+    "addModelHeader": "添加自定義 Header"
   },
   "token_index": {
     "token": "API 金鑰",
