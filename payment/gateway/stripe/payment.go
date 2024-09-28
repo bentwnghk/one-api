@@ -50,7 +50,7 @@ func (e *Stripe) Pay(config *types.PayConfig, gatewayConfig string) (*types.PayR
 				PriceData: &stripe.CheckoutSessionLineItemPriceDataParams{
 					Currency: currency,
 					ProductData: &stripe.CheckoutSessionLineItemPriceDataProductDataParams{
-						Name: stripe.String(sysconfig.SystemName + "-Token充值:" + strconv.FormatFloat(config.Money, 'f', 0, 64) + " " + string(config.Currency)),
+						Name: stripe.String(sysconfig.SystemName + " — 賬戶充值 : " + strconv.FormatFloat(config.Money, 'f', 0, 64) + " " + string(config.Currency)),
 					},
 					UnitAmount: stripe.Int64(int64(math.Round(config.Money * 100))),
 				},
