@@ -158,13 +158,13 @@ const PaymentConfig = {
   stripe: {
     secret_key: {
       name: 'SecretKey',
-      description: 'API 私钥',
+      description: 'API 私鑰',
       type: 'text',
       value: ''
     },
     webhook_secret: {
       name: 'WebHookSecret',
-      description: '回调验证密钥，不用填写，创建网关后会自动在stripe后台创建webhook并获取webhook密钥',
+      description: '回調驗証密鑰，不用填寫，創建網關後會自動在Stripe後台創建webhook並獲取webhook密鑰',
       type: 'text',
       value: ''
     },
