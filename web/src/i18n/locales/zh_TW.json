@@ -13,6 +13,8 @@
   "payment": "支付",
   "setting": "設置",
   "task": "異步任務",
+  "operation": "運營",
+  "paySetting": "支付設置",
   "menu": {
     "home": "首頁",
     "about": "關於",
