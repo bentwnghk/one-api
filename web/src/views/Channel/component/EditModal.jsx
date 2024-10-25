@@ -406,9 +406,9 @@ const EditModal = ({ open, channelId, onCancel, onOk, groupOptions, isTag }) => 
 
   const handleModelTagClick = (modelId) => {
     navigator.clipboard.writeText(modelId).then(() => {
-      showSuccess('模型名称已复制');
+      showSuccess('模型名稱已複製');
     }).catch((error) => {
-      showError('复制失败: ' + error.message);
+      showError('複製失敗: ' + error.message);
     });
   };
 
