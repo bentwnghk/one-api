@@ -22,7 +22,7 @@ func Distribute() func(c *gin.Context) {
 
 		groupRatio := model.GlobalUserGroupRatio.GetBySymbol(tokenGroup)
 		if groupRatio == nil {
-			abortWithMessage(c, http.StatusForbidden, fmt.Sprintf("分组 %s 不存在", tokenGroup))
+			abortWithMessage(c, http.StatusForbidden, fmt.Sprintf("分組 %s 不存在", tokenGroup))
 			return
 		}
 

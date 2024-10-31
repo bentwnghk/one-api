@@ -132,19 +132,19 @@ func initUserGroup() *gormigrate.Migration {
 			userGroups := map[string]*UserGroup{
 				"default": {
 					Symbol: "default",
-					Name:   "默认分组",
+					Name:   "默認分組",
 					Ratio:  1,
 					Public: true,
 				},
 				"vip": {
 					Symbol: "vip",
-					Name:   "vip分组",
+					Name:   "vip分組",
 					Ratio:  1,
 					Public: false,
 				},
 				"svip": {
 					Symbol: "svip",
-					Name:   "svip分组",
+					Name:   "svip分組",
 					Ratio:  1,
 					Public: false,
 				},

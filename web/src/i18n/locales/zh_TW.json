@@ -7,6 +7,7 @@
   "redemption": "兌換",
   "topup": "充值",
   "user": "用戶",
+  "user_group": "用戶分組",
   "profile": "個人設置",
   "pricing": "模型價格",
   "model_price": "可用模型",
@@ -185,6 +186,7 @@
     "quota": "額度",
     "unlimitedQuota": "無限額度",
     "enableCache": "是否開啟緩存 (開啟後，將會緩存聊天記錄，以減少消費)",
+    "userGroup": "分組",
     "cancel": "取消",
     "submit": "提交"
   },
@@ -194,6 +196,7 @@
     "searchButton": "搜索",
     "timeLabel": "時間",
     "channelLabel": "渠道",
+    "groupLabel": "分組",
     "userLabel": "用戶",
     "tokenLabel": "金鑰名稱",
     "typeLabel": "類型",
@@ -823,7 +826,10 @@
     "enable": "已啟用",
     "disable": "已禁用",
     "expired": "已過期",
-    "exhaust": "已耗盡"
+    "exhaust": "已耗盡",
+    "execute": "是否執行 {{title}}?",
+    "executeConfirm": "執行",
+    "deleteConfirm": "是否刪除 {{title}}?"
   },
   "channel_row": {
     "priorityTip": "優先級不能小於 0",
@@ -1079,6 +1085,18 @@
     "video": "視頻",
     "lyrics": "歌詞",
     "response": "響應體"
+  },
+  "userGroup": {
+    "title": "用戶分組",
+    "create": "新建分組",
+    "id": "ID",
+    "symbol": "標識",
+    "name": "名稱",
+    "ratio": "倍率",
+    "public": "是否公開",
+    "enable": "是否啟用",
+    "symbolTip": "標識用於區分用戶組,請使用英文，不可重複",
+    "nameTip": "給用戶看的名稱"
   },
   "模型映射关系：例如用户请求A模型，实际转发给渠道的模型为B。": "模型映射關系：例如用戶請求A模型，實際轉發給渠道的模型為B。",
   "你可以为你的渠道打一个标签，打完标签后，可以通过标签进行批量管理渠道，注意：设置标签后某些设置只能通过渠道标签修改，无法在渠道列表中修改。": "你可以為你的渠道打一個標籤，打完標籤後，可以通過標籤進行批量管理渠道，注意：設置標籤後某些設置隻能通過渠道標籤修改，無法在渠道列表中修改。"

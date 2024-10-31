@@ -87,7 +87,7 @@ export default function LogTableRow({ item, userIsAdmin, userGroup }) {
         <TableCell>
           {item?.metadata?.group_name ? (
             <Label color="default" variant="soft">
-              {userGroup[item.metadata.group_name]?.name || '跟随用户'}
+              {userGroup[item.metadata.group_name]?.name || '跟隨用戶'}
             </Label>
           ) : (
             ''

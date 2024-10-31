@@ -93,7 +93,7 @@ func DeleteUserGroup(c *gin.Context) {
 	}
 
 	if userGroup.Symbol == "default" {
-		common.APIRespondWithError(c, http.StatusOK, errors.New("默认用户组不能删除"))
+		common.APIRespondWithError(c, http.StatusOK, errors.New("默認用戶組不能刪除"))
 		return
 	}
 
@@ -131,7 +131,7 @@ func ChangeUserGroupEnable(c *gin.Context) {
 	if *userGroup.Enable && userGroup.Symbol == "default" {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "不能关闭默认的用户组,请设置一个默认组后，再关闭",
+			"message": "不能關閉默認的用戶組,請設置一個默認組后，再關閉",
 		})
 		return
 	}

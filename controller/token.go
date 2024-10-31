@@ -111,7 +111,7 @@ func AddToken(c *gin.Context) {
 	if token.Group != "" && model.GlobalUserGroupRatio.GetBySymbol(token.Group) == nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "分组不存在",
+			"message": "分組不存在",
 		})
 		return
 	}
@@ -206,7 +206,7 @@ func UpdateToken(c *gin.Context) {
 	if cleanToken.Group != token.Group && token.Group != "" && model.GlobalUserGroupRatio.GetBySymbol(token.Group) == nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "分组不存在",
+			"message": "分組不存在",
 		})
 		return
 	}
