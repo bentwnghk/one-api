@@ -60,7 +60,7 @@ const Setting = {
       children: [
         {
           id: 'user_group',
-          title: '用户分组',
+          title: '用戶分組',
           type: 'item',
           url: '/panel/user_group',
           icon: icons.IconUsers,
@@ -69,7 +69,7 @@ const Setting = {
         },
         {
           id: 'pricing',
-          title: '模型价格',
+          title: '模型價格',
           type: 'item',
           url: '/panel/pricing',
           icon: icons.IconReceipt2,
@@ -96,7 +96,7 @@ const Setting = {
       children: [
         {
           id: 'redemption',
-          title: '兑换',
+          title: '兌換',
           type: 'item',
           url: '/panel/redemption',
           icon: icons.IconCoin,
