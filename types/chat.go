@@ -187,7 +187,7 @@ type ChatCompletionRequest struct {
 	PresencePenalty     *float64                      `json:"presence_penalty,omitempty"`
 	ResponseFormat      *ChatCompletionResponseFormat `json:"response_format,omitempty"`
 	Seed                *int                          `json:"seed,omitempty"`
-	FrequencyPenalty    *float64                      `json:"frequency_penalty,omitempty"`
+	FrequencyPenalty    float64                       `json:"frequency_penalty,omitempty"`
 	LogitBias           any                           `json:"logit_bias,omitempty"`
 	LogProbs            *bool                         `json:"logprobs,omitempty"`
 	TopLogProbs         int                           `json:"top_logprobs,omitempty"`
