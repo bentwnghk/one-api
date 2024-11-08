@@ -143,9 +143,9 @@ func convertFromChatOpenai(request *types.ChatCompletionRequest) *BaiduChatReque
 		MaxOutputTokens: request.MaxTokens,
 	}
 
-	if request.FrequencyPenalty != nil {
-		baiduChatRequest.PenaltyScore = utils.GetPointer(utils.NumClamp(*request.FrequencyPenalty, 1, 2))
-	}
+	// if request.FrequencyPenalty != nil {
+	// 	baiduChatRequest.PenaltyScore = utils.GetPointer(utils.NumClamp(*request.FrequencyPenalty, 1, 2))
+	// }
 
 	if request.Stop != nil {
 		if stop, ok := request.Stop.(string); ok {

@@ -98,7 +98,7 @@ func ConvertFromChatOpenai(request *types.ChatCompletionRequest) (*CohereRequest
 		K:                request.N,
 		Seed:             request.Seed,
 		StopSequences:    request.Stop,
-		FrequencyPenalty: request.FrequencyPenalty,
+		// FrequencyPenalty: request.FrequencyPenalty,
 		PresencePenalty:  request.PresencePenalty,
 	}
 
