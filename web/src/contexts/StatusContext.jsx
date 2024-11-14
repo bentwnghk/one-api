@@ -23,7 +23,7 @@ const StatusProvider = ({ children }) => {
           delete data.chat_link;
         }
         // 设置系统默认语言
-        const storedLanguage = localStorage.getItem('appLanguage') || data.language || 'zh_CN';
+        const storedLanguage = localStorage.getItem('appLanguage') || data.language || 'zh_TW';
         localStorage.setItem('default_language', storedLanguage);
         i18n.changeLanguage(storedLanguage);
         localStorage.setItem('siteInfo', JSON.stringify(data));
