@@ -13,7 +13,7 @@ import (
 const (
 	LIMIT_KEY               = "api-limiter:%d"
 	INTERNAL                = 1 * time.Minute
-	RATE_LIMIT_EXCEEDED_MSG = "您的速率达到上限，请稍后再试。"
+	RATE_LIMIT_EXCEEDED_MSG = "您的速率達到上限，請稍後再試。"
 	SERVER_ERROR_MSG        = "Server error"
 )
 

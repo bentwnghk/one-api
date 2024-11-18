@@ -188,6 +188,8 @@
     "unlimitedQuota": "無限額度",
     "enableCache": "是否開啟緩存 (開啟後，將會緩存聊天記錄，以減少消費)",
     "userGroup": "分組",
+    "apiRate": "API速率",
+    "apiRateTip": "每分鐘允許的請求數,當速率小於60時，使用計數器限制器，當速率大於等於60時，使用令牌桶限制器，僅在啟用Redis時有效",
     "cancel": "取消",
     "submit": "提交"
   },

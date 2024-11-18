@@ -343,7 +343,7 @@ func relayResponseWithErr(c *gin.Context, err *types.OpenAIErrorWithStatusCode) 
 	case "new_api_error", "one_api_error", "shell_api_error":
 		err.OpenAIError.Type = "system_error"
 		if utils.ContainsString(err.Message, quotaKeywords) {
-			err.Message = "上游负载已饱和，请稍后再试"
+			err.Message = "上遊負載已飽和，請稍後再試"
 			statusCode = http.StatusTooManyRequests
 		}
 	}
