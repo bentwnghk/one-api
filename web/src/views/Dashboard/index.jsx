@@ -123,6 +123,8 @@ const Dashboard = () => {
 
                 <Label color={'primary'} variant="outlined" sx={{ mb: 3 }}>
                   {userGroup?.[users.group]?.name || users.group}
+                </Label>
+                <Label color={'primary'} variant="outlined" sx={{ mb: 3 }}>
                   (RPM:{userGroup?.[users.group]?.api_rate || 0})
                 </Label>
 
