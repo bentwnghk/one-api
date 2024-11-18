@@ -907,9 +907,7 @@
     "unlimited": "無限制",
     "unlimitedQuota": "無限額度",
     "usedQuota": "已用額度",
-    "userGroup": "分組",
-    "apiRate": "API速率",
-    "apiRateTip": "每分鐘允許的請求數,當速率小於60時，使用計數器限制器，當速率大於等於60時，使用令牌桶限制器，僅在啟用Redis時有效"
+    "userGroup": "分組"
   },
   "topup": "儲值",
   "topupCard": {
@@ -952,6 +950,8 @@
     "id": "ID",
     "name": "名稱",
     "nameTip": "給用戶看的名稱",
+    "apiRate": "API速率",
+    "apiRateTip": "每分鐘允許的請求數,當速率小於60時，使用計數器限制器，當速率大於等於60時，使用令牌桶限制器，僅在啟用Redis時有效",
     "public": "是否公開",
     "ratio": "倍率",
     "symbol": "標識",
