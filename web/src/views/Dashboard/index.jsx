@@ -125,7 +125,7 @@ const Dashboard = () => {
                   {userGroup?.[users.group]?.name || users.group}
                 </Label>
                 <Label color={'primary'} variant="outlined" sx={{ mb: 3 }}>
-                  (RPM:{userGroup?.[users.group]?.api_rate || 0})
+                  RPM:{userGroup?.[users.group]?.api_rate || 0}
                 </Label>
 
                 {/* 统计信息区域 */}
