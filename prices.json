@@ -1116,15 +1116,15 @@
     "model": "mistral-large-2407",
     "type": "tokens",
     "channel_type": 30,
-    "input": 1.5,
-    "output": 4.5
+    "input": 1,
+    "output": 3
   },
   {
     "model": "mistral-large-latest",
     "type": "tokens",
     "channel_type": 30,
-    "input": 1.5,
-    "output": 4.5
+    "input": 1,
+    "output": 3
   },
   {
     "model": "mistral-medium-latest",
@@ -1137,8 +1137,8 @@
     "model": "mistral-small-latest",
     "type": "tokens",
     "channel_type": 30,
-    "input": 0.5,
-    "output": 1.5
+    "input": 0.1,
+    "output": 0.3
   },
   {
     "model": "mistralai/Mixtral-8x22B-Instruct-v0.1",
@@ -1172,8 +1172,8 @@
     "model": "open-mistral-nemo",
     "type": "tokens",
     "channel_type": 30,
-    "input": 0.15,
-    "output": 0.15
+    "input": 0.075,
+    "output": 0.075
   },
   {
     "model": "open-mixtral-8x7b",
