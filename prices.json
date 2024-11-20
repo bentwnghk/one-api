@@ -385,6 +385,13 @@
     "output": 2.5
   },
   {
+    "model": "us.claude-3-5-haiku-20241022",
+    "type": "tokens",
+    "channel_type": 14,
+    "input": 0.5,
+    "output": 2.5
+  },
+  {
     "model": "claude-3-5-haiku-latest",
     "type": "tokens",
     "channel_type": 14,
@@ -400,6 +407,13 @@
   },
   {
     "model": "claude-3-sonnet-20240229",
+    "type": "tokens",
+    "channel_type": 14,
+    "input": 1.5,
+    "output": 7.5
+  },
+  {
+    "model": "us.claude-3-5-sonnet-20241022",
     "type": "tokens",
     "channel_type": 14,
     "input": 1.5,
