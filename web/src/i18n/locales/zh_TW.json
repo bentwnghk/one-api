@@ -1,6 +1,7 @@
 {
   "dashboard": "儀表板",
   "analytics": "分析",
+  "playground": "聊天",
   "channel": "渠道",
   "token": "API 金鑰",
   "log": "日誌",
