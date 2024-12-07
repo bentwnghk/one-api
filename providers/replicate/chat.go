@@ -93,7 +93,7 @@ func convertFromChatOpenai(request *types.ChatCompletionRequest) *ReplicateReque
 			SystemPrompt:     systemPrompt,
 			Prompt:           prompt,
 			PresencePenalty:  request.PresencePenalty,
-			FrequencyPenalty: request.FrequencyPenalty,
+			// FrequencyPenalty: request.FrequencyPenalty,
 		},
 	}
 }
