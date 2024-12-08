@@ -1205,84 +1205,98 @@
   },
   {
     "model": "gemma-7b-it",
-    "type": "times",
+    "type": "tokens",
     "channel_type": 31,
     "input": 0,
     "output": 0
   },
   {
     "model": "llama2-70b-4096",
-    "type": "times",
+    "type": "tokens",
     "channel_type": 31,
     "input": 0,
     "output": 0
   },
   {
     "model": "mixtral-8x7b-32768",
-    "type": "times",
+    "type": "tokens",
     "channel_type": 31,
     "input": 0,
     "output": 0
   },
   {
     "model": "llama3-8b-8192",
-    "type": "times",
+    "type": "tokens",
     "channel_type": 31,
     "input": 0.025,
     "output": 0.04
   },
   {
     "model": "llama3-70b-8192",
-    "type": "times",
+    "type": "tokens",
     "channel_type": 31,
     "input": 0.295,
     "output": 0.395
   },
   {
     "model": "llama-3.1-8b-instant",
-    "type": "times",
+    "type": "tokens",
     "channel_type": 31,
-    "input": 0.025,
-    "output": 0.04
+    "input": 0.1,
+    "output": 0.1
   },
   {
     "model": "llama-3.1-70b-versatile",
-    "type": "times",
+    "type": "tokens",
     "channel_type": 31,
-    "input": 0.295,
-    "output": 0.395
+    "input": 0.45,
+    "output": 0.45
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "type": "tokens",
+    "channel_type": 31,
+    "input": 0.45,
+    "output": 0.45
   },
   {
     "model": "accounts/fireworks/models/llama-v3p1-8b-instruct",
-    "type": "times",
+    "type": "tokens",
     "channel_type": 31,
     "input": 0.1,
     "output": 0.1
   },
   {
     "model": "accounts/fireworks/models/llama-v3p1-70b-instruct",
-    "type": "times",
+    "type": "tokens",
     "channel_type": 31,
     "input": 0.45,
     "output": 0.45
   },
   {
     "model": "accounts/fireworks/models/llama-v3p1-405b-instruct",
-    "type": "times",
+    "type": "tokens",
     "channel_type": 31,
     "input": 1.5,
     "output": 1.5
   },
   {
     "model": "accounts/fireworks/models/llama-v3p2-11b-vision-instruct",
-    "type": "times",
+    "type": "tokens",
     "channel_type": 31,
     "input": 0.1,
     "output": 0.1
   },
   {
     "model": "accounts/fireworks/models/llama-v3p2-90b-vision-instruct",
-    "type": "times",
+    "type": "tokens",
+    "channel_type": 31,
+    "input": 0.45,
+    "output": 0.45
+  },
+  {
+    "model": "accounts/fireworks/models/llama-v3p3-70b-instruct",
+    "type": "tokens",
     "channel_type": 31,
     "input": 0.45,
     "output": 0.45
