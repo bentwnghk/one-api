@@ -29,7 +29,6 @@
   },
   "alloy 映射": "alloy 映射",
   "analytics": "分析",
-  "playground": "聊天",
   "analytics_index": {
     "active": "正常",
     "averageLatency": "平均延遲",
@@ -954,8 +953,6 @@
     "id": "ID",
     "name": "名稱",
     "nameTip": "給用戶看的名稱",
-    "apiRate": "API速率",
-    "apiRateTip": "每分鐘允許的請求數,當速率小於60時，使用計數器限制器，當速率大於等於60時，使用令牌桶限制器，僅在啟用Redis時有效",
     "public": "是否公開",
     "ratio": "倍率",
     "symbol": "標識",
