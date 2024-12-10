@@ -576,9 +576,9 @@
         "save": "保存倍率設置"
       },
       "chatLinkSettings": {
-        "title": "聊天鏈接設置",
-        "info": "配置聊天鏈接，該配置在 [API 金鑰] 頁面中的聊天生效以及首頁 Playground 中的聊天生效。鏈接中可以使用 {key} 替換用戶的密鑰，{server} 替換伺服器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，會默認配置以下鏈接：Mr.🆖 AI：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序規則：值越大越靠前，值相同則按照配置順序。",
-        "save": "保存聊天鏈接設置"
+        "info": "配置聊天鏈接，該配置在 [API 金鑰] 頁面中的聊天生效以及首頁的聊天生效。<br />鏈接中可以使用 &#123;key&#125; 替換用戶密鑰， &#123;server&#125; 替換伺服器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}<br />如果未配置，會默認配置以下鏈接：<br />Mr.🆖 AI：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}<br />Mr.🆖 AI Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}<br />Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}<br />排序規則：值越大越靠前，值相同則按照配置順序。",
+        "save": "保存聊天鏈接設置",
+        "title": "聊天鏈接設置"
       }
     },
     "systemSettings": {
@@ -599,7 +599,8 @@
         "weChatAuth": "允許通過微信登錄和註冊",
         "larkAuth": "允許通過飛書登錄和註冊",
         "registerEnabled": "允許新用戶註冊（此項為否時，新用戶將無法以任何方式進行註冊）",
-        "turnstileCheck": "啟用 Turnstile 用戶校驗"
+        "turnstileCheck": "啟用 Turnstile 用戶校驗",
+        "gitHubOldIdClose": "關閉 GitHub 老 ID 登錄"
       },
       "configureEmailDomainWhitelist": {
         "title": "配置郵箱域名白名單",

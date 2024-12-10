@@ -156,7 +156,7 @@ const ChatLinksDataGrid = ({ links, onChange }) => {
       {
         field: 'show',
         sortable: false,
-        headerName: '於 Playground 顯示',
+        headerName: '於 [聊天] 顯示',
         flex: 1,
         minWidth: 200,
         type: 'boolean',
