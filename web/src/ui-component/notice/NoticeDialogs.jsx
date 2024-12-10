@@ -36,7 +36,7 @@ export const NoticeDialogs = () => {
       >
         <Icon icon="solar:close-circle-bold" />
       </IconButton>
-      <DialogContent dividers sx={{ backgroundColor: '#a0f235' }}> {/* Set background color */}
+      <DialogContent dividers sx={{ color: (theme) => theme.palette.grey[500] }}>
         <div dangerouslySetInnerHTML={{ __html: notice || '' }} />
       </DialogContent>
     </Dialog>
