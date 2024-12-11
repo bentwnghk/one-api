@@ -14,12 +14,12 @@ import (
 )
 
 var (
-	ErrTokenNotFound          = errors.New("令牌不存在")
-	ErrTokenExpired           = errors.New("令牌已过期")
-	ErrTokenQuotaExhausted    = errors.New("令牌额度已用尽")
-	ErrTokenStatusUnavailable = errors.New("令牌状态不可用")
-	ErrTokenInvalid           = errors.New("无效的令牌")
-	ErrTokenQuotaGet          = errors.New("获取令牌额度失败")
+	ErrTokenNotFound          = errors.New("該API金鑰不存在")
+	ErrTokenExpired           = errors.New("該API金鑰已過期")
+	ErrTokenQuotaExhausted    = errors.New("該API金鑰額度已用盡")
+	ErrTokenStatusUnavailable = errors.New("該API金鑰狀態不可用")
+	ErrTokenInvalid           = errors.New("無效的API金鑰")
+	ErrTokenQuotaGet          = errors.New("獲取API金鑰額度失敗")
 )
 
 type Token struct {
