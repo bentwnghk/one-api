@@ -1122,5 +1122,16 @@
     "apiRate": "API rate",
     "apiRateTip": "The number of requests allowed per minute. When the rate is less than 60, use a counter limiter; when the rate is greater than or equal to 60, use a token bucket limiter. This setting is only effective when Redis is enabled."
   },
-  "playground": "Chat"
+  "playground": "Chat",
+  "modelOwnedby": {
+    "action": "Operation",
+    "create": "New model ownership",
+    "icon": "Icon",
+    "iconTip": "Icons are used to display in the model list.",
+    "id": "ID",
+    "idTip": "Channel ID, a number. Please set it to a number greater than 1000; once set, it cannot be changed.",
+    "name": "Name",
+    "nameTip": "Channel Name",
+    "title": "Model Ownership"
+  }
 }
