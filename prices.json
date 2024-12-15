@@ -1204,6 +1204,48 @@
     "output": 3
   },
   {
+    "model": "accounts/fireworks/models/llama-v3p1-8b-instruct",
+    "type": "tokens",
+    "channel_type": 31,
+    "input": 0.1,
+    "output": 0.1
+  },
+  {
+    "model": "accounts/fireworks/models/llama-v3p1-70b-instruct",
+    "type": "tokens",
+    "channel_type": 31,
+    "input": 0.45,
+    "output": 0.45
+  },
+  {
+    "model": "accounts/fireworks/models/llama-v3p1-405b-instruct",
+    "type": "tokens",
+    "channel_type": 31,
+    "input": 1.5,
+    "output": 1.5
+  },
+  {
+    "model": "accounts/fireworks/models/llama-v3p2-11b-vision-instruct",
+    "type": "tokens",
+    "channel_type": 31,
+    "input": 0.1,
+    "output": 0.1
+  },
+  {
+    "model": "accounts/fireworks/models/llama-v3p2-90b-vision-instruct",
+    "type": "tokens",
+    "channel_type": 31,
+    "input": 0.45,
+    "output": 0.45
+  },
+  {
+    "model": "accounts/fireworks/models/llama-v3p3-70b-instruct",
+    "type": "tokens",
+    "channel_type": 31,
+    "input": 0.45,
+    "output": 0.45
+  },
+  {
     "model": "gemma-7b-it",
     "type": "tokens",
     "channel_type": 31,
