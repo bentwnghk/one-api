@@ -75,7 +75,7 @@ const Setting = {
         },
         {
           id: 'model_ownedby',
-          title: '模型归属',
+          title: '模型歸屬',
           type: 'item',
           url: '/panel/model_ownedby',
           icon: icons.IconModel,
