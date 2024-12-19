@@ -220,7 +220,19 @@
     "outputAudioTokens": "输出音频Tokens",
     "cachedTokens": "缓存Tokens",
     "totalInputTokens": "计算输入Tokens",
-    "totalOutputTokens": "计算输出Tokens"
+    "totalOutputTokens": "计算输出Tokens",
+    "content": {
+      "channel_group": "分组: {{ channel_group }}",
+      "group_discount": "分组折扣: {{ discount }}",
+      "input_price": "输入: ${{ price }} /M",
+      "output_price": "输出: ${{ price }} /M",
+      "times_price": "${{ times }} / 次",
+      "original_input_price": "原输入价格: ${{ price }} /M",
+      "original_output_price": "原输出价格: ${{ price }} /M",
+      "original_times_price": "原价格: ${{ times }} / 次",
+      "calculate_steps": "计算步骤: ",
+      "calculate_steps_tip": "PS：本系统按照积分计算，所有金额均为积分换算而来，1积分=$0.000002，最低消费为1积分，本计算步骤仅供参考，以实际扣费为准"
+    }
   },
   "redemptionPage": {
     "pageTitle": "兑换",
@@ -409,7 +421,10 @@
     "search": "搜索",
     "tokens": "按量付费",
     "times": "按次付费",
-    "noneGroup": "当前分组不可用"
+    "noneGroup": "当前分组不可用",
+    "other": "其他",
+    "inputAudioTokensRatio": "音频输入倍率",
+    "outputAudioTokensRatio": "音频输出倍率"
   },
   "paymentPage": {
     "orderList": "订单列表",
@@ -588,6 +603,11 @@
         "title": "聊天链接设置",
         "info": "配置聊天链接，该配置在 [API 金钥] 页面中的聊天生效以及首页的 Playground 中的聊天生效。链接中可以使用 {key} 替换用户的金钥，{server} 替换服务器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，会默认配置以下链接：Mr.🆖 AI：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序规则：值越大越靠前，值相同则按照配置顺序。",
         "save": "保存聊天链接设置"
+      },
+      "audioTokenSettings": {
+        "title": "音频令牌设置",
+        "info": "配置音频倍率. 配置格式为JSON，键为模型名称，值为输入输出令牌倍率。例如：{\"gpt-4o-audio-preview\":{\"input_audio_tokens_ratio\":40,\"output_audio_tokens_ratio\":20},\"gpt-4o-mini-audio-preview\":{\"input_audio_tokens_ratio\":67,\"output_audio_tokens_ratio\":34}}",
+        "save": "保存音频令牌设置"
       }
     },
     "systemSettings": {
