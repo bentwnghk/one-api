@@ -213,7 +213,19 @@
     "outputLabel": "輸出",
     "quotaLabel": "額度",
     "detailLabel": "詳情",
-    "searchLogsInfo": "充值記錄以及邀請記錄請在日誌中查詢。充值記錄請在日誌中選擇類型【充值】查詢；邀請記錄請在日誌中選擇類型【系統】查詢"
+    "searchLogsInfo": "充值記錄以及邀請記錄請在日誌中查詢。充值記錄請在日誌中選擇類型【充值】查詢；邀請記錄請在日誌中選擇類型【系統】查詢",
+    "content": {
+      "calculate_steps": "計算步驟:",
+      "calculate_steps_tip": "PS：本系統按照積分計算，所有金額均為積分換算而來，1積分=$0.000002，最低消費為1積分，本計算步驟僅供參考，以實際扣費為準。",
+      "channel_group": "分組: {{ channel_group }}",
+      "group_discount": "分組折扣: {{ discount }}",
+      "input_price": "輸入: ${{ price }} /M",
+      "original_input_price": "原輸入價格: ${{ price }} /M",
+      "original_output_price": "原輸出價格: ${{ price }} /M",
+      "original_times_price": "原價格: ${{ times }} / 次",
+      "output_price": "輸出: ${{ price }} /M",
+      "times_price": "${{ times }} / 次"
+    }
   },
   "redemptionPage": {
     "pageTitle": "兌換",
@@ -466,6 +478,11 @@
   "setting_index": {
     "operationSettings": {
       "title": "運營設置",
+      "audioTokenSettings": {
+        "info": "配置音頻倍率。配置格式為JSON，鍵為模型名稱，值為輸入輸出權杖倍率。例如：{\"gpt-4o-audio-preview\":{\"input_audio_tokens_ratio\":40,\"output_audio_tokens_ratio\":20},\"gpt-4o-mini-audio-preview\":{\"input_audio_tokens_ratio\":67,\"output_audio_tokens_ratio\":34}}",
+        "save": "保存音頻金鑰設置",
+        "title": "音頻金鑰設置"
+      },
       "generalSettings": {
         "title": "通用設置",
         "topUpLink": {
