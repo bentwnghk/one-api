@@ -311,8 +311,8 @@
     "progress": "進度",
     "timeConsuming": "耗時",
     "resultImage": "結果圖片",
-    "prompt": "Prompt",
-    "promptEn": "PromptEn",
+    "prompt": "提示",
+    "promptEn": "提示（英文）",
     "failureReason": "失敗原因"
   },
   "userPage": {
@@ -414,7 +414,10 @@
     "search": "搜尋",
     "times": "按次付費",
     "tokens": "按量付費",
-    "type": "類型"
+    "type": "類型",
+    "inputAudioTokensRatio": "音頻輸入倍率",
+    "other": "其他",
+    "outputAudioTokensRatio": "音頻輸出倍率"
   },
   "paymentPage": {
     "orderList": "訂單列表",
