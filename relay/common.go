@@ -409,7 +409,7 @@ func relayResponseWithErr(c *gin.Context, err *types.OpenAIErrorWithStatusCode) 
 	}
 
 	if newErr.StatusCode == http.StatusTooManyRequests {
-		newErr.OpenAIError.Message = "当前分组上游负载已饱和，请稍后再试"
+		newErr.OpenAIError.Message = "目前分組上游負載已飽和，請稍後再試"
 	}
 	statusCode := newErr.StatusCode
 	// 如果message中已经包含 request id: 则不再添加
