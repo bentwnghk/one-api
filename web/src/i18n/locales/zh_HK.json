@@ -148,6 +148,7 @@
     "delChannel": "刪除渠道",
     "delChannelCount": "已刪除所有禁用渠道，共計 {{count}} 個",
     "delChannelInfo": "是否刪除渠道",
+    "check": "檢測",
     "delTag": "刪除標籤",
     "delTagInfo1": "是否刪除標籤",
     "delTagInfo2": "⚠️ 注意：該操作會刪除渠道。",

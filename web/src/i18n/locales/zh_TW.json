@@ -876,6 +876,7 @@
     "otherArg": "其他參數",
     "delChannel": "刪除渠道",
     "delChannelInfo": "是否刪除渠道",
+    "check": "檢測",
     "manual": "手動",
     "auto": "自動",
     "testAllChannel": "已成功開始測試所有通道，請刷新頁面查看結果。",

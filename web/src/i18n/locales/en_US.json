@@ -148,6 +148,7 @@
     "delChannel": "Delete channel",
     "delChannelCount": "Removed all disabled channels, {{count}} in total",
     "delChannelInfo": "Whether to delete the channel",
+    "check": "Check",
     "delTag": "Delete tag",
     "delTagInfo1": "Whether to delete the label",
     "delTagInfo2": "⚠️ Note: This operation will delete the channel.",
