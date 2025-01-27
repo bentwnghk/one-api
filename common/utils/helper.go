@@ -355,11 +355,3 @@ func GetGinValue[T any](c *gin.Context, key string) (T, bool) {
 func GetPointer[T any](val T) *T {
 	return &val
 }
-
-func GetLocalTimezone() string {
-	if tz := os.Getenv("TZ"); tz != "" {
-		return tz
-	}
-
-	return "Asia/Shanghai"
-}
