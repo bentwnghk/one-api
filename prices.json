@@ -710,8 +710,8 @@
     "model": "qwen-max",
     "type": "tokens",
     "channel_type": 17,
-    "input": 1.4286,
-    "output": 4.2857
+    "input": 0.7143,
+    "output": 2.14285
   },
   {
     "model": "qwen-max-longcontext",
