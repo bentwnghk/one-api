@@ -26,7 +26,7 @@ func (f AzureProviderFactory) Create(channel *model.Channel) base.ProviderInterf
 	}
 
     // Check the model name and set SupportStreamOptions accordingly
-    if channel.modelName == "o1-mini" || channel.modelName == "o1-preview" {
+    if channel.Model == "o1-mini" || channel.Model == "o1-preview" {
         provider.SupportStreamOptions = false
     }
 
