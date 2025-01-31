@@ -12,7 +12,7 @@ type AzureProviderFactory struct{}
 // 创建 AzureProvider
 func (f AzureProviderFactory) Create(channel *model.Channel) base.ProviderInterface {
 	config := getAzureConfig()
-	return &AzureProvider{
+	provider := &AzureProvider{
 		OpenAIProvider: openai.OpenAIProvider{
 			BaseProvider: base.BaseProvider{
 				Config:    config,
@@ -21,9 +21,16 @@ func (f AzureProviderFactory) Create(channel *model.Channel) base.ProviderInterf
 			},
 			IsAzure:              true,
 			BalanceAction:        false,
-			SupportStreamOptions: true,
+			SupportStreamOptions: true, // Default to true
 		},
 	}
+
+    // Check the model name and set SupportStreamOptions accordingly
+    if channel.modelName == "o1-mini" || channel.modelName == "o1-preview" {
+        provider.SupportStreamOptions = false
+    }
+
+    return provider
 }
 
 func getAzureConfig() base.ProviderConfig {
