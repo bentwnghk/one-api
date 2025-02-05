@@ -161,7 +161,8 @@
     "requiredName": "名稱 不能為空",
     "validJson": "必須是有效的JSON字符串",
     "collapse": "收起",
-    "expand": "展開"
+    "expand": "展開",
+    "copyModels": "複製模型"
   },
   "token_index": {
     "token": "API 金鑰",
