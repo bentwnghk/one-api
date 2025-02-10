@@ -426,7 +426,7 @@
     "inputMultiplier": "输入价格",
     "inputPrice": "输入价格",
     "outputMultiplier": "输出价格",
-    "outputPrice": "输出价格",
+    "rate": "倍率",
     "search": "搜索",
     "tokens": "按量付费",
     "times": "按次付费",
