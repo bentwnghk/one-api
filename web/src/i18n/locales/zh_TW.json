@@ -425,14 +425,14 @@
     "model": "模型名稱",
     "noneGroup": "當前分組不可用",
     "outputMultiplier": "輸出價格",
-    "outputPrice": "輸出價格",
     "search": "搜尋",
     "times": "按次付費",
     "tokens": "按量付費",
     "type": "類型",
     "inputAudioTokensRatio": "音頻輸入倍率",
     "other": "其他",
-    "outputAudioTokensRatio": "音頻輸出倍率"
+    "outputAudioTokensRatio": "音頻輸出倍率",
+    "rate": "倍率"
   },
   "paymentPage": {
     "orderList": "訂單列表",
