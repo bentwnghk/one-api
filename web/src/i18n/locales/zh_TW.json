@@ -501,6 +501,11 @@
         "save": "保存音頻金鑰設置",
         "title": "音頻金鑰設置"
       },
+      "disableChannelKeywordsSettings": {
+        "info": "配置停用通道關鍵字，每行一個關鍵字。",
+        "save": "保留停用通道關鍵字設置",
+        "title": "停用通道關鍵詞設置"
+      },
       "generalSettings": {
         "title": "通用設置",
         "topUpLink": {
@@ -530,6 +535,8 @@
       },
       "otherSettings": {
         "title": "其他設置",
+        "claudeAPIEnabled": "是否開啟 Claude API",
+        "geminiAPIEnabled": "是否開啟 Gemini API",
         "mjNotify": "Midjourney 允許回調 (會泄露服務器 IP 地址)",
         "alert": "當用戶使用 vision 模型並提供了圖片鏈接時，我們的服務器需要下載這些圖片並計算 tokens。為了在下載圖片時保護服務器的 IP 地址不被泄露，可以在下方配置一個代理。這個代理配置使用的是 HTTP 或 SOCKS5 代理。如果你是個人用戶，這個配置可以不用理會。代理格式為 http://127.0.0.1:1080 或 socks5://127.0.0.1:1080",
         "chatImageRequestProxy": {
