@@ -502,9 +502,9 @@
         "title": "音頻金鑰設置"
       },
       "disableChannelKeywordsSettings": {
-        "info": "配置停用通道關鍵字，每行一個關鍵字。",
-        "save": "保留停用通道關鍵字設置",
-        "title": "停用通道關鍵詞設置"
+        "info": "配置停用渠道關鍵詞，每行一個關鍵詞。",
+        "save": "保存停用渠道關鍵詞設置",
+        "title": "停用渠道關鍵詞設置"
       },
       "generalSettings": {
         "title": "通用設置",
