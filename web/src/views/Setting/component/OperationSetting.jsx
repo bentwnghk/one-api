@@ -32,6 +32,7 @@ const OperationSetting = () => {
     DisplayInCurrencyEnabled: '',
     ApproximateTokenEnabled: '',
     RetryTimes: 0,
+    RetryTimeOut: 0,
     RetryCooldownSeconds: 0,
     MjNotifyEnabled: '',
     ChatImageRequestProxy: '',
@@ -147,8 +148,8 @@ const OperationSetting = () => {
         }
         break;
       case 'general':
-        if (inputs.QuotaPerUnit < 0 || inputs.RetryTimes < 0 || inputs.RetryCooldownSeconds < 0) {
-          showError('單位額度、重試次數、冷卻時間不能為負數');
+        if (inputs.QuotaPerUnit < 0 || inputs.RetryTimes < 0 || inputs.RetryCooldownSeconds < 0 || inputs.RetryTimeOut < 0) {
+          showError('單位額度、重試次數、冷卻時間、重試超時時間不能為負數');
           return;
         }
 
@@ -166,6 +167,9 @@ const OperationSetting = () => {
         }
         if (originInputs['RetryCooldownSeconds'] !== inputs.RetryCooldownSeconds) {
           await updateOption('RetryCooldownSeconds', inputs.RetryCooldownSeconds);
+        }
+        if (originInputs['RetryTimeOut'] !== inputs.RetryTimeOut) {
+          await updateOption('RetryTimeOut', inputs.RetryTimeOut);
         }
         break;
       case 'other':
@@ -294,6 +298,18 @@ const OperationSetting = () => {
                 onChange={handleInputChange}
                 label={t('setting_index.operationSettings.generalSettings.retryCooldownSeconds.label')}
                 placeholder={t('setting_index.operationSettings.generalSettings.retryCooldownSeconds.placeholder')}
+                disabled={loading}
+              />
+            </FormControl>
+            <FormControl fullWidth>
+              <InputLabel htmlFor="RetryTimeOut">{t('setting_index.operationSettings.generalSettings.retryTimeOut.label')}</InputLabel>
+              <OutlinedInput
+                id="RetryTimeOut"
+                name="RetryTimeOut"
+                value={inputs.RetryTimeOut}
+                onChange={handleInputChange}
+                label={t('setting_index.operationSettings.generalSettings.retryTimeOut.label')}
+                placeholder={t('setting_index.operationSettings.generalSettings.retryTimeOut.placeholder')}
                 disabled={loading}
               />
             </FormControl>
