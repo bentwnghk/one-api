@@ -528,6 +528,10 @@
           "label": "重試間隔 (秒)",
           "placeholder": "重試間隔 (秒)"
         },
+        "retryTimeOut": {
+          "label": "重試超時時間 (秒)",
+          "placeholder": "重試超時時間 (秒)"
+        },
         "displayInCurrency": "以貨幣形式顯示額度",
         "displayTokenStat": "計費相關 API 顯示金鑰額度而非用戶額度",
         "approximateToken": "使用近似的方式估算 token 數以減少計算量",

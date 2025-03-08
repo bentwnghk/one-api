@@ -594,6 +594,10 @@
           "label": "Retry Cooldown (seconds)",
           "placeholder": "Retry cooldown (seconds)"
         },
+        "retryTimeOut": {
+          "label": "Retry Timeout (seconds)",
+          "placeholder": "Retry Timeout (seconds)"
+        },
         "retryTimes": {
           "label": "Retry Times",
           "placeholder": "Number of retries"

@@ -596,6 +596,10 @@
           "label": "重試間隔(秒)",
           "placeholder": "重試間隔(秒)"
         },
+        "retryTimeOut": {
+          "label": "重試超時時間(秒)",
+          "placeholder": "重試超時時間(秒)"
+        },
         "retryTimes": {
           "label": "重試次數",
           "placeholder": "重試次數"
