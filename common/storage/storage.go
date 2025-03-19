@@ -82,8 +82,6 @@ func InitS3Storage() {
 		cdnurl = endpoint
 	}
 
-	expirationDays := viper.GetInt("storage.s3.expirationDays")
-
-	s3Upload := drives.NewS3Upload(endpoint, accessKeyId, accessKeySecret, bucketName, cdnurl, expirationDays)
+	s3Upload := drives.NewS3Upload(endpoint, accessKeyId, accessKeySecret, bucketName, cdnurl)
 	AddStorageDrive(s3Upload)
 }
