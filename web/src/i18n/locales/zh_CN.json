@@ -225,6 +225,7 @@
     "cachedReadTokens": "缓存读取Tokens",
     "totalInputTokens": "计算输入Tokens",
     "totalOutputTokens": "计算输出Tokens",
+    "sourceIp": "来源IP",
     "content": {
       "channel_group": "分组: {{ channel_group }}",
       "group_discount": "分组折扣: {{ discount }}",
@@ -305,11 +306,12 @@
     "startTime": "起始时间",
     "endTime": "结束时间",
     "type": "类型",
-    "channelId": "渠道 ID",
-    "channelIdPlaceholder": "渠道 ID",
-    "taskId": "任务 ID",
-    "taskIdPlaceholder": "任务 ID",
-    "username": "用户名称"
+    "channelId": "渠道ID",
+    "channelIdPlaceholder": "渠道ID",
+    "taskId": "任务ID",
+    "taskIdPlaceholder": "任务ID",
+    "username": "用户名称",
+    "sourceIp": "来源IP"
   },
   "midjourneyPage": {
     "midjourney": "Midjourney",
