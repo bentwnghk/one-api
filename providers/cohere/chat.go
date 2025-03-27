@@ -100,7 +100,7 @@ func ConvertFromChatOpenai(request *types.ChatCompletionRequest) (*V2ChatRequest
 		P:                request.TopP,
 		K:                request.TopK,
 		Seed:             request.Seed,
-		FrequencyPenalty: request.FrequencyPenalty,
+		FrequencyPenalty: &request.FrequencyPenalty,
 		PresencePenalty:  request.PresencePenalty,
 		Stream:           request.Stream,
 		StopSequences:    request.Stop,
