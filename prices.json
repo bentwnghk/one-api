@@ -931,6 +931,13 @@
     "output": 0.28125
   },
   {
+    "model": "gemini-1.5-flash-002",
+    "type": "tokens",
+    "channel_type": 25,
+    "input": 0.0375,
+    "output": 0.15
+  },
+  {
     "model": "gemini-1.5-flash-exp-0827",
     "type": "tokens",
     "channel_type": 25,
@@ -945,11 +952,18 @@
     "output": 0.28125
   },
   {
+    "model": "gemini-1.5-flash-8b",
+    "type": "tokens",
+    "channel_type": 25,
+    "input": 0.0375,
+    "output": 0.15
+  },
+  {
     "model": "gemini-ultra",
     "type": "tokens",
     "channel_type": 25,
-    "input": 1,
-    "output": 1
+    "input": 0.0375,
+    "output": 0.015
   },
   {
     "model": "gemini-pro",
@@ -973,18 +987,32 @@
     "output": 0.75
   },
   {
-    "model": "google/gemma-7b-it:free",
+    "model": "gemini-2.0-flash",
     "type": "tokens",
     "channel_type": 25,
-    "input": 0,
-    "output": 0
+    "input": 0.25,
+    "output": 0.25
   },
   {
-    "model": "gemma2-9b-it",
+    "model": "gemini-2.0-flash-lite-preview",
     "type": "tokens",
     "channel_type": 25,
-    "input": 0,
-    "output": 0
+    "input": 0.25,
+    "output": 0.25
+  },
+  {
+    "model": "gemini-2.0-pro-exp",
+    "type": "tokens",
+    "channel_type": 25,
+    "input": 0.0,
+    "output": 0.0
+  },
+  {
+    "model": "gemini-2.0-pro-exp-02-05",
+    "type": "tokens",
+    "channel_type": 25,
+    "input": 0.0,
+    "output": 0.0
   },
   {
     "model": "Baichuan-Text-Embedding",
