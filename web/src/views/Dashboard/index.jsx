@@ -11,6 +11,8 @@ import UserCard from 'ui-component/cards/UserCard';
 import { useTranslation } from 'react-i18next';
 import { UserContext } from 'contexts/UserContext';
 import Label from 'ui-component/Label';
+import InviteCard from './component/InviteCard';
+import QuotaLogWeek from './component/QuotaLogWeek';
 
 const Dashboard = () => {
   const [isLoading, setLoading] = useState(true);
@@ -76,6 +78,7 @@ const Dashboard = () => {
               type="request"
               chartData={requestChart?.chartData}
               todayValue={requestChart?.todayValue}
+              lastDayValue={requestChart?.lastDayValue}
             />
           </Grid>
           <Grid item lg={4} xs={12}>
@@ -85,6 +88,7 @@ const Dashboard = () => {
               type="quota"
               chartData={quotaChart?.chartData}
               todayValue={quotaChart?.todayValue}
+              lastDayValue={quotaChart?.lastDayValue}
             />
           </Grid>
           <Grid item lg={4} xs={12}>
@@ -94,6 +98,7 @@ const Dashboard = () => {
               type="token"
               chartData={tokenChart?.chartData}
               todayValue={tokenChart?.todayValue}
+              lastDayValue={tokenChart?.lastDayValue}
             />
           </Grid>
         </Grid>
@@ -102,7 +107,10 @@ const Dashboard = () => {
       <Grid item xs={12}>
         <Grid container spacing={gridSpacing}>
           <Grid item lg={8} xs={12}>
-            <ApexCharts isLoading={isLoading} chartDatas={statisticalData} />
+            <ApexCharts isLoading={isLoading} chartDatas={statisticalData} title={t('dashboard_index.week_model_statistics')} />
+            <Box mt={2}>
+              <QuotaLogWeek />
+            </Box>
           </Grid>
           <Grid item lg={4} xs={12}>
             <UserCard>
@@ -171,6 +179,9 @@ const Dashboard = () => {
                 </Box>
               </Box>
             </UserCard>
+            <Box mt={2}>
+              <InviteCard />
+            </Box>
           </Grid>
         </Grid>
       </Grid>
@@ -240,9 +251,18 @@ function getBarDataGroup(data) {
 
 function getLineCardOption(lineDataGroup, field) {
   let todayValue = 0;
+  let lastDayValue = 0;
   let chartData = null;
-  const lastItem = lineDataGroup.length - 1;
-  let lineData = lineDataGroup.map((item, index) => {
+  
+  // 获取当前日期和昨天的日期（YYYY-MM-DD格式）
+  const today = new Date();
+  const todayStr = today.toISOString().split('T')[0];
+  
+  const yesterday = new Date(today);
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yesterdayStr = yesterday.toISOString().split('T')[0];
+  
+  let lineData = lineDataGroup.map((item) => {
     let tmp = {
       x: item.date,
       y: item[field]
@@ -256,8 +276,12 @@ function getLineCardOption(lineDataGroup, field) {
         break;
     }
 
-    if (index == lastItem) {
+    // 根据日期判断是否为今天或昨天的数据
+    if (item.date === todayStr) {
       todayValue = tmp.y;
+    }
+    if (item.date === yesterdayStr) {
+      lastDayValue = tmp.y;
     }
     return tmp;
   });
@@ -265,14 +289,17 @@ function getLineCardOption(lineDataGroup, field) {
   switch (field) {
     case 'RequestCount':
       // chartData = generateLineChartOptions(lineData, '次');
+      lastDayValue = parseFloat(lastDayValue);
       todayValue = renderNumber(todayValue);
       break;
     case 'Quota':
       // chartData = generateLineChartOptions(lineData, '美元');
+      lastDayValue = parseFloat(lastDayValue);
       todayValue = '$' + renderNumber(todayValue);
       break;
     case 'PromptTokens':
       // chartData = generateLineChartOptions(lineData, '');
+      lastDayValue = parseFloat(lastDayValue);
       todayValue = renderNumber(todayValue);
       break;
   }
@@ -285,5 +312,5 @@ function getLineCardOption(lineDataGroup, field) {
     ]
   };
 
-  return { chartData: chartData, todayValue: todayValue };
+  return { chartData: chartData, todayValue: todayValue, lastDayValue: lastDayValue };
 }
