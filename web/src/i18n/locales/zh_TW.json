@@ -714,11 +714,11 @@
         "clientSecret": "客戶端密鑰 (Secret)",
         "clientSecretPlaceholder": "敏感信息不會發送到前端顯示",
         "issuer": "OIDC發行者 (Issuer)",
-        "issuerPlaceholder": "請輸入OIDC發行者",
+        "issuerPlaceholder": "請輸入OIDC發行者，例如: https://accounts.google.com",
         "scopes": "權限范圍 (Scopes)",
         "scopesPlaceholder": "請輸入權限范圍 (用英文逗號分隔), 通常為 'openid,email,profile'",
         "usernameClaims": "用戶名聲明 (Claims)",
-        "usernameClaimsPlaceholder": "請輸入用戶名聲明 (例如 username)",
+        "usernameClaimsPlaceholder": "請輸入用戶名聲明，例如: name",
         "saveButton": "保存OIDC設置"
       },
       "configureWeChatServer": {
@@ -990,6 +990,10 @@
   },
   "pricing_edit": {
     "typeErr": "類型 錯誤",
+    "locked_title": "鎖定價格",
+    "locked": "已鎖定價格",
+    "unlocked": "未鎖定價格",
+    "lockedTip": "價格鎖定後無法通過價格更新伺服器和程序覆蓋。如果您所配置的價格希望隨程序或價格伺服器同步更新，請勿鎖定。",
     "requiredType": "類型 不能為空",
     "channelTypeErr": "渠道類型 錯誤",
     "requiredChannelType": "渠道類型 不能為空",

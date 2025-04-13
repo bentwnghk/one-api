@@ -17,16 +17,16 @@ import (
 func OIDCEndpoint(c *gin.Context) {
 	if !config.OIDCAuthEnabled {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "管理员未开启通过OIDC登录",
+			"message": "管理員未開啟透過OIDC登入",
 			"success": false,
 		})
 		return
 	}
 	oidcConfig, err := oidc.GetOIDCConfigInstance()
 	if err != nil {
-		logger.SysError("获取 OIDC 配置失败, err: " + err.Error())
+		logger.SysError("獲取 OIDC 配置失敗: " + err.Error())
 		c.JSON(http.StatusOK, gin.H{
-			"message": "获取 OIDC 配置失败",
+			"message": "獲取 OIDC 配置失敗",
 			"success": false,
 		})
 		return
@@ -56,7 +56,7 @@ func OIDCEndpoint(c *gin.Context) {
 func OIDCAuth(c *gin.Context) {
 	if !config.OIDCAuthEnabled {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "管理员未开启通过OIDC登录",
+			"message": "管理員未開啟透過OIDC登入",
 			"success": false,
 		})
 		return
@@ -76,9 +76,9 @@ func OIDCAuth(c *gin.Context) {
 	// 获取OIDC配置
 	oidcConfig, err := oidc.GetOIDCConfigInstance()
 	if err != nil {
-		logger.SysError("获取 OIDC 配置失败, err: " + err.Error())
+		logger.SysError("獲取 OIDC 配置失敗: " + err.Error())
 		c.JSON(http.StatusOK, gin.H{
-			"message": "获取 OIDC 配置失败",
+			"message": "獲取 OIDC 配置失敗",
 			"success": false,
 		})
 		return
@@ -104,7 +104,7 @@ func OIDCAuth(c *gin.Context) {
 	if idToken.Subject == "" {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "ID Token 中没有 Subject",
+			"message": "ID Token 中沒有 Subject",
 		})
 		return
 	}
@@ -120,7 +120,7 @@ func OIDCAuth(c *gin.Context) {
 	userName, ok := claims[config.OIDCUsernameClaims]
 	if !ok || userName == nil {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "用户没有OIDC登录权限",
+			"message": "用戶沒有 OIDC 登入權限",
 			"success": false,
 		})
 		return
@@ -139,7 +139,7 @@ func OIDCAuth(c *gin.Context) {
 			return
 		}
 		c.JSON(http.StatusOK, gin.H{
-			"message": "用户已被封禁或不存在",
+			"message": "用戶已被封鎖或不存在",
 			"success": false,
 		})
 		return
@@ -147,7 +147,7 @@ func OIDCAuth(c *gin.Context) {
 
 	// OIDCid查询失败，则尝试通过username查询
 	if !errors.Is(err, gorm.ErrRecordNotFound) {
-		logger.SysError("查询用户错误: " + err.Error())
+		logger.SysError("查詢用戶錯誤: " + err.Error())
 		c.JSON(http.StatusOK, gin.H{
 			"message": err.Error(),
 			"success": false,
@@ -171,7 +171,7 @@ func OIDCAuth(c *gin.Context) {
 			return
 		}
 		c.JSON(http.StatusOK, gin.H{
-			"message": "用户已被封禁或不存在",
+			"message": "用戶已被封鎖或不存在",
 			"success": false,
 		})
 		return
@@ -179,7 +179,7 @@ func OIDCAuth(c *gin.Context) {
 
 	// 用户不存在，尝试注册
 	if !errors.Is(err, gorm.ErrRecordNotFound) {
-		logger.SysError("查询用户错误: " + err.Error())
+		logger.SysError("查詢用戶錯誤: " + err.Error())
 		c.JSON(http.StatusOK, gin.H{
 			"message": err.Error(),
 			"success": false,
@@ -191,7 +191,7 @@ func OIDCAuth(c *gin.Context) {
 	if !config.RegisterEnabled {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "管理员关闭了新用户注册",
+			"message": "管理員關閉了新用戶註冊",
 		})
 		return
 	}

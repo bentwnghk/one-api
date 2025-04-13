@@ -83,7 +83,7 @@ func SendEmailVerification(c *gin.Context) {
 	if err := common.Validate.Var(email, "required,email"); err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无效的参数",
+			"message": "無效的參數",
 		})
 		return
 	}
@@ -98,7 +98,7 @@ func SendEmailVerification(c *gin.Context) {
 		if !allowed {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "管理员启用了邮箱域名白名单，您的邮箱地址的域名不在白名单中",
+				"message": "管理員啟用了郵箱網域白名單，您的郵箱地址的網域不在白名單中",
 			})
 			return
 		}
@@ -106,7 +106,7 @@ func SendEmailVerification(c *gin.Context) {
 	if model.IsEmailAlreadyTaken(email) {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "邮箱地址已被占用",
+			"message": "郵箱地址已被佔用",
 		})
 		return
 	}
@@ -131,7 +131,7 @@ func SendPasswordResetEmail(c *gin.Context) {
 	if err := common.Validate.Var(email, "required,email"); err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无效的参数",
+			"message": "無效的參數",
 		})
 		return
 	}
@@ -143,7 +143,7 @@ func SendPasswordResetEmail(c *gin.Context) {
 	if err := user.FillUserByEmail(); err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "该邮箱地址未注册",
+			"message": "該郵箱地址未註冊",
 		})
 		return
 	}
@@ -182,7 +182,7 @@ func ResetPassword(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无效的参数",
+			"message": "無效的參數",
 		})
 		return
 	}
@@ -190,14 +190,14 @@ func ResetPassword(c *gin.Context) {
 	if req.Email == "" || req.Token == "" {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无效的参数",
+			"message": "無效的參數",
 		})
 		return
 	}
 	if !common.VerifyCodeWithKey(req.Email, req.Token, common.PasswordResetPurpose) {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "重置链接非法或已过期",
+			"message": "重置連結非法或已過期",
 		})
 		return
 	}

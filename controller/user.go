@@ -24,7 +24,7 @@ type LoginRequest struct {
 func Login(c *gin.Context) {
 	if !config.PasswordLoginEnabled {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "管理员关闭了密码登录",
+			"message": "管理員關閉了密碼登入",
 			"success": false,
 		})
 		return
@@ -33,7 +33,7 @@ func Login(c *gin.Context) {
 	err := json.NewDecoder(c.Request.Body).Decode(&loginRequest)
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "无效的参数",
+			"message": "無效的參數",
 			"success": false,
 		})
 		return
@@ -42,7 +42,7 @@ func Login(c *gin.Context) {
 	password := loginRequest.Password
 	if username == "" || password == "" {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "无效的参数",
+			"message": "無效的參數",
 			"success": false,
 		})
 		return
@@ -72,7 +72,7 @@ func setupLogin(user *model.User, c *gin.Context) {
 	err := session.Save()
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "无法保存会话信息，请重试",
+			"message": "無法保存會話訊息，請重試",
 			"success": false,
 		})
 		return
@@ -116,14 +116,14 @@ func Logout(c *gin.Context) {
 func Register(c *gin.Context) {
 	if !config.RegisterEnabled {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "管理员关闭了新用户注册",
+			"message": "管理員關閉了新用戶註冊",
 			"success": false,
 		})
 		return
 	}
 	if !config.PasswordRegisterEnabled {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "管理员关闭了通过密码进行注册，请使用第三方账户验证的形式进行注册",
+			"message": "管理員關閉了透過密碼註冊，請使用第三方帳戶驗證的形式進行註冊",
 			"success": false,
 		})
 		return
@@ -133,14 +133,14 @@ func Register(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无效的参数",
+			"message": "無效的參數",
 		})
 		return
 	}
 	if err := common.Validate.Struct(&user); err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "输入不合法 " + err.Error(),
+			"message": "輸入不合法 " + err.Error(),
 		})
 		return
 	}
@@ -148,14 +148,14 @@ func Register(c *gin.Context) {
 		if user.Email == "" || user.VerificationCode == "" {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "管理员开启了邮箱验证，请输入邮箱地址和验证码",
+				"message": "管理員開啟了郵箱驗證，請輸入郵箱地址和驗證碼",
 			})
 			return
 		}
 		if !common.VerifyCodeWithKey(user.Email, user.VerificationCode, common.EmailVerificationPurpose) {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "验证码错误或已过期",
+				"message": "驗證碼錯誤或已過期",
 			})
 			return
 		}
@@ -224,7 +224,7 @@ func GetUser(c *gin.Context) {
 	if myRole <= user.Role && myRole != config.RoleRootUser {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无权获取同级或更高等级用户的信息",
+			"message": "無權獲取同級或更高等級用戶的信息",
 		})
 		return
 	}
@@ -247,7 +247,7 @@ func GetUserDashboard(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无法获取统计信息.",
+			"message": "無法獲取統計信息.",
 		})
 		return
 	}
@@ -274,7 +274,7 @@ func GenerateAccessToken(c *gin.Context) {
 	if model.DB.Where("access_token = ?", user.AccessToken).First(user).RowsAffected != 0 {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "请重试，系统生成的 UUID 竟然重复了！",
+			"message": "請重試，系統生成的 UUID 竟然重複了！",
 		})
 		return
 	}
@@ -344,7 +344,7 @@ func UpdateUser(c *gin.Context) {
 	if err != nil || updatedUser.Id == 0 {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无效的参数",
+			"message": "無效的參數",
 		})
 		return
 	}
@@ -354,7 +354,7 @@ func UpdateUser(c *gin.Context) {
 	if err := common.Validate.Struct(&updatedUser); err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "输入不合法 " + err.Error(),
+			"message": "輸入不合法 " + err.Error(),
 		})
 		return
 	}
@@ -370,14 +370,14 @@ func UpdateUser(c *gin.Context) {
 	if myRole <= originUser.Role && myRole != config.RoleRootUser {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无权更新同权限等级或更高权限等级的用户信息",
+			"message": "無權更新同權限等級或更高權限等級的使用者訊息",
 		})
 		return
 	}
 	if myRole <= updatedUser.Role && myRole != config.RoleRootUser {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无权将其他用户权限等级提升到大于等于自己的权限等级",
+			"message": "無權將其他用户權限等級提升到大於等於自己的權限等級",
 		})
 		return
 	}
@@ -393,7 +393,7 @@ func UpdateUser(c *gin.Context) {
 		return
 	}
 	if originUser.Quota != updatedUser.Quota {
-		model.RecordLog(originUser.Id, model.LogTypeManage, fmt.Sprintf("管理员将用户额度从 %s修改为 %s", common.LogQuota(originUser.Quota), common.LogQuota(updatedUser.Quota)))
+		model.RecordLog(originUser.Id, model.LogTypeManage, fmt.Sprintf("管理員將用户額度從 %s 修改為 %s", common.LogQuota(originUser.Quota), common.LogQuota(updatedUser.Quota)))
 	}
 	c.JSON(http.StatusOK, gin.H{
 		"success": true,
@@ -407,7 +407,7 @@ func UpdateSelf(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无效的参数",
+			"message": "無效的參數",
 		})
 		return
 	}
@@ -417,7 +417,7 @@ func UpdateSelf(c *gin.Context) {
 	if err := common.Validate.Struct(&user); err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "输入不合法 " + err.Error(),
+			"message": "輸入不合法 " + err.Error(),
 		})
 		return
 	}
@@ -468,7 +468,7 @@ func DeleteUser(c *gin.Context) {
 	if myRole <= originUser.Role {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无权删除同权限等级或更高权限等级的用户",
+			"message": "無權刪除同權限等級或更高權限等級的用戶",
 		})
 		return
 	}
@@ -488,14 +488,14 @@ func CreateUser(c *gin.Context) {
 	if err != nil || user.Username == "" || user.Password == "" {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无效的参数",
+			"message": "無效的參數",
 		})
 		return
 	}
 	if err := common.Validate.Struct(&user); err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "输入不合法 " + err.Error(),
+			"message": "輸入不合法 " + err.Error(),
 		})
 		return
 	}
@@ -506,7 +506,7 @@ func CreateUser(c *gin.Context) {
 	if user.Role >= myRole {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无法创建权限大于等于自己的用户",
+			"message": "無法建立權限大於等於自己的用戶",
 		})
 		return
 	}
@@ -543,7 +543,7 @@ func ManageUser(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无效的参数",
+			"message": "無效的參數",
 		})
 		return
 	}
@@ -563,7 +563,7 @@ func ManageUser(c *gin.Context) {
 	if myRole <= user.Role && myRole != config.RoleRootUser {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无权更新同权限等级或更高权限等级的用户信息",
+			"message": "無權更新同權限等級或更高權限等級的用户訊息",
 		})
 		return
 	}
@@ -583,7 +583,7 @@ func ManageUser(c *gin.Context) {
 		if user.Role == config.RoleRootUser {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "无法删除超级管理员用户",
+				"message": "無法禁用超級管理員用戶",
 			})
 			return
 		}
@@ -598,14 +598,14 @@ func ManageUser(c *gin.Context) {
 		if myRole != config.RoleRootUser {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "普通管理员用户无法提升其他用户为管理员",
+				"message": "普通管理員用戶無法提升其他用戶為管理員",
 			})
 			return
 		}
 		if user.Role >= config.RoleAdminUser {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "该用户已经是管理员",
+				"message": "該用戶已經是管理員",
 			})
 			return
 		}
@@ -614,14 +614,14 @@ func ManageUser(c *gin.Context) {
 		if user.Role == config.RoleRootUser {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "无法降级超级管理员用户",
+				"message": "無法降級超級管理員用戶",
 			})
 			return
 		}
 		if user.Role == config.RoleCommonUser {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "该用户已经是普通用户",
+				"message": "該用戶已經是普通用戶",
 			})
 			return
 		}
@@ -652,7 +652,7 @@ func EmailBind(c *gin.Context) {
 	if !common.VerifyCodeWithKey(email, code, common.EmailVerificationPurpose) {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "验证码错误或已过期",
+			"message": "驗證碼錯誤或已過期",
 		})
 		return
 	}
@@ -736,7 +736,7 @@ func ChangeUserQuota(c *gin.Context) {
 	}
 
 	if req.Quota == 0 {
-		common.APIRespondWithError(c, http.StatusOK, errors.New("不能为0"))
+		common.APIRespondWithError(c, http.StatusOK, errors.New("不能為 0"))
 		return
 	}
 
@@ -749,10 +749,10 @@ func ChangeUserQuota(c *gin.Context) {
 		return
 	}
 
-	remark := fmt.Sprintf("管理员增减用户额度 %s", common.LogQuota(req.Quota))
+	remark := fmt.Sprintf("管理員增減用戶額度 %s", common.LogQuota(req.Quota))
 
 	if req.Remark != "" {
-		remark = fmt.Sprintf("%s, 备注: %s", remark, req.Remark)
+		remark = fmt.Sprintf("%s, 備註: %s", remark, req.Remark)
 	}
 
 	model.RecordLog(userId, model.LogTypeManage, remark)

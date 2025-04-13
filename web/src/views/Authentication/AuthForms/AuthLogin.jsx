@@ -36,7 +36,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Github from 'assets/images/icons/github.svg';
 import Wechat from 'assets/images/icons/wechat.svg';
 import Lark from 'assets/images/icons/lark.svg';
-import Oidc from 'assets/images/icons/oidc.svg';
+import Oidc from 'assets/images/icons/social-google.svg';
 import { onGitHubOAuthClicked, onLarkOAuthClicked,onOIDCAuthClicked } from 'utils/common';
 import { useTranslation } from 'react-i18next';
 
