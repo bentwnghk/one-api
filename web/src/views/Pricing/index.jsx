@@ -187,7 +187,7 @@ const Pricing = () => {
     <Stack spacing={3}>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
         <Typography variant="h2">
-          模型价格
+          {t('pricing')}
           <Typography variant="subtitle1" sx={{ mt: 1 }} color="text.secondary">
             Price
           </Typography>
