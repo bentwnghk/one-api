@@ -343,7 +343,7 @@
     "qrCode": "QRコード",
     "useGithubLogin": "Github を使用してログインする",
     "useLarkLogin": "フェイシュでログイン",
-    "useOIDCLogin": "OIDC ログインを使用する",
+    "useOIDCLogin": "Google ログインを使用する",
     "useWechatLogin": "Wechatでログイン",
     "usernameOrEmail": "ユーザー名/メール",
     "usernameRequired": "ユーザー名/メールは必須です",

@@ -829,6 +829,7 @@
     "larkLogin": "飛書登錄",
     "passwordRest": "密碼重置確認",
     "useGithubLogin": "使用 GitHub 登錄",
+    "useOIDCLogin": "使用 Google 登錄",
     "useWechatLogin": "使用 WeChat 登錄",
     "useLarkLogin": "使用飛書登錄"
   },

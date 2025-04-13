@@ -352,7 +352,7 @@
     "qrCode": "QR code",
     "useGithubLogin": "Log in using Github",
     "useLarkLogin": "Log in using Feishu",
-    "useOIDCLogin": "Use OIDC Login",
+    "useOIDCLogin": "Use Google Login",
     "useWechatLogin": "Log in with Wechat",
     "usernameOrEmail": "Username/Email",
     "usernameRequired": "Username/Email is required",
