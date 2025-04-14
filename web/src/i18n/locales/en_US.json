@@ -1,7 +1,6 @@
 {
   "AZURE_OPENAI_ENDPOINT": "AZURE_OPENAI_ENDPOINT",
   "CheckUpdatesTable": {
-    "addNewOnly": "Add New Only",
     "cancel": "Cancel",
     "checkUpdates": "Check Updates",
     "dataFormatIncorrect": "Data format is incorrect",
@@ -13,15 +12,14 @@
     "note": "Note",
     "operationCompleted": "Operation completed successfully!",
     "outputMultiplierChanged": "Output multiplier changed from",
-    "overwriteData": "Overwrite Data",
-    "overwriteOrAddOnly": "You can choose to overwrite or add only new models. If you choose to overwrite, it will delete the prices of the models you added yourself and use the remote configuration completely. If you choose to add only new models, it will only add the prices of the new models.",
+    "overwriteOrAddOnly": "You can choose to overwrite all or only add new or only update existing. If you choose to overwrite all, the model prices you added yourself will be deleted and the remote configuration will be used completely. If you choose to only add new, only the prices of the newly added models will be added. If you choose to only update existing, only the prices of the existing models will be updated. (Locked prices will not be updated or modified)",
     "pleaseFetchData": "Please fetch data first",
-    "priceChangeModels": "Price Change Models (for reference only, ignore if you have modified the prices yourself)",
+    "priceChangeModels": "Price Change Models (for reference only)",
     "to": "to",
     "url": "URL",
     "priceServerTotal": "Price Server Total",
-    "updateModeAdd": "Add Only",
-    "updateModeUpdate": "Update Only",
+    "updateModeAdd": "Add New Only",
+    "updateModeUpdate": "Update Existing Only",
     "updateModeOverwrite": "Overwrite All"
   },
   "Header 配置": "Header configuration",
