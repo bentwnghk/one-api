@@ -395,6 +395,8 @@
     "availableModels": "Available Models",
     "channelType": "Supplier",
     "group": "grouping",
+    "free": "Free",
+    "RPM": "API RPM",
     "inputMultiplier": "Input price",
     "inputPrice": "Input price",
     "model": "Model Name",

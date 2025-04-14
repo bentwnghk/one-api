@@ -144,6 +144,8 @@
   },
   "channel_row": {
     "auto": "自動",
+    "key": "金鑰",
+    "keyRequired": "請輸入金鑰",
     "canModels": "可用模型：",
     "channelWeb": "官方網站",
     "clickUpdateQuota": "點擊更新餘額",
@@ -393,6 +395,8 @@
     "availableModels": "可用模型",
     "channelType": "供應商",
     "group": "分組",
+    "free": "免費",
+    "RPM": "API 速率",
     "inputMultiplier": "輸入價格",
     "inputPrice": "輸入價格",
     "model": "模型名稱",
