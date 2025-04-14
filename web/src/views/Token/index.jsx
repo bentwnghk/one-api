@@ -173,7 +173,7 @@ export default function Token() {
         <Typography variant="h2">
           {t('token_index.token')}
           <Typography variant="subtitle1" sx={{ mt: 1 }} color="text.secondary">
-            Token
+          API Key
           </Typography>
         </Typography>
 
