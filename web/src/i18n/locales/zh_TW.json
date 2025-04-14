@@ -68,7 +68,10 @@
     "tokens": "Tokens (輸入/輸出)",
     "cache_tokens": "CacheTokens",
     "request_time": "請求時間 (s)",
-    "loading": "加載中..."
+    "loading": "加載中...",
+    "quickStart": "快速開始",
+    "quickStartTip": "當您點擊下面按鈕時，系統會自動創建一條 sys_playground API 金鑰",
+    "ComparedWithYesterday": "相比昨日"
   },
   "analytics_index": {
     "startTime": "開始時間",
