@@ -186,7 +186,7 @@ func GitHubOAuth(c *gin.Context) {
 	if !config.GitHubOAuthEnabled {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "管理員未開通 GitHub 登錄及注冊",
+			"message": "管理員未開通 GitHub 登入及注冊",
 		})
 		return
 	}

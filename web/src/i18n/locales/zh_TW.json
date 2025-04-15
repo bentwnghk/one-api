@@ -20,7 +20,7 @@
   "menu": {
     "home": "首頁",
     "about": "關於",
-    "login": "登錄",
+    "login": "登入",
     "signup": "註冊",
     "signout": "登出",
     "console": "控制台",
@@ -44,7 +44,7 @@
     "restSendEmail": "重置郵件發送成功，請檢查郵箱！"
   },
   "registerPage": {
-    "alreadyHaveAccount": "已經有帳號了? 點擊登錄"
+    "alreadyHaveAccount": "已經有帳號了? 點擊登入"
   },
   "dashboard_index": {
     "model_price": "當前可用模型",
@@ -661,17 +661,17 @@
         "updateServerAddress": "更新伺服器地址"
       },
       "configureLoginRegister": {
-        "title": "配置登錄和註冊",
-        "passwordLogin": "允許通過密碼進行登錄",
+        "title": "配置登入和註冊",
+        "passwordLogin": "允許通過密碼進行登入",
         "passwordRegister": "允許通過密碼進行註冊",
         "emailVerification": "通過密碼註冊時需要進行郵箱驗証",
-        "gitHubOAuth": "允許通過 GitHub 賬戶登錄和註冊",
-        "oidcAuth": "允許通過 OIDC 賬戶登錄和註冊",
-        "weChatAuth": "允許通過微信登錄和註冊",
-        "larkAuth": "允許通過飛書登錄和註冊",
+        "gitHubOAuth": "允許通過 GitHub 賬戶登入和註冊",
+        "oidcAuth": "允許通過 OIDC 賬戶登入和註冊",
+        "weChatAuth": "允許通過微信登入和註冊",
+        "larkAuth": "允許通過飛書登入和註冊",
         "registerEnabled": "允許新用戶註冊（此項為否時，新用戶將無法以任何方式進行註冊）",
         "turnstileCheck": "啟用 Turnstile 用戶校驗",
-        "gitHubOldIdClose": "關閉 GitHub 老 ID 登錄"
+        "gitHubOldIdClose": "關閉 GitHub 老 ID 登入"
       },
       "configureEmailDomainWhitelist": {
         "title": "配置郵箱域名白名單",
@@ -698,7 +698,7 @@
       },
       "configureGitHubOAuthApp": {
         "title": "配置 GitHub OAuth 應用",
-        "subTitle": "用以支持通過 GitHub 進行登錄註冊，",
+        "subTitle": "用以支持通過 GitHub 進行登入註冊，",
         "manageLink": "點擊此處",
         "manage": "管理你的 GitHub OAuth App",
         "alert1": "Homepage URL 填",
@@ -711,7 +711,7 @@
       },
       "configureOIDCAuthorization": {
         "title": "配置OIDC統一授權系統",
-        "subTitle": "用以配置標准OIDC授權登錄系統",
+        "subTitle": "用以配置標准OIDC授權登入系統",
         "alert1": "主頁鏈接填",
         "alert2": "，重定向 URL 填 ",
         "clientId": "客戶端ID (Client ID)",
@@ -728,7 +728,7 @@
       },
       "configureWeChatServer": {
         "title": "配置 WeChat 伺服器",
-        "subTitle": "用以支持通過微信進行登錄註冊，",
+        "subTitle": "用以支持通過微信進行登入註冊，",
         "learnLink": "點擊此處",
         "learn": "了解 WeChat 伺服器",
         "serverAddress": "WeChat 伺服器地址",
@@ -741,7 +741,7 @@
       },
       "configureFeishuAuthorization": {
         "title": "配置飛書授權",
-        "subTitle": "用以支持通過飛書進行登錄註冊，",
+        "subTitle": "用以支持通過飛書進行登入註冊，",
         "manageLink": "點擊此處",
         "manage": "管理你的飛書應用",
         "alert1": "主頁鏈接填",
@@ -824,22 +824,22 @@
     "usernameRequired": "用戶名/電郵地址是必填項",
     "passwordRequired": "密碼是必填項",
     "forgetPassword": "忘記密碼?",
-    "wechatVerificationCodeLogin": "微信驗証碼登錄",
+    "wechatVerificationCodeLogin": "微信驗証碼登入",
     "wechatLoginInfo": "請使用微信掃描二維碼關注公眾號，輸入「驗証碼」獲取驗証碼（三分鐘內有效）",
     "qrCode": "二維碼",
     "codeRequired": "驗証碼不能為空",
-    "githubError": "操作失敗，重定向至登錄界面中...",
+    "githubError": "操作失敗，重定向至登入界面中...",
     "githubCountError": "出現錯誤，第 {{count}} 次重試中...",
-    "githubLogin": "GitHub 登錄",
-    "larkLogin": "飛書登錄",
+    "githubLogin": "GitHub 登入",
+    "larkLogin": "飛書登入",
     "oidcCountError": "出現錯誤，第 {{count}} 次重試中...",
-    "oidcError": "操作失敗，正在重定向至登錄界面...",
-    "oidcLogin": "OIDC 登錄",
+    "oidcError": "操作失敗，正在重定向至登入界面...",
+    "oidcLogin": "OIDC 登入",
     "passwordRest": "密碼重置確認",
-    "useGithubLogin": "使用 GitHub 登錄",
-    "useOIDCLogin": "使用 Google 登錄",
-    "useWechatLogin": "使用 WeChat 登錄",
-    "useLarkLogin": "使用飛書登錄"
+    "useGithubLogin": "使用 GitHub 登入",
+    "useOIDCLogin": "使用 Google 登入",
+    "useWechatLogin": "使用 WeChat 登入",
+    "useLarkLogin": "使用飛書登入"
   },
   "description": "全球主流 AI 模型 API 服務",
   "about": {
@@ -895,7 +895,7 @@
     "unableServer": "無法正常連接至伺服器！",
     "unableServerTip": "新版本可用：{{version}}，請使用快捷鍵 Shift + F5 刷新頁面",
     "bindOk": "綁定成功！",
-    "loginOk": "登錄成功！",
+    "loginOk": "登入成功！",
     "registerOk": "註冊成功！",
     "registerTip": "驗証碼發送成功，請檢查你的郵箱！",
     "processing": "處理中...",
@@ -1055,7 +1055,7 @@
     "newPassword": "新密碼",
     "invalidLink": "無效的鏈接",
     "newPasswordInfo": "你的新密碼是：",
-    "newPasswordEdit": "登錄後請立刻修改密碼",
+    "newPasswordEdit": "登入後請立刻修改密碼",
     "restPasswordClick": "點擊重置密碼"
   },
   "res_time": {
