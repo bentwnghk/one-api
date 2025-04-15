@@ -17,6 +17,8 @@
   "task": "異步任務",
   "operation": "運營",
   "paySetting": "支付設置",
+  "invite_count": "邀請人數",
+  "invite_reward": "邀請獎勵",
   "menu": {
     "home": "首頁",
     "about": "關於",
