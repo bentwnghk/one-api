@@ -269,7 +269,10 @@
     "loading": "加載中...",
     "quickStart": "快速開始",
     "quickStartTip": "當您點擊下面按鈕時，系統會自動創建一條 sys_playground API 金鑰",
-    "ComparedWithYesterday": "相比昨日"
+    "ComparedWithYesterday": "相比昨日",
+    "usage": "使用率",
+    "RPM": "當前RPM",
+    "TPM": "當前TPM"
   },
   "description": "一站式的 OpenAI 接口\n整合各種 API 訪問方式\n一鍵部署，開箱即用",
   "echo 映射": "echo 映射",
@@ -771,6 +774,18 @@
         "info": "配置停用渠道關鍵詞，每行一個關鍵詞。",
         "save": "保存停用渠道關鍵詞設置",
         "title": "停用渠道關鍵詞設置"
+      },
+      "safetySettings": {
+        "title": "系統安全設置",
+        "enableSafe": "開啟 Prompt 安全檢查",
+        "safeToolName": {
+          "label": "安全檢查工具"
+        },
+        "safeKeyWords": {
+          "label": "關鍵詞列表",
+          "placeholder": "請輸入關鍵詞，每行一個"
+        },
+        "save": "保存設置"
       }
     },
     "otherSettings": {

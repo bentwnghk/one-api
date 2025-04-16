@@ -269,7 +269,10 @@
     "loading": "Loading...",
     "quickStart": "Quick Start",
     "quickStartTip": "When you click the button below, the system will automatically create a sys_playground API Key",
-    "ComparedWithYesterday": "Compared with yesterday"
+    "ComparedWithYesterday": "Compared with yesterday",
+    "usage": "Usage",
+    "RPM": "Current RPM",
+    "TPM": "Current TPM"
   },
   "description": "All-in-one OpenAI interface\nIntegrates various API access methods\nOne-click deployment, ready to use",
   "echo 映射": "echo mapping",
@@ -769,6 +772,18 @@
         "info": "Disable channel keywords, one keyword per line.",
         "save": "Save disabled channel keyword settings",
         "title": "Disable channel keyword settings"
+      },
+      "safetySettings": {
+        "title": "System Safety Settings",
+        "enableSafe": "Enable Prompt Safety Check",
+        "safeToolName": {
+          "label": "Safe Check Tool"
+        },
+        "safeKeyWords": {
+          "label": "Keyword List",
+          "placeholder": "Enter keywords, one per line"
+        },
+        "save": "Save Settings"
       }
     },
     "otherSettings": {
