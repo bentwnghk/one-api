@@ -173,7 +173,7 @@ export default function Token() {
         <Stack direction="column" spacing={1}>
           <Typography variant="h2">{t('token_index.token')}</Typography>
           <Typography variant="subtitle1" color="text.secondary">
-            Token
+            API Key
           </Typography>
         </Stack>
 
