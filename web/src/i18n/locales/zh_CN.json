@@ -241,13 +241,14 @@
     "quotaLabel": "额度",
     "detailLabel": "详情",
     "searchLogsInfo": "充值记录以及邀请记录请在日志中查询。充值记录请在日志中选择类型【充值】查询；邀请记录请在日志中选择【系统】查询",
-    "inputTextTokens": "输入文本Tokens",
-    "outputTextTokens": "输出文本Tokens",
-    "inputAudioTokens": "输入音频Tokens",
-    "outputAudioTokens": "输出音频Tokens",
-    "cachedTokens": "缓存Tokens",
-    "cachedWriteTokens": "缓存写入Tokens",
-    "cachedReadTokens": "缓存读取Tokens",
+    "inputTextTokens": "输入文本Tokens (* {{ ratio }})",
+    "outputTextTokens": "输出文本Tokens (* {{ ratio }})",
+    "inputAudioTokens": "输入音频Tokens (* {{ ratio }})",
+    "outputAudioTokens": "输出音频Tokens (* {{ ratio }})",
+    "cachedTokens": "缓存Tokens (* {{ ratio }})",
+    "cachedWriteTokens": "缓存写入Tokens (* {{ ratio }})",
+    "cachedReadTokens": "缓存读取Tokens (* {{ ratio }})",
+    "reasoningTokens": "推理Tokens (* {{ ratio }})",
     "totalInputTokens": "计算输入Tokens",
     "totalOutputTokens": "计算输出Tokens",
     "sourceIp": "来源IP",
@@ -652,10 +653,10 @@
         "info": "配置聊天链接，该配置在 [API 金钥] 页面中的聊天生效以及首页的 Playground 中的聊天生效。链接中可以使用 {key} 替换用户的金钥，{server} 替换服务器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，会默认配置以下链接：Mr.🆖 AI：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序规则：值越大越靠前，值相同则按照配置顺序。",
         "save": "保存聊天链接设置"
       },
-      "audioTokenSettings": {
-        "title": "音频Token设置",
-        "info": "配置音频倍率. 配置格式为JSON，键为模型名称，值为输入输出Token倍率。例如：{\"gpt-4o-audio-preview\":{\"input_audio_tokens_ratio\":40,\"output_audio_tokens_ratio\":20},\"gpt-4o-mini-audio-preview\":{\"input_audio_tokens_ratio\":67,\"output_audio_tokens_ratio\":34}}",
-        "save": "保存音频Token设置"
+      "extraTokenPriceJson": {
+        "title": "额外Token价格设置",
+        "info": "配置额外Token价格. 配置格式为JSON，键为模型名称，值为输入输出Token倍率。例如：{\"gpt-4o-audio-preview\":{\"input_audio_tokens_ratio\":40,\"output_audio_tokens_ratio\":20},\"gpt-4o-mini-audio-preview\":{\"input_audio_tokens_ratio\":67,\"output_audio_tokens_ratio\":34}}",
+        "save": "保存额外Token价格设置"
       },
       "disableChannelKeywordsSettings": {
         "title": "禁用渠道关键词设置",
