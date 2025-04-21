@@ -780,6 +780,18 @@
         "save": "Save disabled channel keyword settings",
         "title": "Disable channel keyword settings"
       },
+      "claudeSettings": {
+        "title": "Claude Settings",
+        "budgetTokensPercentage": {
+          "label": "Default reasoning token percentage",
+          "placeholder": "Enter default reasoning token percentage"
+        },
+        "defaultMaxTokens": {
+          "label": "Default MaxToken value",
+          "placeholder": "Enter default MaxToken value, in json format, default being default value, e.g. {\"default\": 1000, \"claude-3-7-sonnet-latest\": 128000}"
+        },
+        "save": "Save Claude Settings"
+      },
       "safetySettings": {
         "title": "System Safety Settings",
         "enableSafe": "Enable Prompt Safety Check",
