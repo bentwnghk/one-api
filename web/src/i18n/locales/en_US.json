@@ -24,6 +24,10 @@
     "updateModeUpdate": "Update Existing Only",
     "updateModeOverwrite": "Overwrite All"
   },
+  "sidebar": {
+    "totalQuota": "Total Quota",
+    "remainingBalance": "Remaining Balance"
+  },
   "Header 配置": "Header configuration",
   "about": {
     "aboutDescription": "You can set the about content in the settings page, supports HTML & Markdown",
@@ -266,6 +270,7 @@
     "used": "Used",
     "week_model_statistics": "Model statistics for the past 7 days",
     "week_consumption_log": "Consumption log for the past 7 days",
+    "7days_model_usage_pie": "7-Day Model Usage Pie",
     "date": "Date",
     "request_count": "Request Count",
     "amount": "Amount",

@@ -26,6 +26,10 @@
     "overwriteData": ""
   },
   "Header 配置": "Header 配置",
+  "sidebar": {
+    "totalQuota": "總額度",
+    "remainingBalance": "可用額度"
+  },
   "about": {
     "aboutDescription": "可在設置頁面設置關於內容，支持 HTML 和 Markdown",
     "aboutTitle": "關於",
@@ -267,6 +271,8 @@
     "used": "已使用",
     "week_model_statistics": "最近七日模型統計",
     "week_consumption_log": "最近七日消費日誌",
+    "7days_model_usage_pie": "最近七日模型使用情況",
+    "total": "總次數",
     "date": "日期",
     "request_count": "請求次數",
     "amount": "金額",
