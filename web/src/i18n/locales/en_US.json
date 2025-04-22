@@ -256,7 +256,7 @@
   "dashboard": "Dashboard",
   "dashboard_index": {
     "balance": "Balance",
-    "calls": "Number of calls",
+    "calls": "Number of requests",
     "model_name": "Model Name",
     "model_price": "Available Models",
     "no_data": "No Data",
@@ -271,6 +271,7 @@
     "week_model_statistics": "Model statistics for the past 7 days",
     "week_consumption_log": "Consumption log for the past 7 days",
     "7days_model_usage_pie": "7-Day Model Usage Pie",
+    "total": "Total Requests",
     "date": "Date",
     "request_count": "Request Count",
     "amount": "Amount",
