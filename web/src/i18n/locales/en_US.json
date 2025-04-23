@@ -726,6 +726,11 @@
           "placeholder": "Retry Timeout (seconds)"
         }
       },
+      "invoice": {
+        "title": "Bill Settings",
+        "genTime": "Bill Time",
+        "genMonthInvoice":"Generate Monthly Invoice"
+      },
       "logSettings": {
         "clearLogs": "Clear Historical Logs",
         "logCleanupTime": {
