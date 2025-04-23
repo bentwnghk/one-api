@@ -272,7 +272,7 @@
     "week_model_statistics": "最近七日模型統計",
     "week_consumption_log": "最近七日消費日誌",
     "7days_model_usage_pie": "最近七日模型使用情況",
-    "total": "總次數",
+    "total": "請求總數",
     "date": "日期",
     "request_count": "請求次數",
     "amount": "金額",
