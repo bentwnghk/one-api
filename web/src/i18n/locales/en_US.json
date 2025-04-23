@@ -275,7 +275,7 @@
     "date": "Date",
     "request_count": "Request Count",
     "amount": "Amount",
-    "tokens": "Tokens (input/output)",
+    "tokens": "Tokens (Input/Output)",
     "cache_tokens": "CacheTokens",
     "request_time": "Request Time (s)",
     "loading": "Loading...",
