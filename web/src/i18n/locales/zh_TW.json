@@ -65,7 +65,7 @@
     "week_model_statistics": "最近七日模型統計",
     "week_consumption_log": "最近七日消費日誌",
     "7days_model_usage_pie": "最近七日模型使用情況",
-    "total": "請求總數",
+    "total": "請求次數",
     "date": "日期",
     "request_count": "請求次數",
     "amount": "金額",
@@ -1238,7 +1238,7 @@
   "Header 配置": "Header 配置",
   "sidebar": {
     "totalQuota": "總額度",
-    "remainingBalance": "可用額度"
+    "remainingBalance": "餘額 (美元)"
   },
   "本配置主要是用于使用cloudflare Zero Trust将端口暴露到公网时，需要配置的header": "本配置主要是用於使用 Cloudflare Zero Trust 將端口暴露到公網時，需要配置的 header",
   "代码执行": "代碼執行",
