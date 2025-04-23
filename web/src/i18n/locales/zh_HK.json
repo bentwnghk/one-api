@@ -332,7 +332,7 @@
     "paid": "已支付",
     "unpaid": "未支付",
     "date": "賬單時間",
-    "requestCount": "請求總數",
+    "requestCount": "請求次數",
     "quota": "總金額",
     "promptTokens": "輸入tokens",
     "completionTokens": "輸出tokens",

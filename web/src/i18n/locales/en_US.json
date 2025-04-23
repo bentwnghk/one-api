@@ -256,7 +256,7 @@
   "dashboard": "Dashboard",
   "dashboard_index": {
     "balance": "Balance",
-    "calls": "Number of requests",
+    "calls": "Total Requests",
     "model_name": "Model Name",
     "model_price": "Available Models",
     "no_data": "No Data",
@@ -1165,7 +1165,7 @@
     "submit": "Submit",
     "superAdminRole": "super administrator",
     "uUserRole": "Unknown identity",
-    "useQuota": "Number of requests",
+    "useQuota": "Total Requests",
     "userRole": "User Role",
     "username": "Username",
     "usernameRequired": "Username is required",
