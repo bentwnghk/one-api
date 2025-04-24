@@ -753,6 +753,11 @@
         "saveMonitoringSettings": "保存監控設置",
         "title": "監控設置"
       },
+      "invoice": {
+        "title": "帳單設置",
+        "genTime": "帳單時間",
+        "genMonthInvoice":"更新月結帳單"
+      },
       "otherSettings": {
         "CFWorkerImageUrl": {
           "alert": "這裡是 Cloudflare Worker 的圖片代理地址，你可以通過部署 https://github.com/MartialBE/get-image-by-cf，來使用，它和圖片檢測代理可以只設置其中一個。注意有些圖片鏈接可能會拒絕 CF 的訪問導致檢測失敗。",

@@ -729,7 +729,7 @@
       "invoice": {
         "title": "Bill Settings",
         "genTime": "Bill Time",
-        "genMonthInvoice":"Generate Monthly Invoice"
+        "genMonthInvoice":"Update Monthly Invoice"
       },
       "logSettings": {
         "clearLogs": "Clear Historical Logs",
