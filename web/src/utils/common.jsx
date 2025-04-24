@@ -330,7 +330,7 @@ export function getChatLinks(filterShow = false) {
     if (siteInfo?.chat_link) {
       // 循环找到name为Mr.🆖 AI Tutor的链接
       for (let i = 0; i < links.length; i++) {
-        if (links[i].name === 'Mr.🆖 AI Tutor') {
+        if (links[i].name === 'Mr.🆖 AI Lite') {
           links[i].url = siteInfo.chat_link + `/#/?settings={"key":"{key}","url":"{server}"}`;
           links[i].show = true;
           break;

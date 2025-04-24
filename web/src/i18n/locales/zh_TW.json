@@ -697,7 +697,7 @@
         "save": "保存倍率設置"
       },
       "chatLinkSettings": {
-        "info": "配置聊天鏈接，該配置在 [API 金鑰] 頁面中的聊天生效以及首頁的聊天生效。<br />鏈接中可以使用 &#123;key&#125; 替換用戶密鑰， &#123;server&#125; 替換伺服器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}<br />如果未配置，會默認配置以下鏈接：<br />Mr.🆖 AI：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}<br />Mr.🆖 AI Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}<br />Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}<br />排序規則：值越大越靠前，值相同則按照配置順序。",
+        "info": "配置聊天鏈接，該配置在 [API 金鑰] 頁面中的聊天生效以及首頁的聊天生效。<br />鏈接中可以使用 &#123;key&#125; 替換用戶密鑰， &#123;server&#125; 替換伺服器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}<br />如果未配置，會默認配置以下鏈接：<br />Mr.🆖 AI：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}<br />Mr.🆖 AI Lite：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}<br />Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}<br />排序規則：值越大越靠前，值相同則按照配置順序。",
         "save": "保存聊天鏈接設置",
         "title": "聊天鏈接設置"
       }

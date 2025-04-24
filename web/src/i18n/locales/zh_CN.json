@@ -704,7 +704,7 @@
       },
       "chatLinkSettings": {
         "title": "聊天链接设置",
-        "info": "配置聊天链接，该配置在 [API 金钥] 页面中的聊天生效以及首页的 Playground 中的聊天生效。链接中可以使用 {key} 替换用户的金钥，{server} 替换服务器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，会默认配置以下链接：Mr.🆖 AI：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI Tutor：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序规则：值越大越靠前，值相同则按照配置顺序。",
+        "info": "配置聊天链接，该配置在 [API 金钥] 页面中的聊天生效以及首页的 Playground 中的聊天生效。链接中可以使用 {key} 替换用户的金钥，{server} 替换服务器地址。例如：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。如果未配置，会默认配置以下链接：Mr.🆖 AI：https://mr5ai.com/?settings={\"keyVaults\":{\"openai\":{\"apiKey\":\"{key}\",\"baseURL\":\"{server}/v1\"}}}。Mr.🆖 AI Lite：https://ai2.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。Mr.🆖 AI Creator：https://create.mister5.net/#/?settings={\"key\":\"{key}\",\"url\":\"{server}\"}。排序规则：值越大越靠前，值相同则按照配置顺序。",
         "save": "保存聊天链接设置"
       },
       "extraTokenPriceJson": {
