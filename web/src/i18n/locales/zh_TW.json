@@ -223,7 +223,7 @@
     "submit": "提交"
   },
   "logPage": {
-    "cachedTokens": "緩存Tokens",
+    "cachedTokens": "緩存Tokens (* {{ ratio }})",
     "channelLabel": "渠道",
     "columnSettings": "列設置",
     "selectColumns": "選擇列",
@@ -455,7 +455,6 @@
     "availableModels": "可用模型",
     "channelType": "供應商",
     "group": "分組",
-    "free": "免費",
     "RPM": "API速率",
     "inputMultiplier": "輸入價格",
     "inputPrice": "輸入價格",
@@ -466,10 +465,17 @@
     "times": "按次付費",
     "tokens": "按量付費",
     "type": "類型",
-    "inputAudioTokensRatio": "音頻輸入倍率",
+    "input_audio_tokens": "音頻輸入倍率",
     "other": "其他",
-    "outputAudioTokensRatio": "音頻輸出倍率",
-    "rate": "倍率"
+    "output_audio_tokens": "音頻輸出倍率",
+    "rate": "倍率",
+    "free": "免費",
+    "cached_tokens": "快取倍率",
+    "cached_write_tokens": "快取寫入倍率",
+    "cached_read_tokens": "快取讀取倍率",
+    "reasoning_tokens": "推理倍率",
+    "input_text_tokens": "輸入文本倍率",
+    "output_text_tokens": "輸出文本倍率"
   },
   "paymentPage": {
     "orderList": "訂單列表",
