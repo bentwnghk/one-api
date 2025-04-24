@@ -908,17 +908,17 @@ const OperationSetting = () => {
               {`{"gpt-4o-audio-preview":{"input_audio_tokens":40,"output_audio_tokens":20,"cached_tokens":0.5,"cached_write_tokens":1.25,"cached_read_tokens":0.1,"reasoning_tokens":1}}`}
               ，当前支持以下配置：
               <br />
-              input_audio_tokens：输入音频令牌 (输入价格)
+              input_audio_tokens：输入音频tokens (输入价格)
               <br />
-              output_audio_tokens：输出音频令牌 (输出价格)
+              output_audio_tokens：输出音频tokens (输出价格)
               <br />
-              cached_tokens：缓存令牌 (输入价格)
+              cached_tokens：缓存tokens (输入价格)
               <br />
-              cached_write_tokens：缓存写入令牌 (输入价格)
+              cached_write_tokens：缓存写入tokens (输入价格)
               <br />
-              cached_read_tokens：缓存读取令牌 (输入价格)
+              cached_read_tokens：缓存读取tokens (输入价格)
               <br />
-              reasoning_tokens：推理令牌 (输出价格)
+              reasoning_tokens：推理tokens (输出价格)
             </Alert>
             <FormControl fullWidth>
               <TextField

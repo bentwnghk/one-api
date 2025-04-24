@@ -6,7 +6,7 @@ export const CHAT_LINKS = [
     sort: 1
   },
   {
-    name: 'Mr.🆖 AI Tutor',
+    name: 'Mr.🆖 AI Lite',
     url: 'https://ai2.mister5.net/#/?settings={"key":"{key}","url":"{server}"}',
     show: true,
     sort: 2
