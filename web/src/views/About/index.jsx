@@ -43,7 +43,7 @@ const About = () => {
               <Typography variant="body2">
                 {t('about.aboutDescription')} <br />
                 {t('about.projectRepo')}
-                <a href="https://github.com/bentwnghk/one-hub">https://github.com/bentwnghk/one-hub</a>
+                <a href="https://github.com/bentwnghk/one-api">https://github.com/bentwnghk/one-api</a>
               </Typography>
             </MainCard>
           </Container>
