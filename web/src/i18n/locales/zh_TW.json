@@ -1079,6 +1079,7 @@
     "locked": "鎖定價格",
     "unlocked": "不鎖定價格",
     "lockedTip": "價格鎖定後無法通過價格更新伺服器和程序覆蓋。如果您所配置的價格希望隨程序或價格伺服器同步更新，請勿鎖定",
+    "extraRatios": "額外擴展倍率",
     "completionRatio": "完成倍率",
     "delMultipleInfoTip": "確定刪除所選的 {{count}} 個價格嗎？",
     "noAvailableRatios": "冇可用嘅擴展倍率",
