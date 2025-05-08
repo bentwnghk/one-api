@@ -239,7 +239,7 @@
     "outputAudioTokens": "輸出音頻Tokens (* {{ ratio }})",
     "outputLabel": "輸出",
     "outputTextTokens": "輸出文本Tokens (* {{ ratio }})",
-    "quotaLabel": "額度",
+    "quotaLabel": "金額",
     "refreshButton": "刷新/清除搜尋條件",
     "searchButton": "搜尋",
     "searchLogsInfo": "充值記錄以及邀請記錄請在日誌中查詢。充值記錄請在日誌中選擇類型【充值】查詢；邀請記錄請在日誌中選擇【系統】查詢",
@@ -287,7 +287,7 @@
       "id": "ID",
       "name": "名稱",
       "status": "狀態",
-      "quota": "額度",
+      "quota": "金額",
       "createdTime": "創建時間",
       "redeemedTime": "兌換時間",
       "action": "操作"
