@@ -287,7 +287,7 @@
       "id": "ID",
       "name": "名稱",
       "status": "狀態",
-      "quota": "金額",
+      "quota": "額度",
       "createdTime": "創建時間",
       "redeemedTime": "兌換時間",
       "action": "操作"
@@ -531,7 +531,7 @@
       "fee": "手續費 (美元)",
       "discount": "優惠金額",
       "order_amount": "實際支付金額",
-      "quota": "到帳點數",
+      "quota": "到賬額度",
       "status": "狀態"
     },
     "gatewayIdLabel": "網關 ID",
