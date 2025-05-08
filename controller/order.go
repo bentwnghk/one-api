@@ -168,7 +168,7 @@ func PaymentCallback(c *gin.Context) {
 		return
 	}
 
-	model.RecordQuotaLog(order.UserId, model.LogTypeTopup, order.Quota, fmt.Sprintf("線上充值成功，充值額度: %d，支付金額：%.2f %s", order.Quota, order.OrderAmount, order.OrderCurrency))
+	model.RecordQuotaLog(order.UserId, model.LogTypeTopup, order.Quota, c.ClientIP(), fmt.Sprintf("線上充值成功，充值額度：%d，支付金額：%.2f %s", order.Quota, order.OrderAmount, order.OrderCurrency))
 
 }
 
