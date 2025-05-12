@@ -891,18 +891,6 @@
         "save": "保存停用渠道關鍵詞設置",
         "title": "停用渠道關鍵詞設置"
       },
-      "claudeSettings": {
-        "title": "Claude設置",
-        "budgetTokensPercentage": {
-          "label": "默認思考Token百分比",
-          "placeholder": "請輸入默認思考Token百分比"
-        },
-        "defaultMaxTokens": {
-          "label": "默認MaxToken數量",
-          "placeholder": "請輸入默認MaxToken數量,json格式, default代表默認值， 例如：{\"default\": 1000, \"claude-3-7-sonnet-latest\": 128000}"
-        },
-        "save": "保存Claude設置"
-      },
       "safetySettings": {
         "title": "系統安全設置",
         "enableSafe": "開啟 Prompt 安全檢查",
