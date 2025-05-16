@@ -283,6 +283,7 @@
   },
   "dashboard": "Dashboard",
   "dashboard_index": {
+    "title": "Dashboard",
     "balance": "Balance",
     "calls": "Total Requests",
     "model_name": "Model Name",
@@ -294,6 +295,8 @@
     "today_consumption": "Today's Consumption",
     "today_requests": "Today's Requests",
     "today_tokens": "Today's Tokens",
+    "tab_dashboard": "Overview",
+    "tab_status": "Status",
     "unknown": "Unknown",
     "used": "Used",
     "week_model_statistics": "Model statistics for the past 7 days",
@@ -313,7 +316,9 @@
     "usage": "Usage",
     "RPM": "Current RPM",
     "TPM": "Current TPM",
-    "total": "Total number"
+    "availability": "Availability",
+    "status_normal": "Normal",
+    "status_abnormal": "Abnormal"
   },
   "description": "All-in-one OpenAI interface\nIntegrates various API access methods\nOne-click deployment, ready to use",
   "echo 映射": "echo mapping",

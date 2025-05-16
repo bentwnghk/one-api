@@ -49,10 +49,13 @@
     "alreadyHaveAccount": "已經有帳號了? 點擊登入"
   },
   "dashboard_index": {
+    "title": "儀表板",
     "model_price": "當前可用模型",
     "today_requests": "今日請求次數",
     "today_consumption": "今日消費 (美元)",
     "today_tokens": "今日 Token 用量",
+    "tab_dashboard": "概覽",
+    "tab_status": "狀態",
     "no_data": "無數據",
     "statistics": "統計",
     "no_data_available": "暫無數據",
@@ -78,7 +81,10 @@
     "ComparedWithYesterday": "相比昨日",
     "usage": "使用率",
     "RPM": "當前 RPM",
-    "TPM": "當前 TPM"
+    "TPM": "當前 TPM",
+    "availability": "可用率",
+    "status_normal": "正常",
+    "status_abnormal": "異常"
   },
   "analytics_index": {
     "startTime": "開始時間",
