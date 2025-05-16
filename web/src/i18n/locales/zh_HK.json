@@ -314,7 +314,11 @@
     "usage": "使用率",
     "RPM": "當前 RPM",
     "TPM": "當前 TPM",
-    "total": "請求次數"
+    "total": "請求次數",
+    "availability": "可用率",
+    "tab_status": "狀態",
+    "tab_dashboard": "儀表板",
+    "title": "儀表板"
   },
   "description": "一站式的 OpenAI 接口\n整合各種 API 訪問方式\n一鍵部署，開箱即用",
   "echo 映射": "echo 映射",
