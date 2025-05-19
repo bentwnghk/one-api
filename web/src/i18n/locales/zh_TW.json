@@ -221,7 +221,15 @@
     "removePrefix": "刪除前缀",
     "removeSuffix": "刪除後缀",
     "collapseList": "收起列表",
-    "expandList": "展開列表"
+    "expandList": "展開列表",
+    "convertToLowercase": "模型名稱轉小寫",
+    "filterMappedModels": "不填充映射前的模型名稱",
+    "overwriteModels": "覆蓋原有模型列表",
+    "overwriteModelsTip": "啟用後將清空原有的模型列表，僅保留此次選擇的模型",
+    "overwriteMappings": "覆蓋原有映射關係",
+    "overwriteMappingsTip": "啟用後將清空原有的映射關係，僅保留此次創建的映射",
+    "clearModels": "重置",
+    "clearModelsTip": "重置所有已選擇的模型"
   },
   "token_index": {
     "token": "API 金鑰",
@@ -1024,6 +1032,7 @@
     "back": "返回",
     "none": "無",
     "show": "顯示",
+    "reset": "重置",
     "copyUrl": "複製地址",
     "downImg": "下載圖片",
     "newWindos": "新窗口打開",
