@@ -40,7 +40,9 @@ func (e *Stripe) Pay(config *types.PayConfig, gatewayConfig string) (*types.PayR
 	currency := stripe.String("USD")
 	if config.Currency == "CNY" {
 		currency = stripe.String("CNY")
-	}
+    } else if config.Currency == "HKD" {
+		currency = stripe.String("HKD")
+    }
 
 	params := &stripe.CheckoutSessionParams{
 		Mode:              stripe.String(string(stripe.CheckoutSessionModePayment)),

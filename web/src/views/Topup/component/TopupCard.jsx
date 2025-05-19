@@ -182,7 +182,7 @@ const TopupCard = () => {
     const discount = RechargeDiscount[amount] || 1; // 如果没有折扣，则默认为1（即没有折扣）
     let newAmount = amount * discount; //折后价格
     let total = Number(newAmount) + Number(calculateFee());
-    if (selectedPayment && selectedPayment.currency === 'CNY') {
+    if (selectedPayment && selectedPayment.currency === 'HKD') {
       total = parseFloat((total * siteInfo.PaymentUSDRate).toFixed(2));
     }
     return total;
@@ -304,8 +304,8 @@ const TopupCard = () => {
               <Grid item xs={6} md={3}>
                 {calculateTotal()}{' '}
                 {selectedPayment &&
-                  (selectedPayment.currency === 'CNY'
-                    ? `人民幣 (${t('topupCard.exchangeRate')}: ${siteInfo.PaymentUSDRate})`
+                  (selectedPayment.currency === 'HKD'
+                    ? `港幣 (${t('topupCard.exchangeRate')}: ${siteInfo.PaymentUSDRate})`
                     : selectedPayment.currency)}
               </Grid>
             </Grid>

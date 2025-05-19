@@ -11,6 +11,7 @@ type CurrencyType string
 const (
 	CurrencyTypeUSD CurrencyType = "USD"
 	CurrencyTypeCNY CurrencyType = "CNY"
+	CurrencyTypeHKD CurrencyType = "HKD"
 )
 
 type Payment struct {

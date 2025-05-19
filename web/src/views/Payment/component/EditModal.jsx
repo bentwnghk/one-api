@@ -43,7 +43,7 @@ const originInputs = {
   notify_domain: '',
   fixed_fee: 0,
   percent_fee: 0,
-  currency: 'CNY',
+  currency: 'HKD',
   config: {},
   sort: 0,
   enable: true

@@ -7,6 +7,7 @@ const PaymentType = {
 
 const CurrencyType = {
   CNY: '人民幣',
+  HKD: '港幣',
   USD: '美元'
 };
 
