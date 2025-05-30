@@ -210,7 +210,7 @@ export default function Token() {
                 backgroundColor: 'rgba(0, 0, 0, 0.12)'
               }
             }}
-            onClick={() => copy(siteInfo.server_address, 'API 接口地址')}
+            onClick={() => copy(siteInfo.server_address, ' API 接口地址')}
           >
             <b>{siteInfo.server_address}</b>
             <Icon icon="solar:copy-line-duotone" style={{ marginLeft: '8px', fontSize: '18px' }} />

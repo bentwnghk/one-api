@@ -254,7 +254,7 @@
     "createToken": "新建 API 金鑰",
     "instruction": "1. 按右上角【+ 新建 API 金鑰】建立一條屬於你的私人 API 金鑰。",
     "replaceApiAddress1": "2. 按【複製】將 API 金鑰複製，然後在你的 AI 應用中貼上該 API 金鑰即可。",
-    "replaceApiAddress2": "3. 如有需要，將 OpenAI API 接口地址 (Endpoint URL) 'https://api.openai.com' 替換為 ",
+    "replaceApiAddress2": "3. 將 OpenAI API 接口地址 (Endpoint URL) 'https://api.openai.com' 替換為 ",
     "searchTokenName": "搜索 API 金鑰名稱...",
     "refresh": "刷新",
     "name": "金鑰名稱",

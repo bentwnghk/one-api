@@ -1199,7 +1199,7 @@
     "remainingQuota": "Remaining Quota",
     "instruction": "1. Click [+ New API Key] in the upper right corner to create your own API key.",
     "replaceApiAddress1": "2. Press [Copy] to copy the API key, and then paste the API key in your AI application.",
-    "replaceApiAddress2": "3. If necessary, replace the OpenAI API Endpoint URL 'https://api.openai.com' with ",
+    "replaceApiAddress2": "3. Replace the OpenAI API Endpoint URL 'https://api.openai.com' with ",
     "searchTokenName": "Search for Key name...",
     "status": "Status",
     "submit": "Submit",
