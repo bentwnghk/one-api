@@ -194,6 +194,8 @@ export default function Token() {
           {t('token_index.instruction')}
           <br />
           {t('token_index.replaceApiAddress1')}
+          <br />
+          {t('token_index.replaceApiAddress2')}
           <Box
             component="span"
             sx={{
@@ -213,8 +215,6 @@ export default function Token() {
             <b>{siteInfo.server_address}</b>
             <Icon icon="solar:copy-line-duotone" style={{ marginLeft: '8px', fontSize: '18px' }} />
           </Box>
-          {t('token_index.replaceApiAddress2')}
-          <b>{siteInfo.server_address}</b>
         </Alert>
       </Stack>
       <Card>
