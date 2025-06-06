@@ -658,6 +658,14 @@
         },
         "save": "保存Claude設置"
       },
+      "geminiSettings": {
+        "title": "Gemini設置",
+        "geminiOpenThink": {
+          "label": "開啓輸出推理的模型",
+          "placeholder": "請輸入需要開啓推理輸出的模型,json格式,例如：{\"gemini-2.5-pro-preview-05-06\": true}"
+        },
+        "save": "保存Gemini設置"
+      },
       "safetySettings": {
         "title": "系統安全設置",
         "enableSafe": "開啟 Prompt 安全檢查",
