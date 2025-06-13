@@ -31,7 +31,7 @@ type MiniMaxProvider struct {
 
 func getConfig() base.ProviderConfig {
 	return base.ProviderConfig{
-		BaseURL:         "https://api.minimax.chat",
+		BaseURL:         "https://api.minimax.io",
 		ChatCompletions: "/v1/chat/completions",
 		AudioSpeech:     "/v1/t2a_v2",
 		// Embeddings:      "/v1/embeddings",
