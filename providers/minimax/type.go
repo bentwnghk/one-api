@@ -12,6 +12,7 @@ type BaseResp struct {
 type SpeechRequest struct {
 	Model        string        `json:"model"`
 	Text         string        `json:"text"`
+	Stream       bool          `json:"stream"`
 	VoiceSetting VoiceSetting  `json:"voice_setting"`
 	AudioSetting *AudioSetting `json:"audio_setting"`
 }
@@ -19,6 +20,7 @@ type SpeechRequest struct {
 type VoiceSetting struct {
 	Speed     float64  `json:"speed,omitempty"`
 	Vol       *float64 `json:"vol,omitempty"`
+	Pitch     *float64 `json:"pitch,omitempty"`
 	VoiceID   string   `json:"voice_id"`
 	Emotion   string   `json:"emotion,omitempty"`
 	LatexRead bool     `json:"latex_read,omitempty"`

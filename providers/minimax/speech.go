@@ -62,12 +62,15 @@ func (p *MiniMaxProvider) getRequestBody(request *types.SpeechAudioRequest) *Spe
 	}
 
 	speechRequest := &SpeechRequest{
-		Model: request.Model,
-		Text:  request.Input,
+		Model:  request.Model,
+		Text:   request.Input,
+		Stream: false, // Explicitly set stream to false for non-streaming
 		VoiceSetting: VoiceSetting{
 			VoiceID: voice,
 			Emotion: emotion,
 			Speed:   request.Speed,
+			Vol:     utils.Float64Ptr(1.0), // Default value for Vol
+			Pitch:   utils.Float64Ptr(0.0), // Default value for Pitch
 		},
 	}
 
