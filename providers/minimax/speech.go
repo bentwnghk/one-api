@@ -72,6 +72,7 @@ func (p *MiniMaxProvider) getRequestBody(request *types.SpeechAudioRequest) *Spe
 			Vol:     func(f float64) *float64 { return &f }(1.0), // Default value for Vol
 			Pitch:   func(f float64) *float64 { return &f }(0.0), // Default value for Pitch
 		},
+		LanguageBoost: getLanguageBoostValue(request.Language),
 	}
 
 	// mp3-1-32000-128000
@@ -92,6 +93,19 @@ func (p *MiniMaxProvider) getRequestBody(request *types.SpeechAudioRequest) *Spe
 	}
 
 	return speechRequest
+}
+
+func getLanguageBoostValue(language string) string {
+	languageBoostMap := map[string]string{
+		"English":   "English",
+		"Chinese":   "Chinese",
+		"Cantonese": "Chinese,Yue",
+		// Add other mappings as needed
+	}
+	if val, ok := languageBoostMap[language]; ok {
+		return val
+	}
+	return "English" // Default to English if language is empty or not in map
 }
 
 func (p *MiniMaxProvider) CreateSpeech(request *types.SpeechAudioRequest) (*http.Response, *types.OpenAIErrorWithStatusCode) {

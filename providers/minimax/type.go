@@ -12,9 +12,10 @@ type BaseResp struct {
 type SpeechRequest struct {
 	Model        string        `json:"model"`
 	Text         string        `json:"text"`
-	Stream       bool          `json:"stream"`
-	VoiceSetting VoiceSetting  `json:"voice_setting"`
-	AudioSetting *AudioSetting `json:"audio_setting"`
+	Stream        bool          `json:"stream"`
+	VoiceSetting  VoiceSetting  `json:"voice_setting"`
+	AudioSetting  *AudioSetting `json:"audio_setting"`
+	LanguageBoost string        `json:"language_boost,omitempty"`
 }
 
 type VoiceSetting struct {
