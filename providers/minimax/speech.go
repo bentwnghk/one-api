@@ -69,8 +69,8 @@ func (p *MiniMaxProvider) getRequestBody(request *types.SpeechAudioRequest) *Spe
 			VoiceID: voice,
 			Emotion: emotion,
 			Speed:   request.Speed,
-			Vol:     utils.Float64Ptr(1.0), // Default value for Vol
-			Pitch:   utils.Float64Ptr(0.0), // Default value for Pitch
+			Vol:     func(f float64) *float64 { return &f }(1.0), // Default value for Vol
+			Pitch:   func(f float64) *float64 { return &f }(0.0), // Default value for Pitch
 		},
 	}
 
