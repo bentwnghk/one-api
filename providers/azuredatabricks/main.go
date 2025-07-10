@@ -117,10 +117,10 @@ func (p *AzureDatabricksProvider) convertRequest(request *types.ChatCompletionRe
 		}
 	}
 	if request.PresencePenalty != nil {
-		databricksRequest.PresencePenalty = float64(*request.PresencePenalty)
+		databricksRequest.PresencePenalty = *float64(*request.PresencePenalty)
 	}
 	if request.FrequencyPenalty != nil {
-		databricksRequest.FrequencyPenalty = float64(*request.FrequencyPenalty)
+		databricksRequest.FrequencyPenalty = *float64(*request.FrequencyPenalty)
 	}
 
 	if request.Reasoning != nil {
