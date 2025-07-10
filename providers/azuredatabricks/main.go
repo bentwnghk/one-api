@@ -116,12 +116,12 @@ func (p *AzureDatabricksProvider) convertRequest(request *types.ChatCompletionRe
 			databricksRequest.Stop = stop
 		}
 	}
-	if request.PresencePenalty != 0 {
-		databricksRequest.PresencePenalty = float64(*request.PresencePenalty)
-	}
-	if request.FrequencyPenalty != 0 {
-		databricksRequest.FrequencyPenalty = float64(*request.FrequencyPenalty)
-	}
+	// if request.PresencePenalty != nil {
+	// 	databricksRequest.PresencePenalty = float64(*request.PresencePenalty)
+	// }
+	// if request.FrequencyPenalty != nil {
+	// 	databricksRequest.FrequencyPenalty = float64(*request.FrequencyPenalty)
+	// }
 
 	if request.Reasoning != nil {
 		var opErr *types.OpenAIErrorWithStatusCode
