@@ -355,6 +355,8 @@
     },
     "cachedReadTokens": "緩存讀取Tokens (* {{ ratio }})",
     "reasoningTokens": "推理Tokens (* {{ ratio }})",
+    "inputImageTokens": "輸入圖像Tokens (* {{ ratio }})",
+    "outputImageTokens": "輸出圖像Tokens (* {{ ratio }})",
     "cachedWriteTokens": "緩存寫入Tokens (* {{ ratio }})"
   },
   "redemptionPage": {

@@ -493,6 +493,8 @@
     },
     "cachedReadTokens": "Cache read Tokens (* {{ ratio }})",
     "cachedWriteTokens": "Write tokens to cache (* {{ ratio }})",
+    "inputImageTokens": "Input image Tokens (* {{ ratio }})",
+    "outputImageTokens": "Output image Tokens (* {{ ratio }})",
     "reasoningTokens": "Deduction Tokens (* {{ ratio }})"
   },
   "login": {
