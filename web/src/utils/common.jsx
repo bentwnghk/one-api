@@ -134,7 +134,7 @@ export async function onOIDCAuthClicked(openInNewTab = false) {
 }
 export async function onWebAuthnClicked(username, showError, showSuccess, navigateToStatus) {
   if (!username || username.trim() === '') {
-    showError('请先输入用户名');
+    showError('請先輸入用戶名');
     return;
   }
 
