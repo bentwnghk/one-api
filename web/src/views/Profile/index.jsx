@@ -350,11 +350,11 @@ export default function Profile() {
                 )}
               </Grid>
             </SubCard>
-            <SubCard title="WebAuthn 凭据管理">
+            <SubCard title="WebAuthn 憑證管理">
               <Grid container spacing={2}>
                 <Grid xs={12}>
                   <Alert severity="info">
-                    WebAuthn 提供无密码身份验证，您可以使用指纹、Face ID 或安全密钥等生物识别方式进行登录。
+                    WebAuthn 提供無密碼身份驗證，您可以使用指紋、Face ID 或安全金鑰等生物辨識方式登入。
                   </Alert>
                 </Grid>
                 <Grid xs={12}>
@@ -363,13 +363,13 @@ export default function Profile() {
                     onClick={handleWebAuthnRegister}
                     disabled={loadingWebAuthn}
                   >
-                    注册 WebAuthn 凭据
+                    註冊 WebAuthn 憑證
                   </Button>
                 </Grid>
                 {webAuthnCredentials.length > 0 && (
                   <Grid xs={12}>
                     <Typography variant="h4" sx={{ mb: 2 }}>
-                      已注册的凭据
+                      已註冊的憑證
                     </Typography>
                     {webAuthnCredentials.map((credential) => (
                       <Card 
@@ -384,10 +384,10 @@ export default function Profile() {
                       >
                         <Stack>
                           <Typography variant="body1">
-                            凭据 ID: {credential.credential_id.substring(0, 20)}...
+                            憑證 ID: {credential.credential_id.substring(0, 20)}...
                           </Typography>
                           <Typography variant="body2" color="text.secondary">
-                            注册时间: {new Date(credential.created_time * 1000).toLocaleString()}
+                            註冊時間: {new Date(credential.created_time * 1000).toLocaleString()}
                           </Typography>
                         </Stack>
                         <Button
@@ -406,7 +406,7 @@ export default function Profile() {
                 {webAuthnCredentials.length === 0 && !loadingWebAuthn && (
                   <Grid xs={12}>
                     <Alert severity="info">
-                      您还没有注册任何 WebAuthn 凭据。点击上方按钮开始注册。
+                      您尚未註冊任何 WebAuthn 憑證。點擊上方按鈕開始註冊。
                     </Alert>
                   </Grid>
                 )}
@@ -451,11 +451,11 @@ export default function Profile() {
         aria-describedby="confirm-delete-dialog-description"
       >
         <DialogTitle id="confirm-delete-dialog-title">
-          确认删除
+          確認刪除
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="confirm-delete-dialog-description">
-            您确定要删除这个 WebAuthn 凭据吗？此操作无法撤销。
+            您確定要刪除這個 WebAuthn 憑證嗎？此操作無法撤銷。
           </DialogContentText>
         </DialogContent>
         <DialogActions>
