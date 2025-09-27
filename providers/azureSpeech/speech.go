@@ -17,19 +17,24 @@ var outputFormatMap = map[string]string{
 	"flac": "audio-48khz-192kbitrate-mono-mp3",
 }
 
-func CreateSSML(text string, name string, role string) string {
+func CreateSSML(text string, name string, role string, speed float64) string {
 	ssmlTemplate := `<speak version='1.0' xml:lang='en-US'>
-        <voice xml:lang='en-US' %s name='%s'>
+        <voice xml:lang='en-US' %s name='%s'%s>
             %s
         </voice>
     </speak>`
 
 	roleAttribute := ""
 	if role != "" {
-		roleAttribute = fmt.Sprintf("role='%s'", role)
+		roleAttribute = fmt.Sprintf(" role='%s'", role)
 	}
 
-	return fmt.Sprintf(ssmlTemplate, roleAttribute, name, text)
+	rateAttribute := ""
+	if speed > 0 {
+		rateAttribute = fmt.Sprintf(" rate='%.2fx'", speed)
+	}
+
+	return fmt.Sprintf(ssmlTemplate, roleAttribute, name, rateAttribute, text)
 }
 
 func (p *AzureSpeechProvider) GetVoiceMap() map[string][]string {
@@ -78,7 +83,7 @@ func (p *AzureSpeechProvider) getRequestBody(request *types.SpeechAudioRequest) 
 		voice = request.Voice
 	}
 
-	ssml := CreateSSML(request.Input, voice, role)
+	ssml := CreateSSML(request.Input, voice, role, request.Speed)
 
 	return bytes.NewBufferString(ssml)
 
