@@ -3,6 +3,7 @@ package azureSpeech
 import (
 	"bytes"
 	"fmt"
+	"math"
 	"net/http"
 	"one-api/common"
 	"one-api/common/config"
@@ -30,11 +31,23 @@ func CreateSSML(text string, name string, role string, speed float64) string {
 	}
 
 	rateAttribute := ""
-	if speed > 0 {
-		rateAttribute = fmt.Sprintf(" rate='%.2fx'", speed)
+	// Validate speed range (Azure typically supports 0.5x to 2.0x or 3.0x)
+	if speed > 0 && speed >= 0.5 && speed <= 3.0 {
+		// Try different rate formats that Azure supports
+		// Format 1: multiplier (e.g., "0.5", "1.0", "2.0")
+		rateAttribute = fmt.Sprintf(" rate='%.2f'", speed)
+		fmt.Printf("DEBUG: Azure Speech - Speed parameter received: %.2f, rate attribute: %s\n", speed, rateAttribute)
+	} else if speed > 0 {
+		// Clamp speed to valid range if it's outside bounds
+		clampedSpeed := math.Max(0.5, math.Min(3.0, speed))
+		rateAttribute = fmt.Sprintf(" rate='%.2f'", clampedSpeed)
+		fmt.Printf("DEBUG: Azure Speech - Speed %.2f clamped to %.2f, rate attribute: %s\n", speed, clampedSpeed, rateAttribute)
 	}
 
-	return fmt.Sprintf(ssmlTemplate, roleAttribute, name, rateAttribute, text)
+	generatedSSML := fmt.Sprintf(ssmlTemplate, roleAttribute, name, rateAttribute, text)
+	fmt.Printf("DEBUG: Azure Speech - Generated SSML: %s\n", generatedSSML)
+
+	return generatedSSML
 }
 
 func (p *AzureSpeechProvider) GetVoiceMap() map[string][]string {
@@ -82,6 +95,9 @@ func (p *AzureSpeechProvider) getRequestBody(request *types.SpeechAudioRequest) 
 	} else {
 		voice = request.Voice
 	}
+
+	// Debug log to verify speed value from request
+	fmt.Printf("DEBUG: Azure Speech - Request speed value: %.2f\n", request.Speed)
 
 	ssml := CreateSSML(request.Input, voice, role, request.Speed)
 
