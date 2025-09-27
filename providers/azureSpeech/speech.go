@@ -31,10 +31,8 @@ func CreateSSML(text string, name string, role string, speed float64) string {
 	}
 
 	rateAttribute := ""
-	// Validate speed range (Azure typically supports 0.5x to 2.0x or 3.0x)
+	// Validate speed range (Azure typically supports 0.5 to 2.0 or 3.0)
 	if speed > 0 && speed >= 0.5 && speed <= 3.0 {
-		// Try different rate formats that Azure supports
-		// Format 1: multiplier (e.g., "0.5", "1.0", "2.0")
 		rateAttribute = fmt.Sprintf(" rate='%.2f'", speed)
 		fmt.Printf("DEBUG: Azure Speech - Speed parameter received: %.2f, rate attribute: %s\n", speed, rateAttribute)
 	} else if speed > 0 {
