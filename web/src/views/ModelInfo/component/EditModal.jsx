@@ -25,10 +25,10 @@ import { API } from 'utils/api';
 import { MODALITY_OPTIONS } from 'constants/Modality';
 
 const validationSchema = Yup.object().shape({
-    model: Yup.string().required('模型标识不能为空'),
-    name: Yup.string().required('模型名称不能为空'),
-    context_length: Yup.number().required('上下文长度不能为空'),
-    max_tokens: Yup.number().required('最大Token不能为空')
+    model: Yup.string().required('模型標識不能為空'),
+    name: Yup.string().required('模型名稱不能為空'),
+    context_length: Yup.number().required('上下文長度不能為空'),
+    max_tokens: Yup.number().required('最大Token不能為空')
 });
 
 const originInputs = {
@@ -58,7 +58,7 @@ const EditModal = ({ open, editId, onCancel, onOk, existingModels = [] }) => {
         values.max_tokens = parseInt(values.max_tokens);
 
         if (existingModels.includes(values.model) && values.model !== originalModel) {
-            showError('模型标识已存在');
+            showError('模型標識已存在');
             setSubmitting(false);
             return;
         }
@@ -140,7 +140,7 @@ const EditModal = ({ open, editId, onCancel, onOk, existingModels = [] }) => {
     return (
         <Dialog open={open} onClose={onCancel} fullWidth maxWidth={'md'}>
             <DialogTitle sx={{ margin: '0px', fontWeight: 700, lineHeight: '1.55556', padding: '24px', fontSize: '1.125rem' }}>
-                {editId ? '编辑模型信息' : '新建模型信息'}
+                {editId ? '編輯模型信息' : '新建模型信息'}
             </DialogTitle>
             <Divider />
             <DialogContent>
@@ -167,7 +167,7 @@ const EditModal = ({ open, editId, onCancel, onOk, existingModels = [] }) => {
                                             renderInput={(params) => (
                                                 <TextField
                                                     {...params}
-                                                    label="模型标识"
+                                                    label="模型標識"
                                                     error={Boolean(touched.model && errors.model)}
                                                     helperText={touched.model && errors.model}
                                                 />
@@ -177,10 +177,10 @@ const EditModal = ({ open, editId, onCancel, onOk, existingModels = [] }) => {
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <FormControl fullWidth error={Boolean(touched.name && errors.name)} sx={{ ...theme.typography.otherInput }}>
-                                        <InputLabel htmlFor="name-label">模型名称</InputLabel>
+                                        <InputLabel htmlFor="name-label">模型名稱</InputLabel>
                                         <OutlinedInput
                                             id="name-label"
-                                            label="模型名称"
+                                            label="模型名稱"
                                             type="text"
                                             value={values.name}
                                             name="name"
@@ -213,10 +213,10 @@ const EditModal = ({ open, editId, onCancel, onOk, existingModels = [] }) => {
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <FormControl fullWidth error={Boolean(touched.context_length && errors.context_length)} sx={{ ...theme.typography.otherInput }}>
-                                        <InputLabel htmlFor="context_length-label">上下文长度</InputLabel>
+                                        <InputLabel htmlFor="context_length-label">上下文長度</InputLabel>
                                         <OutlinedInput
                                             id="context_length-label"
-                                            label="上下文长度"
+                                            label="上下文長度"
                                             type="number"
                                             value={values.context_length}
                                             name="context_length"
@@ -302,8 +302,8 @@ const EditModal = ({ open, editId, onCancel, onOk, existingModels = [] }) => {
                                             renderInput={(params) => (
                                                 <TextField
                                                     {...params}
-                                                    label="输入模态"
-                                                    placeholder="选择或输入"
+                                                    label="輸入模態"
+                                                    placeholder="選擇或輸入"
                                                 />
                                             )}
                                             renderOption={(props, option) => {
@@ -386,8 +386,8 @@ const EditModal = ({ open, editId, onCancel, onOk, existingModels = [] }) => {
                                             renderInput={(params) => (
                                                 <TextField
                                                     {...params}
-                                                    label="输出模态"
-                                                    placeholder="选择或输入"
+                                                    label="輸出模態"
+                                                    placeholder="選擇或輸入"
                                                 />
                                             )}
                                             renderOption={(props, option) => {
@@ -454,8 +454,8 @@ const EditModal = ({ open, editId, onCancel, onOk, existingModels = [] }) => {
                                             renderInput={(params) => (
                                                 <TextField
                                                     {...params}
-                                                    label="标签"
-                                                    placeholder="输入标签,回车键确认"
+                                                    label="標籤"
+                                                    placeholder="輸入標籤，Enter鍵確認"
                                                 />
                                             )}
                                         />
