@@ -940,7 +940,7 @@ export default function ModelPrice() {
       {/* 模型卡片网格 */}
       <Box>
         <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-          共 {filteredModels.length} 个模型
+          共 {filteredModels.length} 個模型
         </Typography>
         {filteredModels.length > 0 ? (
           <Grid container spacing={3}>
@@ -975,7 +975,7 @@ export default function ModelPrice() {
                 未找到匹配的模型
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                请尝试调整筛选条件或搜索关键词
+                請嘗試調整篩選條件或搜索關鍵詞
               </Typography>
             </Stack>
           </Card>

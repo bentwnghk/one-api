@@ -39,7 +39,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
 
   const handleFetchData = async () => {
     if (!jsonUrl.trim()) {
-      setUrlError('请输入 JSON URL');
+      setUrlError('請輸入 JSON URL');
       return;
     }
 
@@ -56,7 +56,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
 
       // 验证数据格式
       if (!jsonData.data || !Array.isArray(jsonData.data)) {
-        throw new Error('JSON 格式错误：缺少 data 数组');
+        throw new Error('JSON 格式錯誤：缺少 data 數組');
       }
 
       // 转换数据格式
@@ -79,14 +79,14 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
 
       setPreviewData(transformedData);
       if (transformedData.length === 0) {
-        showError('没有找到有效的模型数据');
+        showError('沒有找到有效的模型數據');
       } else {
-        showSuccess(`成功获取 ${transformedData.length} 条模型数据`);
+        showSuccess(`成功獲取 ${transformedData.length} 條模型數據`);
       }
     } catch (error) {
       console.error('Failed to fetch JSON data:', error);
-      setUrlError(error.message || '获取 JSON 数据失败');
-      showError('获取 JSON 数据失败: ' + error.message);
+      setUrlError(error.message || '獲取 JSON 數據失敗');
+      showError('獲取 JSON 數據失敗: ' + error.message);
     } finally {
       setLoading(false);
     }
@@ -94,7 +94,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
 
   const handleImport = async () => {
     if (previewData.length === 0) {
-      showError('没有可导入的数据');
+      showError('沒有可導入的數據');
       return;
     }
 
@@ -138,14 +138,14 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
 
     // 显示导入结果
     const messages = [];
-    if (successCount > 0) messages.push(`成功导入 ${successCount} 条`);
-    if (skipCount > 0) messages.push(`跳过 ${skipCount} 条`);
-    if (errorCount > 0) messages.push(`失败 ${errorCount} 条`);
+    if (successCount > 0) messages.push(`成功導入 ${successCount} 條`);
+    if (skipCount > 0) messages.push(`跳過 ${skipCount} 條`);
+    if (errorCount > 0) messages.push(`失敗 ${errorCount} 條`);
 
     if (errorCount > 0) {
-      showError(`导入完成：${messages.join('，')}`);
+      showError(`導入完成：${messages.join('，')}`);
     } else {
-      showSuccess(`导入完成：${messages.join('，')}`);
+      showSuccess(`導入完成：${messages.join('，')}`);
     }
 
     // 重置状态
@@ -168,7 +168,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
   return (
     <Dialog open={open} onClose={handleClose} fullWidth maxWidth="lg">
       <DialogTitle sx={{ margin: '0px', fontWeight: 700, lineHeight: '1.55556', padding: '24px', fontSize: '1.125rem' }}>
-        批量导入模型信息
+        批量導入模型信息
       </DialogTitle>
       <Divider />
       <DialogContent>
@@ -176,10 +176,10 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
         <Box sx={{ mb: 3 }}>
           <Box sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>
             <FormControl fullWidth error={Boolean(urlError)}>
-              <InputLabel htmlFor="json-url-input">数据源地址</InputLabel>
+              <InputLabel htmlFor="json-url-input">數據源地址</InputLabel>
               <OutlinedInput
                 id="json-url-input"
-                label="数据源地址"
+                label="數據源地址"
                 type="text"
                 value={jsonUrl}
                 onChange={(e) => {
@@ -206,7 +206,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
               }}
               startIcon={loading ? <CircularProgress size={20} /> : <Icon icon="solar:download-bold-duotone" />}
             >
-              获取数据
+              獲取數據
             </Button>
           </Box>
         </Box>
@@ -228,7 +228,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
                 }
               }}
             >
-              检测到 <strong>{conflictCount}</strong> 个模型标识冲突，请选择处理策略
+              檢測到 <strong>{conflictCount}</strong> 個模型標識衝突，請選擇處理策略
             </Alert>
 
             {/* 策略选择卡片 */}
@@ -245,7 +245,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
                 }}
               >
                 <Icon icon="solar:settings-minimalistic-bold-duotone" width={20} />
-                冲突处理策略
+                衝突處理策略
               </Typography>
               <Box sx={{ display: 'flex', gap: 2 }}>
                 {/* 跳过策略卡片 */}
@@ -322,11 +322,11 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
                             color: conflictStrategy === 'skip' ? 'primary.main' : 'text.primary'
                           }}
                         >
-                          跳过已存在的
+                          跳過已存在的
                         </Typography>
                       </Box>
                       <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.875rem' }}>
-                        保留现有数据，仅导入新模型
+                        保留現有數據，僅導入新模型
                       </Typography>
                     </Box>
                   </Box>
@@ -407,11 +407,11 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
                             color: conflictStrategy === 'overwrite' ? 'warning.main' : 'text.primary'
                           }}
                         >
-                          覆盖已存在的
+                          覆蓋已存在的
                         </Typography>
                       </Box>
                       <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.875rem' }}>
-                        使用新数据替换现有模型
+                        使用新數據替換現有模型
                       </Typography>
                     </Box>
                   </Box>
@@ -425,7 +425,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
         {importing && (
           <Box sx={{ mb: 2 }}>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-              正在导入：{importProgress.current} / {importProgress.total}
+              正在導入：{importProgress.current} / {importProgress.total}
             </Typography>
             <LinearProgress variant="determinate" value={(importProgress.current / importProgress.total) * 100} />
           </Box>
@@ -437,14 +437,14 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
             <Table stickyHeader size="small">
               <TableHead>
                 <TableRow>
-                  <TableCell>模型标识</TableCell>
-                  <TableCell>模型名称</TableCell>
-                  <TableCell>上下文长度</TableCell>
+                  <TableCell>模型標識</TableCell>
+                  <TableCell>模型名稱</TableCell>
+                  <TableCell>上下文長度</TableCell>
                   <TableCell>最大Token</TableCell>
-                  <TableCell>输入模态</TableCell>
-                  <TableCell>输出模态</TableCell>
-                  <TableCell>标签</TableCell>
-                  <TableCell>状态</TableCell>
+                  <TableCell>輸入模態</TableCell>
+                  <TableCell>輸出模態</TableCell>
+                  <TableCell>標籤</TableCell>
+                  <TableCell>狀態</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -484,7 +484,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
           <Box sx={{ textAlign: 'center', py: 4, color: 'text.secondary' }}>
             <Icon icon="solar:cloud-download-linear" width={48} style={{ opacity: 0.5 }} />
             <Typography variant="body2" sx={{ mt: 1 }}>
-              输入 JSON URL 并点击"获取数据"开始
+              輸入 JSON URL 並點擊"獲取數據"開始
             </Typography>
           </Box>
         )}
@@ -501,7 +501,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
           color="primary"
           startIcon={importing ? <CircularProgress size={16} /> : <Icon icon="solar:upload-bold-duotone" />}
         >
-          {importing ? '导入中...' : '开始导入'}
+          {importing ? '導入中...' : '開始導入'}
         </Button>
       </DialogActions>
     </Dialog>

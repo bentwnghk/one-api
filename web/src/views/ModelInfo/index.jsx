@@ -125,7 +125,7 @@ export default function ModelInfo() {
     <>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
         <Stack direction="column" spacing={1}>
-          <Typography variant="h2">模型详情</Typography>
+          <Typography variant="h2">模型詳情</Typography>
           <Typography variant="subtitle1" color="text.secondary">
             Model Info
           </Typography>
@@ -138,7 +138,7 @@ export default function ModelInfo() {
             startIcon={<Icon icon="solar:upload-bold-duotone" />}
             onClick={() => setOpenImportModal(true)}
           >
-            批量导入
+            批量導入
           </Button>
           <Button
             variant="contained"
@@ -170,7 +170,7 @@ export default function ModelInfo() {
           <OutlinedInput
             value={keyword}
             onChange={handleSearch}
-            placeholder="搜索模型标识、名称、模态或标签..."
+            placeholder="搜索模型標識、名稱、模態或標籤..."
             startAdornment={<Icon icon="eva:search-fill" style={{ color: 'text.disabled', width: 20, height: 20, marginRight: 8 }} />}
             sx={{ height: 40, width: 600 }}
           />
@@ -180,13 +180,13 @@ export default function ModelInfo() {
             <Table sx={{ minWidth: 800 }}>
               <KeywordTableHead
                 headLabel={[
-                  { id: 'model', label: '模型标识', disableSort: false },
-                  { id: 'name', label: '模型名称', disableSort: false },
-                  { id: 'context_length', label: '上下文长度', disableSort: false },
+                  { id: 'model', label: '模型標識', disableSort: false },
+                  { id: 'name', label: '模型名稱', disableSort: false },
+                  { id: 'context_length', label: '上下文長度', disableSort: false },
                   { id: 'max_tokens', label: '最大Token', disableSort: false },
-                  { id: 'input_modalities', label: '输入模态', disableSort: false },
-                  { id: 'output_modalities', label: '输出模态', disableSort: false },
-                  { id: 'tags', label: '标签', disableSort: false },
+                  { id: 'input_modalities', label: '輸入模態', disableSort: false },
+                  { id: 'output_modalities', label: '輸出模態', disableSort: false },
+                  { id: 'tags', label: '標籤', disableSort: false },
                   { id: 'action', label: '操作', disableSort: true }
                 ]}
               />

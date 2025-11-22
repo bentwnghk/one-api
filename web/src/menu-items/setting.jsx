@@ -42,7 +42,7 @@ const Setting = {
     },
     {
       id: 'operation',
-      title: '运营',
+      title: '運營',
       type: 'collapse',
       icon: icons.IconBasket,
       isAdmin: true,
@@ -76,7 +76,7 @@ const Setting = {
         },
         {
           id: 'model_info',
-          title: '模型详情',
+          title: '模型詳情',
           type: 'item',
           url: '/panel/model_info',
           icon: icons.IconInfo,
@@ -96,7 +96,7 @@ const Setting = {
     },
     {
       id: 'paySetting',
-      title: '支付设置',
+      title: '支付設置',
       type: 'collapse',
       icon: icons.IconBrandPaypal,
       isAdmin: true,
@@ -133,7 +133,7 @@ const Setting = {
 
     {
       id: 'profile',
-      title: '个人设置',
+      title: '個人設置',
       type: 'item',
       url: '/panel/profile',
       icon: icons.IconUserScan,
@@ -143,7 +143,7 @@ const Setting = {
 
     {
       id: 'setting',
-      title: '设置',
+      title: '設置',
       type: 'item',
       url: '/panel/setting',
       icon: icons.IconSettingsCog,

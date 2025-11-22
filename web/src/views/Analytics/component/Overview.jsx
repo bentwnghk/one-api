@@ -85,7 +85,7 @@ export default function Overview() {
               <DateRangePicker
                 defaultValue={dateRange}
                 onChange={handleDateRangeChange}
-                localeText={{ start: '开始时间', end: '结束时间' }}
+                localeText={{ start: '開始時間', end: '結束時間' }}
                 fullWidth
               />
             </Grid>

@@ -610,7 +610,7 @@
     "inputModality": "輸入模態",
     "outputModality": "輸出模態",
     "priceDetails": "價格明細",
-    "priceNote": "不同分組,對應的價格也隨之不同,渠道組需要在令牌管理中切換。",
+    "priceNote": "不同分組，對應的價格也隨之不同。渠道組需要在API金鑰管理中切換。",
     "otherInfo": "其他資訊"
   },
   "paymentPage": {

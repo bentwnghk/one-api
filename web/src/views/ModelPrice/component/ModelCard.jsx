@@ -107,8 +107,8 @@ export default function ModelCard({ model, provider, modelInfo, price, group, ow
               </Typography>
             </Box>
           </Stack>
-          <Tooltip title="复制模型标识">
-            <IconButton size="small" onClick={() => copy(model, '模型标识')} sx={{ color: theme.palette.text.secondary }}>
+          <Tooltip title="複製模型標識">
+            <IconButton size="small" onClick={() => copy(model, '模型標識')} sx={{ color: theme.palette.text.secondary }}>
               <Icon icon="eva:copy-outline" width={18} height={18} />
             </IconButton>
           </Tooltip>
@@ -143,7 +143,7 @@ export default function ModelCard({ model, provider, modelInfo, price, group, ow
           {inputModalities.length > 0 && (
             <Box>
               <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5, fontSize: '0.7rem' }}>
-                输入模态
+                輸入模態
               </Typography>
               <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap>
                 {inputModalities.map((modality, index) => (
@@ -164,7 +164,7 @@ export default function ModelCard({ model, provider, modelInfo, price, group, ow
           {outputModalities.length > 0 && (
             <Box>
               <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5, fontSize: '0.7rem' }}>
-                输出模态
+                輸出模態
               </Typography>
               <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap>
                 {outputModalities.map((modality, index) => (
@@ -185,7 +185,7 @@ export default function ModelCard({ model, provider, modelInfo, price, group, ow
           {tags.length > 0 && (
             <Box>
               <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5, fontSize: '0.7rem' }}>
-                标签
+                標籤
               </Typography>
               <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap>
                 {tags.map((tag, index) => (
@@ -213,7 +213,7 @@ export default function ModelCard({ model, provider, modelInfo, price, group, ow
 
           <Box>
             <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5, fontSize: '0.7rem' }}>
-              计费方式
+              計費方式
             </Typography>
             <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap>
               {type === 'tokens' && (
@@ -238,7 +238,7 @@ export default function ModelCard({ model, provider, modelInfo, price, group, ow
             <Stack spacing={1}>
               <Stack direction="row" alignItems="center" justifyContent="space-between">
                 <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.7rem' }}>
-                  输入价格
+                  輸入價格
                 </Typography>
                 <Label color="success" variant="outlined" sx={{ fontSize: '0.75rem', py: 0.25, px: 0.75, fontWeight: 600 }}>
                   {formatPrice(price.input, type)}
@@ -246,7 +246,7 @@ export default function ModelCard({ model, provider, modelInfo, price, group, ow
               </Stack>
               <Stack direction="row" alignItems="center" justifyContent="space-between">
                 <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.7rem' }}>
-                  输出价格
+                  輸出價格
                 </Typography>
                 <Label color="warning" variant="outlined" sx={{ fontSize: '0.75rem', py: 0.25, px: 0.75, fontWeight: 600 }}>
                   {formatPrice(price.output, type)}
@@ -275,7 +275,7 @@ export default function ModelCard({ model, provider, modelInfo, price, group, ow
             <Box sx={{ mt: 1.5 }}>
               <Stack direction="row" alignItems="center" justifyContent="space-between">
                 <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.7rem' }}>
-                  当前用户组
+                  當前用戶組
                 </Typography>
                 <Stack direction="row" spacing={0.5} alignItems="center">
                   <Label color="primary" sx={{ fontSize: '0.7rem', py: 0.25, px: 0.75 }}>
@@ -308,7 +308,7 @@ export default function ModelCard({ model, provider, modelInfo, price, group, ow
               fontWeight: 600
             }}
           >
-            查看详情
+            查看詳情
           </Button>
         </Box>
       </CardContent>
