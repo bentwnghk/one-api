@@ -31,7 +31,7 @@ export default function ModelDetailModal({ open, onClose, model, provider, model
   const theme = useTheme();
   const { t } = useTranslation();
   if (!model) return null;
-  // 解析模态和标签
+  // 解析模態和標籤
   const getModalities = (modalitiesStr) => {
     try {
       return JSON.parse(modalitiesStr || '[]');
@@ -93,7 +93,7 @@ export default function ModelDetailModal({ open, onClose, model, provider, model
                 <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.875rem' }}>
                   {model}
                 </Typography>
-                <IconButton size="small" onClick={() => copy(model, '模型标识')} sx={{ p: 0.5 }}>
+                <IconButton size="small" onClick={() => copy(model, '模型標識')} sx={{ p: 0.5 }}>
                   <Icon icon="eva:copy-outline" width={16} height={16} />
                 </IconButton>
               </Stack>
@@ -143,7 +143,7 @@ export default function ModelDetailModal({ open, onClose, model, provider, model
           </Stack>
 
           <Stack spacing={2}>
-            {/* 类型 */}
+            {/* 類型 */}
             <Stack direction="row" alignItems="center" spacing={2}>
               <Icon icon="eva:cube-outline" width={18} height={18} color={theme.palette.text.secondary} />
               <Typography variant="body2" color="text.secondary" sx={{ minWidth: 80 }}>
@@ -154,7 +154,7 @@ export default function ModelDetailModal({ open, onClose, model, provider, model
               </Label>
             </Stack>
 
-            {/* 上下文长度 */}
+            {/* 上下文長度 */}
             {modelInfo?.context_length > 0 && (
               <Stack direction="row" alignItems="center" spacing={2}>
                 <Icon icon="eva:file-text-outline" width={18} height={18} color={theme.palette.text.secondary} />
@@ -180,7 +180,7 @@ export default function ModelDetailModal({ open, onClose, model, provider, model
               </Stack>
             )}
 
-            {/* 输入模态 */}
+            {/* 輸入模態 */}
             {inputModalities.length > 0 && (
               <Stack direction="row" alignItems="center" spacing={2}>
                 <Icon icon="eva:arrow-down-outline" width={18} height={18} color={theme.palette.text.secondary} />
@@ -197,7 +197,7 @@ export default function ModelDetailModal({ open, onClose, model, provider, model
               </Stack>
             )}
 
-            {/* 输出模态 */}
+            {/* 輸出模態 */}
             {outputModalities.length > 0 && (
               <Stack direction="row" alignItems="center" spacing={2}>
                 <Icon icon="eva:arrow-up-outline" width={18} height={18} color={theme.palette.text.secondary} />
@@ -214,7 +214,7 @@ export default function ModelDetailModal({ open, onClose, model, provider, model
               </Stack>
             )}
 
-            {/* 标签 */}
+            {/* 標籤 */}
             {tags.length > 0 && (
               <Stack direction="row" alignItems="center" spacing={2}>
                 <Icon icon="eva:pricetags-outline" width={18} height={18} color={theme.palette.text.secondary} />
@@ -233,7 +233,7 @@ export default function ModelDetailModal({ open, onClose, model, provider, model
 
         <Divider sx={{ my: 3 }} />
 
-        {/* 价格明细 */}
+        {/* 價格明細 */}
         <Box sx={{ mb: 2 }}>
           <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 2 }}>
             <Icon icon="mdi:attach-money" width={20} height={20} />
@@ -246,7 +246,7 @@ export default function ModelDetailModal({ open, onClose, model, provider, model
             {t('modelpricePage.priceNote')}
           </Typography>
 
-          {/* 价格表格 */}
+          {/* 價格表格 */}
           <TableContainer
             sx={{
               border: `1px solid ${theme.palette.mode === 'dark' ? alpha('#fff', 0.08) : alpha('#000', 0.08)}`,

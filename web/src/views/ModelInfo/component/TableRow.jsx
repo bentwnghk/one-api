@@ -51,7 +51,7 @@ export default function ModelInfoTableRow({ item, manageModelInfo, handleOpenMod
     <>
       <TableRow tabIndex={item.id}>
         <TableCell>
-          <Label color="success" sx={{ mr: 0.5, cursor: 'pointer' }} onClick={() => copy(item.model, '模型标识')}>
+          <Label color="success" sx={{ mr: 0.5, cursor: 'pointer' }} onClick={() => copy(item.model, '模型標識')}>
             {item.model}
           </Label>
         </TableCell>
@@ -124,23 +124,23 @@ export default function ModelInfoTableRow({ item, manageModelInfo, handleOpenMod
           }}
         >
           <Icon icon="solar:pen-bold-duotone" style={{ marginRight: '16px' }} />
-          编辑
+          編輯
         </MenuItem>
         <MenuItem onClick={handleDeleteOpen} sx={{ color: 'error.main' }}>
           <Icon icon="solar:trash-bin-trash-bold-duotone" style={{ marginRight: '16px' }} />
-          删除
+          刪除
         </MenuItem>
       </Popover>
 
       <Dialog open={openDelete} onClose={handleDeleteClose}>
-        <DialogTitle>删除模型信息</DialogTitle>
+        <DialogTitle>刪除模型信息</DialogTitle>
         <DialogContent>
-          <DialogContentText>确定要删除 {item.name} 吗？</DialogContentText>
+          <DialogContentText>確定要刪除 {item.name} 嗎？</DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleDeleteClose}>取消</Button>
           <Button onClick={handleDelete} sx={{ color: 'error.main' }} autoFocus>
-            删除
+            刪除
           </Button>
         </DialogActions>
       </Dialog>
