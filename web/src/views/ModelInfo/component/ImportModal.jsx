@@ -54,21 +54,21 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
       }
       const jsonData = await response.json();
 
-      // 验证数据格式
+      // 驗證數據格式
       if (!jsonData.data || !Array.isArray(jsonData.data)) {
         throw new Error('JSON 格式錯誤：缺少 data 數組');
       }
 
-      // 转换数据格式
+      // 轉換數據格式
       const transformedData = jsonData.data
-        .filter((item) => item.model_info) // 只处理有 model_info 的项
+        .filter((item) => item.model_info) // 只處理有 model_info 的項
         .map((item) => {
           const modelInfo = item.model_info;
           return {
             model: modelInfo.model || item.model,
             name: modelInfo.name || modelInfo.model || item.model,
             description: modelInfo.description || '',
-            context_length: modelInfo.context_length || 0, // 默认值
+            context_length: modelInfo.context_length || 0, // 默認值
             max_tokens: modelInfo.max_tokens || 0,
             input_modalities: JSON.stringify(modelInfo.input_modalities || []),
             output_modalities: JSON.stringify(modelInfo.output_modalities || []),
@@ -109,20 +109,21 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
       const item = previewData[i];
       setImportProgress({ current: i + 1, total: previewData.length });
 
-      // 处理冲突
+      // 處理衝突
       if (item.isConflict && conflictStrategy === 'skip') {
         skipCount++;
         continue;
       }
 
       try {
-        // 准备提交的数据（移除 isConflict 标记）
-        const { isConflict, ...submitData } = item;
+        // 準備提交的數據（移除 isConflict 標記）
+        const submitData = { ...item };
+        delete submitData.isConflict;
 
         if (item.isConflict && conflictStrategy === 'overwrite') {
-          // 查找现有记录的 ID（需要从 existingModels 获取完整信息）
-          // 注意：这里需要传入完整的模型信息，而不仅仅是模型名称
-          // 暂时使用 POST 创建，如果需要更新，需要调整数据结构
+          // 查找現有記錄的 ID（需要從 existingModels 獲取完整信息）
+          // 注意：這裡需要傳入完整的模型信息，而不僅僅是模型名稱
+          // 暫時使用 POST 創建，如果需要更新，需要調整數據結構
           await API.post('/api/model_info/', submitData);
         } else {
           await API.post('/api/model_info/', submitData);
@@ -136,7 +137,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
 
     setImporting(false);
 
-    // 显示导入结果
+    // 顯示導入結果
     const messages = [];
     if (successCount > 0) messages.push(`成功導入 ${successCount} 條`);
     if (skipCount > 0) messages.push(`跳過 ${skipCount} 條`);
@@ -148,7 +149,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
       showSuccess(`導入完成：${messages.join('，')}`);
     }
 
-    // 重置状态
+    // 重置狀態
     setJsonUrl('');
     setPreviewData([]);
     setImportProgress({ current: 0, total: 0 });
@@ -172,7 +173,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
       </DialogTitle>
       <Divider />
       <DialogContent>
-        {/* URL 输入 */}
+        {/* URL 輸入 */}
         <Box sx={{ mb: 3 }}>
           <Box sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>
             <FormControl fullWidth error={Boolean(urlError)}>
@@ -211,7 +212,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
           </Box>
         </Box>
 
-        {/* 冲突处理选项 */}
+        {/* 衝突處理選項 */}
         {previewData.length > 0 && conflictCount > 0 && (
           <Box sx={{ mb: 3 }}>
             {/* 警告提示 */}
@@ -231,7 +232,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
               檢測到 <strong>{conflictCount}</strong> 個模型標識衝突，請選擇處理策略
             </Alert>
 
-            {/* 策略选择卡片 */}
+            {/* 策略選擇卡片 */}
             <Box>
               <Typography
                 variant="subtitle2"
@@ -248,7 +249,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
                 衝突處理策略
               </Typography>
               <Box sx={{ display: 'flex', gap: 2 }}>
-                {/* 跳过策略卡片 */}
+                {/* 跳過策略卡片 */}
                 <Box
                   onClick={() => setConflictStrategy('skip')}
                   sx={{
@@ -332,7 +333,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
                   </Box>
                 </Box>
 
-                {/* 覆盖策略卡片 */}
+                {/* 覆蓋策略卡片 */}
                 <Box
                   onClick={() => setConflictStrategy('overwrite')}
                   sx={{
@@ -421,7 +422,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
           </Box>
         )}
 
-        {/* 导入进度 */}
+        {/* 導入進度 */}
         {importing && (
           <Box sx={{ mb: 2 }}>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
@@ -431,7 +432,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
           </Box>
         )}
 
-        {/* 预览数据表格 */}
+        {/* 預覽數據表格 */}
         {previewData.length > 0 && (
           <TableContainer component={Paper} sx={{ maxHeight: 400 }}>
             <Table stickyHeader size="small">
@@ -484,7 +485,7 @@ const ImportModal = ({ open, onCancel, onOk, existingModels = [] }) => {
           <Box sx={{ textAlign: 'center', py: 4, color: 'text.secondary' }}>
             <Icon icon="solar:cloud-download-linear" width={48} style={{ opacity: 0.5 }} />
             <Typography variant="body2" sx={{ mt: 1 }}>
-              輸入 JSON URL 並點擊"獲取數據"開始
+              輸入JSON URL並點擊&quot;獲取數據&quot;開始
             </Typography>
           </Box>
         )}
