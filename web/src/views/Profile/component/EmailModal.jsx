@@ -23,8 +23,8 @@ import { API } from 'utils/api';
 import Turnstile from 'react-turnstile';
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email('请输入正确的邮箱地址').required('邮箱不能为空'),
-  email_verification_code: Yup.string().required('验证码不能为空')
+  email: Yup.string().email('請輸入正確的郵箱地址').required('郵箱不能為空'),
+  email_verification_code: Yup.string().required('驗證碼不能為空')
 });
 
 const EmailModal = ({ open, handleClose, turnstileSiteKey, turnstileEnabled }) => {
@@ -43,7 +43,7 @@ const EmailModal = ({ open, handleClose, turnstileSiteKey, turnstileEnabled }) =
       const res = await API.get(`/api/oauth/email/bind?email=${values.email}&code=${values.email_verification_code}`);
       const { success, message } = res.data;
       if (success) {
-        showSuccess('邮箱账户绑定成功！');
+        showSuccess('郵箱賬戶綁定成功！');
         setSubmitting(false);
         setStatus({ success: true });
         handleClose();
@@ -72,11 +72,11 @@ const EmailModal = ({ open, handleClose, turnstileSiteKey, turnstileEnabled }) =
 
   const handleSendCode = async (email) => {
     if (email === '') {
-      showError('请输入邮箱');
+      showError('請輸入郵箱');
       return;
     }
     if (turnstileEnabled && turnstileToken === '') {
-      showError('请稍后几秒重试，Turnstile 正在检查用户环境！');
+      showError('請稍後幾秒重試，Turnstile 正在檢查用戶環境！');
       return;
     }
     setDisableButton(true);
@@ -96,7 +96,7 @@ const EmailModal = ({ open, handleClose, turnstileSiteKey, turnstileEnabled }) =
 
   return (
     <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>绑定邮箱</DialogTitle>
+      <DialogTitle>綁定郵箱</DialogTitle>
       <DialogContent>
         <Grid container direction="column" alignItems="center">
           <Formik
@@ -127,7 +127,7 @@ const EmailModal = ({ open, handleClose, turnstileSiteKey, turnstileEnabled }) =
                           onClick={() => handleSendCode(values.email)}
                           disabled={disableButton || loading}
                         >
-                          {disableButton ? `重新发送(${countdown})` : '获取验证码'}
+                          {disableButton ? `重新發送(${countdown})` : '獲取驗證碼'}
                         </Button>
                       </InputAdornment>
                     }
@@ -144,7 +144,7 @@ const EmailModal = ({ open, handleClose, turnstileSiteKey, turnstileEnabled }) =
                   error={Boolean(touched.email_verification_code && errors.email_verification_code)}
                   sx={{ ...theme.typography.customInput }}
                 >
-                  <InputLabel htmlFor="email_verification_code">验证码</InputLabel>
+                  <InputLabel htmlFor="email_verification_code">驗證碼</InputLabel>
                   <OutlinedInput
                     id="email_verification_code"
                     type="text"

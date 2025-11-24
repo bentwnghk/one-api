@@ -388,6 +388,7 @@
   "jump": "Redirecting...",
   "log": "Log",
   "invoice": "Monthly Bill",
+  "multi_user_stats": "Multi-User Token Statistics",
   "midjourney": "Midjourney",
   "invoice_index": {
     "invoice": "Monthly Bill",
