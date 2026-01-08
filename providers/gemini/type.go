@@ -333,8 +333,9 @@ type GeminiChatGenerationConfig struct {
 }
 
 type ThinkingConfig struct {
-	ThinkingBudget  *int `json:"thinkingBudget"`
-	IncludeThoughts bool `json:"includeThoughts,omitempty"`
+	ThinkingBudget  *int   `json:"thinkingBudget,omitempty"`
+	ThinkingLevel   string `json:"thinkingLevel,omitempty"`
+	IncludeThoughts bool   `json:"includeThoughts,omitempty"`
 }
 
 type GeminiError struct {
@@ -358,12 +359,12 @@ func (e *GeminiErrorResponse) Error() string {
 }
 
 type GeminiChatResponse struct {
-	Candidates     []GeminiChatCandidate    `json:"candidates"`
-	PromptFeedback GeminiChatPromptFeedback `json:"promptFeedback"`
-	UsageMetadata  *GeminiUsageMetadata     `json:"usageMetadata,omitempty"`
-	ModelVersion   string                   `json:"modelVersion,omitempty"`
-	Model          string                   `json:"model,omitempty"`
-	ResponseId     string                   `json:"responseId,omitempty"`
+	Candidates     []GeminiChatCandidate     `json:"candidates"`
+	PromptFeedback *GeminiChatPromptFeedback `json:"promptFeedback,omitempty"`
+	UsageMetadata  *GeminiUsageMetadata      `json:"usageMetadata,omitempty"`
+	ModelVersion   string                    `json:"modelVersion,omitempty"`
+	Model          string                    `json:"model,omitempty"`
+	ResponseId     string                    `json:"responseId,omitempty"`
 	GeminiErrorResponse
 }
 

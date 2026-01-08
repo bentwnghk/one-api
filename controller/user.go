@@ -424,7 +424,7 @@ func UpdateUser(c *gin.Context) {
 	if myRole <= updatedUser.Role && myRole != config.RoleRootUser {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "無權將其他用户權限等級提升到大於等於自己的權限等級",
+			"message": "無權將其他用戶權限等級提升到大於等於自己的權限等級",
 		})
 		return
 	}
@@ -440,7 +440,7 @@ func UpdateUser(c *gin.Context) {
 		return
 	}
 	if originUser.Quota != updatedUser.Quota {
-		model.RecordLog(originUser.Id, model.LogTypeManage, fmt.Sprintf("管理員將用户額度從 %s 修改為 %s", common.LogQuota(originUser.Quota), common.LogQuota(updatedUser.Quota)))
+		model.RecordLog(originUser.Id, model.LogTypeManage, fmt.Sprintf("管理員將用戶額度從 %s 修改為 %s", common.LogQuota(originUser.Quota), common.LogQuota(updatedUser.Quota)))
 	}
 	c.JSON(http.StatusOK, gin.H{
 		"success": true,
@@ -602,7 +602,7 @@ func ManageUser(c *gin.Context) {
 	if user.Id == 0 {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "用户不存在",
+			"message": "用戶不存在",
 		})
 		return
 	}
@@ -610,7 +610,7 @@ func ManageUser(c *gin.Context) {
 	if myRole <= user.Role && myRole != config.RoleRootUser {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "無權更新同權限等級或更高權限等級的用户訊息",
+			"message": "無權更新同權限等級或更高權限等級的用戶訊息",
 		})
 		return
 	}
@@ -620,7 +620,7 @@ func ManageUser(c *gin.Context) {
 		if user.Role == config.RoleRootUser {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "无法禁用超级管理员用户",
+				"message": "無法禁用超級管理員用戶",
 			})
 			return
 		}
@@ -642,37 +642,49 @@ func ManageUser(c *gin.Context) {
 			return
 		}
 	case "promote":
+		// 设置为管理员：只有超级管理员能操作
 		if myRole != config.RoleRootUser {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "普通管理員用戶無法提升其他用戶為管理員",
+				"message": "只有超級管理員可以設置其他用戶為管理員",
 			})
 			return
 		}
-		if user.Role >= config.RoleAdminUser {
+		if user.Role == config.RoleRootUser {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "該用戶已經是管理員",
+				"message": "無法修改超級管理員的身份",
 			})
 			return
 		}
 		user.Role = config.RoleAdminUser
 	case "demote":
+		// 设置为普通用户：不能操作超级管理员
 		if user.Role == config.RoleRootUser {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "無法降級超級管理員用戶",
-			})
-			return
-		}
-		if user.Role == config.RoleCommonUser {
-			c.JSON(http.StatusOK, gin.H{
-				"success": false,
-				"message": "該用戶已經是普通用戶",
+				"message": "無法修改超級管理員的身份",
 			})
 			return
 		}
 		user.Role = config.RoleCommonUser
+	case "set_reliable":
+		// 设置为可信内部员工：管理员及以上能操作
+		if myRole < config.RoleAdminUser {
+			c.JSON(http.StatusOK, gin.H{
+				"success": false,
+				"message": "只有管理員或超級管理員可以設置可信內部員工",
+			})
+			return
+		}
+		if user.Role == config.RoleRootUser {
+			c.JSON(http.StatusOK, gin.H{
+				"success": false,
+				"message": "無法修改超級管理員的身份",
+			})
+			return
+		}
+		user.Role = config.RoleReliableUser
 	}
 
 	if err := user.Update(false); err != nil {
@@ -820,7 +832,7 @@ func Unbind(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "无效的参数",
+			"message": "無效的參數",
 		})
 		return
 	}
@@ -847,7 +859,7 @@ func Unbind(c *gin.Context) {
 	default:
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "未知的绑定类型",
+			"message": "未知的綁定類型",
 		})
 		return
 	}
