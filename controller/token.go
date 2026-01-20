@@ -27,7 +27,7 @@ func GetUserTokensList(c *gin.Context) {
 		return
 	}
 
-	// 对于非可信用户，隐藏 BillingTag 字段
+	// 對於非可信用戶，隱藏 BillingTag 字段
 	if userRole < config.RoleReliableUser {
 		for _, token := range *tokens.Data {
 			setting := token.Setting.Data()
@@ -43,7 +43,7 @@ func GetUserTokensList(c *gin.Context) {
 	})
 }
 
-// GetTokensListByAdmin 管理员查询令牌列表（可按用户ID或令牌ID查询）
+// GetTokensListByAdmin 管理員查詢令牌列表（可按用戶ID或令牌ID查詢）
 func GetTokensListByAdmin(c *gin.Context) {
 	var params model.AdminSearchTokensParams
 	if err := c.ShouldBindQuery(&params); err != nil {
@@ -84,7 +84,7 @@ func GetToken(c *gin.Context) {
 		return
 	}
 
-	// 对于非可信用户，隐藏 BillingTag 字段
+	// 對於非可信用戶，隱藏 BillingTag 字段
 	if userRole < config.RoleReliableUser {
 		setting := token.Setting.Data()
 		setting.BillingTag = nil
@@ -117,7 +117,7 @@ func GetPlaygroundToken(c *gin.Context) {
 		if err != nil {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "创建令牌失败，请去系统手动配置一个名称为：sys_playground 的令牌",
+				"message": "創建令牌失敗，請去系統手動配置一個名稱為：sys_playground 的令牌",
 			})
 			return
 		}
@@ -146,7 +146,7 @@ func AddToken(c *gin.Context) {
 	if len(token.Name) > 30 {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "令牌名称过长",
+			"message": "API 金鑰名稱過長",
 		})
 		return
 	}
@@ -179,7 +179,7 @@ func AddToken(c *gin.Context) {
 		return
 	}
 
-	// 非可信用户不能设置 BillingTag
+	// 非可信用戶不能設置 BillingTag
 	if userRole < config.RoleReliableUser {
 		setting.BillingTag = nil
 	}
@@ -244,7 +244,7 @@ func UpdateToken(c *gin.Context) {
 	if len(token.Name) > 30 {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "令牌名称过长",
+			"message": "API 金鑰名稱過長",
 		})
 		return
 	}
@@ -268,14 +268,14 @@ func UpdateToken(c *gin.Context) {
 		if cleanToken.Status == config.TokenStatusExpired && cleanToken.ExpiredTime <= utils.GetTimestamp() && cleanToken.ExpiredTime != -1 {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "令牌已过期，无法启用，请先修改令牌过期时间，或者设置为永不过期",
+				"message": "令牌已過期，無法啟用，請先修改令牌過期時間，或者設置為永不過期",
 			})
 			return
 		}
 		if cleanToken.Status == config.TokenStatusExhausted && cleanToken.RemainQuota <= 0 && !cleanToken.UnlimitedQuota {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "令牌可用额度已用尽，无法启用，请先修改令牌剩余额度，或者设置为无限额度",
+				"message": "令牌可用額度已用盡，無法啟用，請先修改令牌剩餘額度，或者設置為無限額度",
 			})
 			return
 		}
@@ -313,13 +313,13 @@ func UpdateToken(c *gin.Context) {
 		cleanToken.Group = token.Group
 		cleanToken.BackupGroup = token.BackupGroup
 
-		// 处理 BillingTag: 非可信用户保持原值不变
+		// 處理 BillingTag: 非可信用戶保持原值不變
 		oldSetting := cleanToken.Setting.Data()
 		if userRole < config.RoleReliableUser {
-			// 非可信用户：保持原来的 BillingTag，忽略前端传入的值
+			// 非可信用戶：保持原來的 BillingTag，忽略前端傳入的值
 			newSetting.BillingTag = oldSetting.BillingTag
 		}
-		// 可信用户：直接使用前端传入的值（包括空值，用于清除 BillingTag）
+		// 可信用戶：直接使用前端傳入的值（包括空值，用於清除 BillingTag）
 
 		cleanToken.Setting.Set(newSetting)
 	}
@@ -332,7 +332,7 @@ func UpdateToken(c *gin.Context) {
 		return
 	}
 
-	// 对于非可信用户，返回数据时隐藏 BillingTag 字段
+	// 對於非可信用戶，返回數據時隱藏 BillingTag 字段
 	if userRole < config.RoleReliableUser {
 		responseSetting := cleanToken.Setting.Data()
 		responseSetting.BillingTag = nil
@@ -346,7 +346,7 @@ func UpdateToken(c *gin.Context) {
 	})
 }
 
-// UpdateTokenByAdmin 管理员更新任意token（支持转移用户）
+// UpdateTokenByAdmin 管理員更新任意token（支持轉移用戶）
 func UpdateTokenByAdmin(c *gin.Context) {
 	statusOnly := c.Query("status_only")
 	token := model.Token{}
@@ -361,7 +361,7 @@ func UpdateTokenByAdmin(c *gin.Context) {
 	if len(token.Name) > 30 {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "令牌名称过长",
+			"message": "API 金鑰名稱過長",
 		})
 		return
 	}
@@ -386,32 +386,32 @@ func UpdateTokenByAdmin(c *gin.Context) {
 		if cleanToken.Status == config.TokenStatusExpired && cleanToken.ExpiredTime <= utils.GetTimestamp() && cleanToken.ExpiredTime != -1 {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "令牌已过期，无法启用，请先修改令牌过期时间，或者设置为永不过期",
+				"message": "API 金鑰已過期，無法啟用，請先修改 API 金鑰過期時間，或者設置為永不過期",
 			})
 			return
 		}
 		if cleanToken.Status == config.TokenStatusExhausted && cleanToken.RemainQuota <= 0 && !cleanToken.UnlimitedQuota {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "令牌可用额度已用尽，无法启用，请先修改令牌剩余额度，或者设置为无限额度",
+				"message": "API 金鑰可用額度已用盡，無法啟用，請先修改 API 金鑰剩餘額度，或者設置為無限額度",
 			})
 			return
 		}
 	}
 
-	// 验证目标用户是否存在（如果要转移token）
+	// 驗證目標用戶是否存在（如果要轉移token）
 	if token.UserId > 0 && token.UserId != cleanToken.UserId {
 		targetUser, err := model.GetUserById(token.UserId, false)
 		if err != nil || targetUser == nil {
 			c.JSON(http.StatusOK, gin.H{
 				"success": false,
-				"message": "目标用户不存在",
+				"message": "目標用戶不存在",
 			})
 			return
 		}
 	}
 
-	// 验证用户组（使用目标用户ID）
+	// 驗證用戶組（使用目標用戶ID）
 	targetUserId := cleanToken.UserId
 	if token.UserId > 0 {
 		targetUserId = token.UserId
@@ -449,7 +449,7 @@ func UpdateTokenByAdmin(c *gin.Context) {
 		cleanToken.BackupGroup = token.BackupGroup
 		cleanToken.Setting.Set(newSetting)
 
-		// 管理员可以转移token给其他用户
+		// 管理員可以轉移token給其他用戶
 		if token.UserId > 0 {
 			cleanToken.UserId = token.UserId
 		}
@@ -471,20 +471,20 @@ func UpdateTokenByAdmin(c *gin.Context) {
 	})
 }
 
-// validateTokenGroupForUser 验证用户组是否对指定用户有效
+// validateTokenGroupForUser 驗證用戶組是否對指定用戶有效
 func validateTokenGroupForUser(tokenGroup string, userId int) error {
 	userGroup, _ := model.CacheGetUserGroup(userId)
 	if userGroup == "" {
-		return errors.New("获取用户组信息失败")
+		return errors.New("獲取用戶組信息失敗")
 	}
 
 	groupRatio := model.GlobalUserGroupRatio.GetBySymbol(tokenGroup)
 	if groupRatio == nil {
-		return errors.New("无效的用户组")
+		return errors.New("無效的用戶組")
 	}
 
 	if !groupRatio.Public && userGroup != tokenGroup {
-		return errors.New("目标用户无权使用指定的分组")
+		return errors.New("目標用戶無權使用指定的分組")
 	}
 
 	return nil
@@ -493,16 +493,16 @@ func validateTokenGroupForUser(tokenGroup string, userId int) error {
 func validateTokenGroup(tokenGroup string, userId int) error {
 	userGroup, _ := model.CacheGetUserGroup(userId)
 	if userGroup == "" {
-		return errors.New("获取用户组信息失败")
+		return errors.New("獲取用戶組信息失敗")
 	}
 
 	groupRatio := model.GlobalUserGroupRatio.GetBySymbol(tokenGroup)
 	if groupRatio == nil {
-		return errors.New("无效的用户组")
+		return errors.New("無效的用戶組")
 	}
 
 	if !groupRatio.Public && userGroup != tokenGroup {
-		return errors.New("当前用户组无权使用指定的分组")
+		return errors.New("當前用戶組無權使用指定的分組")
 	}
 
 	return nil

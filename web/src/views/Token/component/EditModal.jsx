@@ -189,7 +189,7 @@ const EditModal = ({ open, tokenId, onCancel, onOk, userGroupOptions, adminMode 
         // 管理员搜索接口返回的是分页数据，取第一条
         const tokenData = adminMode ? data.data[0] : data;
         if (!tokenData) {
-          showError('令牌不存在');
+          showError('API 金鑰不存在');
           return;
         }
         tokenData.is_edit = true;
