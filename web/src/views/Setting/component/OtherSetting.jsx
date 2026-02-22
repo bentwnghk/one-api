@@ -127,7 +127,7 @@ const OtherSetting = () => {
   const checkUpdate = async () => {
     try {
       if (!import.meta.env.VITE_APP_VERSION) {
-        showError('无法获取当前版本号');
+        showError('無法獲取當前版本號');
         return;
       }
 
@@ -307,18 +307,18 @@ const OtherSetting = () => {
                   multiline
                   maxRows={15}
                   id="AnalyticsCode"
-                  label="统计代码"
+                  label="統計代碼"
                   value={inputs.AnalyticsCode}
                   name="AnalyticsCode"
                   onChange={handleInputChange}
                   minRows={10}
-                  placeholder="在此输入统计代码，例如 Google Analytics 或 Umami"
+                  placeholder="在此輸入統計代碼，例如 Google Analytics 或 Umami"
                 />
               </FormControl>
             </Grid>
             <Grid xs={12}>
               <Button variant="contained" onClick={submitAnalyticsCode}>
-                保存统计代码
+                保存統計代碼
               </Button>
             </Grid>
           </Grid>
