@@ -352,7 +352,7 @@ export default function MultiUserStats() {
             <Grid item xs={12} lg={6}>
               <MainCard sx={{ borderRadius: '16px' }}>
                 <Typography variant="h3" sx={{ mb: 2, fontWeight: 600 }}>
-                  用户额度消耗对比
+                  用戶額度消耗對比
                 </Typography>
                 <Paper elevation={0} sx={{ bgcolor: 'transparent', p: 2 }}>
                   <ReactApexChart options={quotaChartData.options} series={quotaChartData.series} type="bar" height={400} />
