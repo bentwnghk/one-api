@@ -33,12 +33,12 @@ func getAzureConfig() base.ProviderConfig {
 		Completions:         "/v1/completions",
 		ChatCompletions:     "/v1/chat/completions",
 		Embeddings:          "/v1/embeddings",
-		AudioSpeech:         "/v1/audio/speech",
-		AudioTranscriptions: "/v1/audio/transcriptions",
-		AudioTranslations:   "/v1/audio/translations",
+		AudioSpeech:         "/audio/speech",
+		AudioTranscriptions: "/audio/transcriptions",
+		AudioTranslations:   "/audio/translations",
 		ImagesGenerations:   "/v1/images/generations",
 		ChatRealtime:        "/v1/realtime",
-		ModelList:           "1", // 在azure中该参数不参与实际url拼接，只是起到flag的作用
+		ModelList:           "1",
 		Responses:           "/v1/responses",
 	}
 }
