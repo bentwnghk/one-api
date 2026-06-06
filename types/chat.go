@@ -166,8 +166,14 @@ type ChatMessageFile struct {
 }
 
 type ChatCompletionResponseFormat struct {
-	Type       string            `json:"type,omitempty"`
-	JsonSchema *FormatJsonSchema `json:"json_schema,omitempty"`
+	Type       string                  `json:"type,omitempty"`
+	JsonSchema *FormatJsonSchema       `json:"json_schema,omitempty"`
+	Image      *ResponseFormatImage    `json:"image,omitempty"`
+}
+
+type ResponseFormatImage struct {
+	AspectRatio string `json:"aspect_ratio,omitempty"`
+	ImageSize   string `json:"image_size,omitempty"`
 }
 
 type FormatJsonSchema struct {

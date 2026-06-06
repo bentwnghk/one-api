@@ -320,16 +320,26 @@ type GeminiCodeExecution struct {
 }
 
 type GeminiChatGenerationConfig struct {
-	Temperature        *float64        `json:"temperature,omitempty"`
-	TopP               *float64        `json:"topP,omitempty"`
-	TopK               *float64        `json:"topK,omitempty"`
-	MaxOutputTokens    int             `json:"maxOutputTokens,omitempty"`
-	CandidateCount     int             `json:"candidateCount,omitempty"`
-	StopSequences      []string        `json:"stopSequences,omitempty"`
-	ResponseMimeType   string          `json:"responseMimeType,omitempty"`
-	ResponseSchema     any             `json:"responseSchema,omitempty"`
-	ResponseModalities []string        `json:"responseModalities,omitempty"`
-	ThinkingConfig     *ThinkingConfig `json:"thinkingConfig,omitempty"`
+	Temperature        *float64                `json:"temperature,omitempty"`
+	TopP               *float64                `json:"topP,omitempty"`
+	TopK               *float64                `json:"topK,omitempty"`
+	MaxOutputTokens    int                     `json:"maxOutputTokens,omitempty"`
+	CandidateCount     int                     `json:"candidateCount,omitempty"`
+	StopSequences      []string                `json:"stopSequences,omitempty"`
+	ResponseMimeType   string                  `json:"responseMimeType,omitempty"`
+	ResponseSchema     any                     `json:"responseSchema,omitempty"`
+	ResponseModalities []string                `json:"responseModalities,omitempty"`
+	ResponseFormat     *GeminiResponseFormat    `json:"responseFormat,omitempty"`
+	ThinkingConfig     *ThinkingConfig         `json:"thinkingConfig,omitempty"`
+}
+
+type GeminiResponseFormat struct {
+	Image *GeminiResponseFormatImage `json:"image,omitempty"`
+}
+
+type GeminiResponseFormatImage struct {
+	AspectRatio string `json:"aspectRatio,omitempty"`
+	ImageSize   string `json:"imageSize,omitempty"`
 }
 
 type ThinkingConfig struct {

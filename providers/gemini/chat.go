@@ -163,8 +163,17 @@ func ConvertFromChatOpenai(request *types.ChatCompletionRequest) (*GeminiChatReq
 		},
 	}
 
-	if strings.HasPrefix(request.Model, "gemini-2.0-flash-exp") || strings.HasPrefix(request.Model, "gemini-2.5-flash-image-preview") {
+	if strings.HasPrefix(request.Model, "gemini-2.0-flash-exp") || strings.HasPrefix(request.Model, "gemini-2.5-flash-image-preview") || strings.HasPrefix(request.Model, "gemini-3.1-flash-image") {
 		geminiRequest.GenerationConfig.ResponseModalities = []string{"Text", "Image"}
+	}
+
+	if strings.HasPrefix(request.Model, "gemini-3.1-flash-image") && request.ResponseFormat != nil && request.ResponseFormat.Image != nil {
+		geminiRequest.GenerationConfig.ResponseFormat = &GeminiResponseFormat{
+			Image: &GeminiResponseFormatImage{
+				AspectRatio: request.ResponseFormat.Image.AspectRatio,
+				ImageSize:   request.ResponseFormat.Image.ImageSize,
+			},
+		}
 	}
 
 	if strings.HasSuffix(request.Model, "-tts") {
