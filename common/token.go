@@ -63,6 +63,8 @@ func GetTokenEncoder(model string) *tiktoken.Tiktoken {
 		tokenEncoder = gpt4oTokenEncoder
 	} else if strings.HasPrefix(model, "gpt-4") {
 		tokenEncoder = gpt4TokenEncoder
+	} else if strings.HasPrefix(model, "gemini-") {
+		tokenEncoder = gpt4oTokenEncoder
 	} else {
 		var err error
 		tokenEncoder, err = tiktoken.EncodingForModel(model)
