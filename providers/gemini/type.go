@@ -118,17 +118,17 @@ func (candidate *GeminiChatCandidate) ToOpenAIStreamChoice(request *types.ChatCo
 			choice.Delta.ToolCalls = append(choice.Delta.ToolCalls, part.FunctionCall.ToOpenAITool())
 		} else if part.InlineData != nil {
 			if strings.HasPrefix(part.InlineData.MimeType, "image/") {
-				images = append(images, types.MultimediaData{
-					Data: part.InlineData.Data,
-				})
 				url := ""
-				imageData, err := base64.StdEncoding.DecodeString(part.InlineData.Data)
+				imageData, err := decodeBase64(part.InlineData.Data)
 				if err == nil {
 					url = storage.Upload(imageData, utils.GetUUID()+".png")
 				}
 				if url == "" {
 					url = "image upload err"
 				}
+				images = append(images, types.MultimediaData{
+					Data: url,
+				})
 				content = append(content, fmt.Sprintf("%s(%s)", GeminiImageSymbol, url))
 			}
 			//  else if strings.HasPrefix(part.InlineData.MimeType, "audio/") {
@@ -208,17 +208,17 @@ func (candidate *GeminiChatCandidate) ToOpenAIChoice(request *types.ChatCompleti
 		} else if part.InlineData != nil {
 			if strings.HasPrefix(part.InlineData.MimeType, "image/") {
 
-				images = append(images, types.MultimediaData{
-					Data: part.InlineData.Data,
-				})
 				url := ""
-				imageData, err := base64.StdEncoding.DecodeString(part.InlineData.Data)
+				imageData, err := decodeBase64(part.InlineData.Data)
 				if err == nil {
 					url = storage.Upload(imageData, utils.GetUUID()+".png")
 				}
 				if url == "" {
 					url = "image upload err"
 				}
+				images = append(images, types.MultimediaData{
+					Data: url,
+				})
 				content = append(content, fmt.Sprintf("%s(%s)", GeminiImageSymbol, url))
 			}
 			//  else if strings.HasPrefix(part.InlineData.MimeType, "audio/") {
@@ -659,6 +659,18 @@ type GeminiImagePrediction struct {
 func isEmptyOrOnlyNewlines(s string) bool {
 	trimmed := strings.TrimSpace(s)
 	return trimmed == ""
+}
+
+func decodeBase64(data string) ([]byte, error) {
+	decoded, err := base64.StdEncoding.DecodeString(data)
+	if err == nil {
+		return decoded, nil
+	}
+	decoded, err = base64.URLEncoding.DecodeString(data)
+	if err == nil {
+		return decoded, nil
+	}
+	return base64.RawStdEncoding.DecodeString(data)
 }
 
 type GeminiGroundingMetadata struct {
