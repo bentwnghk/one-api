@@ -297,6 +297,10 @@ func GetDefaultPrice() []*Price {
 		"gemini-1.5-flash-latest": {[]float64{0.175, 0.265}, config.ChannelTypeGemini},
 		"gemini-ultra":            {[]float64{1, 1}, config.ChannelTypeGemini},
 
+		// $0.50 / 1M tokens input, $3.00 / 1M tokens text output, $60.00 / 1M tokens image output
+		"gemini-3.1-flash-image":         {[]float64{0.25, 1.5}, config.ChannelTypeGemini},
+		"gemini-3.1-flash-image-preview": {[]float64{0.25, 1.5}, config.ChannelTypeGemini},
+
 		// ￥0.005 / 1k tokens
 		"glm-3-turbo": {[]float64{0.3572, 0.3572}, config.ChannelTypeZhipu},
 		// ￥0.1 / 1k tokens
@@ -504,6 +508,6 @@ func GetDefaultPrice() []*Price {
 }
 
 func GetDefaultExtraRatio() string {
-	return `{"gpt-4o-audio-preview":{"input_audio_tokens":40,"output_audio_tokens":20},"gpt-4o-audio-preview-2024-10-01":{"input_audio_tokens":40,"output_audio_tokens":20},"gpt-4o-audio-preview-2024-12-17":{"input_audio_tokens":16,"output_audio_tokens":8},"gpt-4o-mini-audio-preview":{"input_audio_tokens":67,"output_audio_tokens":34},"gpt-4o-mini-audio-preview-2024-12-17":{"input_audio_tokens":67,"output_audio_tokens":34},"gpt-4o-realtime-preview":{"input_audio_tokens":20,"output_audio_tokens":10},"gpt-4o-realtime-preview-2024-10-01":{"input_audio_tokens":20,"output_audio_tokens":10},"gpt-4o-realtime-preview-2024-12-17":{"input_audio_tokens":8,"output_audio_tokens":4},"gpt-4o-mini-realtime-preview":{"input_audio_tokens":17,"output_audio_tokens":8.4},"gpt-4o-mini-realtime-preview-2024-12-17":{"input_audio_tokens":17,"output_audio_tokens":8.4},"gemini-2.5-flash-preview-04-17":{"reasoning_tokens":5.833},"gpt-image-1":{"input_text_tokens": 0.5}}`
+	return `{"gpt-4o-audio-preview":{"input_audio_tokens":40,"output_audio_tokens":20},"gpt-4o-audio-preview-2024-10-01":{"input_audio_tokens":40,"output_audio_tokens":20},"gpt-4o-audio-preview-2024-12-17":{"input_audio_tokens":16,"output_audio_tokens":8},"gpt-4o-mini-audio-preview":{"input_audio_tokens":67,"output_audio_tokens":34},"gpt-4o-mini-audio-preview-2024-12-17":{"input_audio_tokens":67,"output_audio_tokens":34},"gpt-4o-realtime-preview":{"input_audio_tokens":20,"output_audio_tokens":10},"gpt-4o-realtime-preview-2024-10-01":{"input_audio_tokens":20,"output_audio_tokens":10},"gpt-4o-realtime-preview-2024-12-17":{"input_audio_tokens":8,"output_audio_tokens":4},"gpt-4o-mini-realtime-preview":{"input_audio_tokens":17,"output_audio_tokens":8.4},"gpt-4o-mini-realtime-preview-2024-12-17":{"input_audio_tokens":17,"output_audio_tokens":8.4},"gemini-2.5-flash-preview-04-17":{"reasoning_tokens":5.833},"gpt-image-1":{"input_text_tokens": 0.5},"gemini-3.1-flash-image":{"output_image_tokens":20},"gemini-3.1-flash-image-preview":{"output_image_tokens":20}}`
 
 }
