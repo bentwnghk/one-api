@@ -1,13 +1,11 @@
 package gemini
 
 import (
-	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"net/http"
 	"one-api/common"
 	"one-api/common/image"
-	"one-api/common/storage"
 	"one-api/common/utils"
 	"one-api/types"
 	"regexp"
@@ -118,18 +116,11 @@ func (candidate *GeminiChatCandidate) ToOpenAIStreamChoice(request *types.ChatCo
 			choice.Delta.ToolCalls = append(choice.Delta.ToolCalls, part.FunctionCall.ToOpenAITool())
 		} else if part.InlineData != nil {
 			if strings.HasPrefix(part.InlineData.MimeType, "image/") {
-				url := ""
-				imageData, err := decodeBase64(part.InlineData.Data)
-				if err == nil {
-					url = storage.Upload(imageData, utils.GetUUID()+".png")
-				}
-				if url == "" {
-					url = "image upload err"
-				}
+				dataURL := "data:" + part.InlineData.MimeType + ";base64," + part.InlineData.Data
 				images = append(images, types.MultimediaData{
-					Data: url,
+					Data: dataURL,
 				})
-				content = append(content, fmt.Sprintf("%s(%s)", GeminiImageSymbol, url))
+				content = append(content, fmt.Sprintf("%s(%s)", GeminiImageSymbol, dataURL))
 			}
 			//  else if strings.HasPrefix(part.InlineData.MimeType, "audio/") {
 			// 	choice.Message.Audio = types.MultimediaData{
@@ -207,19 +198,11 @@ func (candidate *GeminiChatCandidate) ToOpenAIChoice(request *types.ChatCompleti
 			choice.Message.ToolCalls = append(choice.Message.ToolCalls, part.FunctionCall.ToOpenAITool())
 		} else if part.InlineData != nil {
 			if strings.HasPrefix(part.InlineData.MimeType, "image/") {
-
-				url := ""
-				imageData, err := decodeBase64(part.InlineData.Data)
-				if err == nil {
-					url = storage.Upload(imageData, utils.GetUUID()+".png")
-				}
-				if url == "" {
-					url = "image upload err"
-				}
+				dataURL := "data:" + part.InlineData.MimeType + ";base64," + part.InlineData.Data
 				images = append(images, types.MultimediaData{
-					Data: url,
+					Data: dataURL,
 				})
-				content = append(content, fmt.Sprintf("%s(%s)", GeminiImageSymbol, url))
+				content = append(content, fmt.Sprintf("%s(%s)", GeminiImageSymbol, dataURL))
 			}
 			//  else if strings.HasPrefix(part.InlineData.MimeType, "audio/") {
 			// 	choice.Message.Audio = types.MultimediaData{
@@ -659,18 +642,6 @@ type GeminiImagePrediction struct {
 func isEmptyOrOnlyNewlines(s string) bool {
 	trimmed := strings.TrimSpace(s)
 	return trimmed == ""
-}
-
-func decodeBase64(data string) ([]byte, error) {
-	decoded, err := base64.StdEncoding.DecodeString(data)
-	if err == nil {
-		return decoded, nil
-	}
-	decoded, err = base64.URLEncoding.DecodeString(data)
-	if err == nil {
-		return decoded, nil
-	}
-	return base64.RawStdEncoding.DecodeString(data)
 }
 
 type GeminiGroundingMetadata struct {
