@@ -10,8 +10,9 @@ var HTTPClient *http.Client
 
 func InitHttpClient() {
 	trans := &http.Transport{
-		DialContext: utils.Socks5ProxyFunc,
-		Proxy:       utils.ProxyFunc,
+		DialContext:        utils.Socks5ProxyFunc,
+		Proxy:              utils.ProxyFunc,
+		DisableCompression: true,
 	}
 
 	HTTPClient = &http.Client{
