@@ -77,6 +77,10 @@ const originInputs = {
         enabled: false,
         models: []
       },
+      limit_channel_setting: {
+        enabled: false,
+        channels: []
+      },
       limits_ip_setting: {
         enabled: false,
         whitelist: []
@@ -91,6 +95,7 @@ const EditModal = ({ open, tokenId, onCancel, onOk, userGroupOptions, adminMode 
   const userIsReliable = useIsReliable();
   const [inputs, setInputs] = useState(originInputs);
   const [modelOptions, setModelOptions] = useState([]);
+  const [channelOptions, setChannelOptions] = useState([]);
   const [ownedByIcons, setOwnedByIcons] = useState({});
   const fetchOwnedByIcons = async () => {
     try {
@@ -124,6 +129,18 @@ const EditModal = ({ open, tokenId, onCancel, onOk, userGroupOptions, adminMode 
       }
     } catch (error) {
       console.error('获取模型列表失败:', error);
+    }
+  };
+
+  const fetchChannelOptions = async () => {
+    try {
+      const res = await API.get('/api/channel/options');
+      const { success, data } = res.data;
+      if (success) {
+        setChannelOptions(data || []);
+      }
+    } catch (error) {
+      console.error('獲取渠道列表失敗:', error);
     }
   };
 
@@ -199,9 +216,13 @@ const EditModal = ({ open, tokenId, onCancel, onOk, userGroupOptions, adminMode 
         if (!tokenData.setting.limits) tokenData.setting.limits = originInputs.setting.limits;
         if (!tokenData.setting.limits.limit_model_setting)
           tokenData.setting.limits.limit_model_setting = originInputs.setting.limits.limit_model_setting;
+        if (!tokenData.setting.limits.limit_channel_setting)
+          tokenData.setting.limits.limit_channel_setting = originInputs.setting.limits.limit_channel_setting;
         if (!tokenData.setting.limits.limits_ip_setting)
           tokenData.setting.limits.limits_ip_setting = originInputs.setting.limits.limits_ip_setting;
         if (!tokenData.setting.limits.limit_model_setting.models) tokenData.setting.limits.limit_model_setting.models = [];
+        if (!tokenData.setting.limits.limit_channel_setting.channels)
+          tokenData.setting.limits.limit_channel_setting.channels = [];
         if (!tokenData.setting.limits.limits_ip_setting.whitelist) tokenData.setting.limits.limits_ip_setting.whitelist = [];
         setInputs(tokenData);
       } else {
@@ -216,6 +237,7 @@ const EditModal = ({ open, tokenId, onCancel, onOk, userGroupOptions, adminMode 
     if (open) {
       fetchOwnedByIcons();
       fetchModelOptions();
+      fetchChannelOptions();
     }
   }, [open]);
 
@@ -482,6 +504,58 @@ const EditModal = ({ open, tokenId, onCancel, onOk, userGroupOptions, adminMode 
               </FormControl>
               {values?.setting?.limits?.limit_model_setting?.enabled && (
                 <ModelLimitSelector modelOptions={modelOptions} getModelIcon={getModelIcon} />
+              )}
+
+              {/* 渠道限制 */}
+              <Divider sx={{ margin: '16px 0px' }} />
+              <Typography variant="caption">{t('token_index.limits_channels_info')}</Typography>
+
+              <FormControl fullWidth>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={values?.setting?.limits?.limit_channel_setting?.enabled === true}
+                      onClick={() => {
+                        const newEnabledState = !values.setting?.limits?.limit_channel_setting?.enabled;
+                        setFieldValue('setting.limits.limit_channel_setting.enabled', newEnabledState);
+                        if (!newEnabledState) {
+                          setFieldValue('setting.limits.limit_channel_setting.channels', []);
+                        }
+                      }}
+                    />
+                  }
+                  label={t('token_index.limits_channels_switch')}
+                />
+              </FormControl>
+
+              {values?.setting?.limits?.limit_channel_setting?.enabled && (
+                <FormControl fullWidth sx={{ ...theme.typography.otherInput }}>
+                  <InputLabel id="token-limit-channels-label">{t('token_index.limits_channels_select')}</InputLabel>
+                  <Select
+                    labelId="token-limit-channels-label"
+                    label={t('token_index.limits_channels_select')}
+                    multiple
+                    value={values?.setting?.limits?.limit_channel_setting?.channels || []}
+                    onChange={(e) => {
+                      setFieldValue('setting.limits.limit_channel_setting.channels', e.target.value);
+                    }}
+                    renderValue={(selected) =>
+                      selected
+                        .map((id) => {
+                          const channel = channelOptions.find((c) => c.id === id);
+                          return channel ? `#${channel.id} ${channel.name}` : `#${id}`;
+                        })
+                        .join(', ')
+                    }
+                  >
+                    {channelOptions.map((channel) => (
+                      <MenuItem key={channel.id} value={channel.id}>
+                        #{channel.id} {channel.name}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                  <FormHelperText>{t('token_index.limits_channels_helper')}</FormHelperText>
+                </FormControl>
               )}
 
               {/* IP 白名单限制 */}

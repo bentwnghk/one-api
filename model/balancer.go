@@ -37,6 +37,13 @@ func FilterChannelId(skipChannelIds []int) ChannelsFilterFunc {
 	}
 }
 
+// FilterChannelAllowed 返回过滤器：不在允许渠道列表内的渠道将被跳过
+func FilterChannelAllowed(allowedChannelIds []int) ChannelsFilterFunc {
+	return func(channelId int, _ *ChannelChoice) bool {
+		return !utils.Contains(channelId, allowedChannelIds)
+	}
+}
+
 func FilterChannelTypes(channelTypes []int) ChannelsFilterFunc {
 	return func(_ int, choice *ChannelChoice) bool {
 		return !utils.Contains(choice.Channel.Type, channelTypes)

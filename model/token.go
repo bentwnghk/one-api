@@ -75,8 +75,9 @@ type HeartbeatSetting struct {
 }
 
 type LimitsConfig struct {
-	LimitModelSetting LimitModelSetting `json:"limit_model_setting,omitempty"`
-	LimitsIPSetting   LimitsIPSetting   `json:"limits_ip_setting,omitempty"`
+	LimitModelSetting   LimitModelSetting   `json:"limit_model_setting,omitempty"`
+	LimitsIPSetting     LimitsIPSetting     `json:"limits_ip_setting,omitempty"`
+	LimitChannelSetting LimitChannelSetting `json:"limit_channel_setting,omitempty"`
 }
 
 type LimitModelSetting struct {
@@ -87,6 +88,11 @@ type LimitModelSetting struct {
 type LimitsIPSetting struct {
 	Enabled   bool     `json:"enabled"`
 	Whitelist []string `json:"whitelist"`
+}
+
+type LimitChannelSetting struct {
+	Enabled  bool  `json:"enabled"`
+	Channels []int `json:"channels"`
 }
 
 func GetUserTokensList(userId int, params *GenericParams) (*DataResult[Token], error) {

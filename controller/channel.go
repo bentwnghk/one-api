@@ -31,6 +31,20 @@ func GetChannelsList(c *gin.Context) {
 	})
 }
 
+// GetUserChannelOptions 返回啟用狀態渠道的 ID 與名稱（用於令牌渠道限制選擇）
+func GetUserChannelOptions(c *gin.Context) {
+	options, err := model.GetEnabledChannelOptions()
+	if err != nil {
+		common.APIRespondWithError(c, http.StatusOK, err)
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"message": "",
+		"data":    options,
+	})
+}
+
 func GetChannel(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {

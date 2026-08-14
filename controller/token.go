@@ -519,5 +519,16 @@ func validateTokenSetting(setting *model.TokenSetting) error {
 		}
 	}
 
+	if setting.Limits.LimitChannelSetting.Enabled {
+		if len(setting.Limits.LimitChannelSetting.Channels) == 0 {
+			return errors.New("channel limit is enabled but no channels are selected")
+		}
+		for _, channelId := range setting.Limits.LimitChannelSetting.Channels {
+			if channelId <= 0 {
+				return errors.New("invalid channel id in channel limit setting")
+			}
+		}
+	}
+
 	return nil
 }

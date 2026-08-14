@@ -150,6 +150,8 @@ func SetApiRouter(router *gin.Engine) {
 			userGroup.DELETE("/:id", controller.DeleteUserGroup)
 
 		}
+		// 渠道選項（登入用戶可用，用於令牌渠道限制選擇）
+		apiRouter.GET("/channel/options", middleware.UserAuth(), controller.GetUserChannelOptions)
 		channelRoute := apiRouter.Group("/channel")
 		channelRoute.Use(middleware.AdminAuth())
 		{

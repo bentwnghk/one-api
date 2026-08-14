@@ -148,6 +148,18 @@ func GetAllChannels() ([]*Channel, error) {
 	return channels, err
 }
 
+type ChannelOption struct {
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+}
+
+// GetEnabledChannelOptions 返回啟用狀態渠道的 ID 與名稱（用於令牌渠道限制選擇）
+func GetEnabledChannelOptions() ([]*ChannelOption, error) {
+	var options []*ChannelOption
+	err := DB.Model(&Channel{}).Select("id, name").Where("status = ?", config.ChannelStatusEnabled).Order("id asc").Find(&options).Error
+	return options, err
+}
+
 func GetChannelById(id int) (*Channel, error) {
 	channel := Channel{Id: id}
 	err := DB.First(&channel, "id = ?", id).Error

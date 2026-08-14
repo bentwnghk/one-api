@@ -248,6 +248,13 @@ func fetchChannelByModel(c *gin.Context, modelName string) (*model.Channel, erro
 		filters = append(filters, model.FilterChannelId(skipChannelIds))
 	}
 
+	// 令牌渠道限制：僅允許使用令牌設置中指定的渠道
+	if tokenSetting, exists := c.Get("token_setting"); exists {
+		if setting, ok := tokenSetting.(*model.TokenSetting); ok && setting != nil && setting.Limits.LimitChannelSetting.Enabled {
+			filters = append(filters, model.FilterChannelAllowed(setting.Limits.LimitChannelSetting.Channels))
+		}
+	}
+
 	if types, exists := c.Get("allow_channel_type"); exists {
 		if allowTypes, ok := types.([]int); ok {
 			filters = append(filters, model.FilterChannelTypes(allowTypes))
