@@ -184,6 +184,11 @@ func AddToken(c *gin.Context) {
 		setting.BillingTag = nil
 	}
 
+	// 僅管理員可設置渠道限制
+	if userRole < config.RoleAdminUser {
+		setting.Limits.LimitChannelSetting = model.LimitChannelSetting{}
+	}
+
 	cleanToken := model.Token{
 		UserId: userId,
 		Name:   token.Name,
@@ -320,6 +325,11 @@ func UpdateToken(c *gin.Context) {
 			newSetting.BillingTag = oldSetting.BillingTag
 		}
 		// 可信用戶：直接使用前端傳入的值（包括空值，用於清除 BillingTag）
+
+		// 處理渠道限制: 僅管理員可修改，非管理員保持原值不變
+		if userRole < config.RoleAdminUser {
+			newSetting.Limits.LimitChannelSetting = oldSetting.Limits.LimitChannelSetting
+		}
 
 		cleanToken.Setting.Set(newSetting)
 	}

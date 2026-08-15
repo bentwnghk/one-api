@@ -30,7 +30,7 @@ import {
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import { renderQuotaWithPrompt, showSuccess, showError, useIsReliable } from 'utils/common';
+import { renderQuotaWithPrompt, showSuccess, showError, useIsReliable, useIsAdmin } from 'utils/common';
 import { API } from 'utils/api';
 import { useTranslation } from 'react-i18next';
 import 'dayjs/locale/zh-cn';
@@ -93,6 +93,7 @@ const EditModal = ({ open, tokenId, onCancel, onOk, userGroupOptions, adminMode 
   const { t } = useTranslation();
   const theme = useTheme();
   const userIsReliable = useIsReliable();
+  const userIsAdmin = useIsAdmin();
   const [inputs, setInputs] = useState(originInputs);
   const [modelOptions, setModelOptions] = useState([]);
   const [channelOptions, setChannelOptions] = useState([]);
@@ -237,9 +238,14 @@ const EditModal = ({ open, tokenId, onCancel, onOk, userGroupOptions, adminMode 
     if (open) {
       fetchOwnedByIcons();
       fetchModelOptions();
-      fetchChannelOptions();
     }
   }, [open]);
+
+  useEffect(() => {
+    if (open && userIsAdmin) {
+      fetchChannelOptions();
+    }
+  }, [open, userIsAdmin]);
 
   useEffect(() => {
     if (tokenId) {
@@ -506,56 +512,60 @@ const EditModal = ({ open, tokenId, onCancel, onOk, userGroupOptions, adminMode 
                 <ModelLimitSelector modelOptions={modelOptions} getModelIcon={getModelIcon} />
               )}
 
-              {/* 渠道限制 */}
-              <Divider sx={{ margin: '16px 0px' }} />
-              <Typography variant="caption">{t('token_index.limits_channels_info')}</Typography>
+              {/* 渠道限制 - 僅管理員可設定 */}
+              {userIsAdmin && (
+                <>
+                  <Divider sx={{ margin: '16px 0px' }} />
+                  <Typography variant="caption">{t('token_index.limits_channels_info')}</Typography>
 
-              <FormControl fullWidth>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={values?.setting?.limits?.limit_channel_setting?.enabled === true}
-                      onClick={() => {
-                        const newEnabledState = !values.setting?.limits?.limit_channel_setting?.enabled;
-                        setFieldValue('setting.limits.limit_channel_setting.enabled', newEnabledState);
-                        if (!newEnabledState) {
-                          setFieldValue('setting.limits.limit_channel_setting.channels', []);
-                        }
-                      }}
+                  <FormControl fullWidth>
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={values?.setting?.limits?.limit_channel_setting?.enabled === true}
+                          onClick={() => {
+                            const newEnabledState = !values.setting?.limits?.limit_channel_setting?.enabled;
+                            setFieldValue('setting.limits.limit_channel_setting.enabled', newEnabledState);
+                            if (!newEnabledState) {
+                              setFieldValue('setting.limits.limit_channel_setting.channels', []);
+                            }
+                          }}
+                        />
+                      }
+                      label={t('token_index.limits_channels_switch')}
                     />
-                  }
-                  label={t('token_index.limits_channels_switch')}
-                />
-              </FormControl>
+                  </FormControl>
 
-              {values?.setting?.limits?.limit_channel_setting?.enabled && (
-                <FormControl fullWidth sx={{ ...theme.typography.otherInput }}>
-                  <InputLabel id="token-limit-channels-label">{t('token_index.limits_channels_select')}</InputLabel>
-                  <Select
-                    labelId="token-limit-channels-label"
-                    label={t('token_index.limits_channels_select')}
-                    multiple
-                    value={values?.setting?.limits?.limit_channel_setting?.channels || []}
-                    onChange={(e) => {
-                      setFieldValue('setting.limits.limit_channel_setting.channels', e.target.value);
-                    }}
-                    renderValue={(selected) =>
-                      selected
-                        .map((id) => {
-                          const channel = channelOptions.find((c) => c.id === id);
-                          return channel ? `#${channel.id} ${channel.name}` : `#${id}`;
-                        })
-                        .join(', ')
-                    }
-                  >
-                    {channelOptions.map((channel) => (
-                      <MenuItem key={channel.id} value={channel.id}>
-                        #{channel.id} {channel.name}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                  <FormHelperText>{t('token_index.limits_channels_helper')}</FormHelperText>
-                </FormControl>
+                  {values?.setting?.limits?.limit_channel_setting?.enabled && (
+                    <FormControl fullWidth sx={{ ...theme.typography.otherInput }}>
+                      <InputLabel id="token-limit-channels-label">{t('token_index.limits_channels_select')}</InputLabel>
+                      <Select
+                        labelId="token-limit-channels-label"
+                        label={t('token_index.limits_channels_select')}
+                        multiple
+                        value={values?.setting?.limits?.limit_channel_setting?.channels || []}
+                        onChange={(e) => {
+                          setFieldValue('setting.limits.limit_channel_setting.channels', e.target.value);
+                        }}
+                        renderValue={(selected) =>
+                          selected
+                            .map((id) => {
+                              const channel = channelOptions.find((c) => c.id === id);
+                              return channel ? `#${channel.id} ${channel.name}` : `#${id}`;
+                            })
+                            .join(', ')
+                        }
+                      >
+                        {channelOptions.map((channel) => (
+                          <MenuItem key={channel.id} value={channel.id}>
+                            #{channel.id} {channel.name}
+                          </MenuItem>
+                        ))}
+                      </Select>
+                      <FormHelperText>{t('token_index.limits_channels_helper')}</FormHelperText>
+                    </FormControl>
+                  )}
+                </>
               )}
 
               {/* IP 白名单限制 */}
