@@ -254,6 +254,8 @@ func GetDefaultPrice() []*Price {
 		"dall-e-2": {[]float64{8, 8}, config.ChannelTypeOpenAI},
 		// $0.040 - $0.120 / image
 		"dall-e-3": {[]float64{20, 20}, config.ChannelTypeOpenAI},
+		// $0.04 / image (1K Low)  2K Low / 1K Medium: $0.06  2K Medium: $0.08  编辑输入图片: +$0.01/张
+		"grok-imagine-image-2.0": {[]float64{20, 20}, config.ChannelTypeXAI},
 
 		// $0.80/million tokens $2.40/million tokens
 		"claude-instant-1.2": {[]float64{0.4, 1.2}, config.ChannelTypeAnthropic},

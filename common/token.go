@@ -437,7 +437,18 @@ func CountTokenImage(input interface{}) (int, error) {
 		return calculateToken(v.Model, v.Size, v.N, v.Quality, v.Style)
 	case types.ImageEditRequest:
 		// 处理 ImageEditsRequest
-		return calculateToken(v.Model, v.Size, v.N, "", "")
+		tokens, err := calculateToken(v.Model, v.Size, v.N, "", "")
+		if err != nil {
+			return 0, err
+		}
+		if ratio, ok := ImageEditInputImageRatios[v.Model]; ok {
+			inputImages := len(v.Images)
+			if v.Image != nil {
+				inputImages++
+			}
+			tokens += int(ratio*1000) * inputImages
+		}
+		return tokens, nil
 	default:
 		return 0, errors.New("unsupported type")
 	}
@@ -453,6 +464,9 @@ func calculateToken(model string, size string, n int, quality, style string) (in
 		if style == "vector_illustration" {
 			imageCostRatio = 2
 		}
+
+	case "grok-imagine-image-2.0":
+		imageCostRatio = GrokImagineTierRatio(size, quality)
 
 	default:
 		imageCostRatio, hasValidSize = DalleSizeRatios[model][size]
