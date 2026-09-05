@@ -436,8 +436,12 @@ func CountTokenImage(input interface{}) (int, error) {
 		// 处理 ImageRequest
 		return calculateToken(v.Model, v.Size, v.N, v.Quality, v.Style)
 	case types.ImageEditRequest:
-		// 处理 ImageEditsRequest
-		tokens, err := calculateToken(v.Model, v.Size, v.N, "", "")
+		// 处理 ImageEditsRequest（未指定 quality 时按 low 计费）
+		quality := ""
+		if IsPerImageBillingModel(v.Model) {
+			quality = v.Quality
+		}
+		tokens, err := calculateToken(v.Model, v.Size, v.N, quality, "")
 		if err != nil {
 			return 0, err
 		}

@@ -31,7 +31,7 @@ var PerImageBillingModels = map[string]bool{
 // grok-imagine-image-2.0 计费倍率（相对基准价 $0.04/张）：
 // 1K Low: 1  2K Low / 1K Medium: 1.5 ($0.06)  2K Medium: 2 ($0.08)
 func GrokImagineTierRatio(size, quality string) float64 {
-	is2K, isMedium := isLargeSize(size), quality == "medium"
+	is2K, isMedium := isLargeSize(size), strings.ToLower(quality) == "medium"
 
 	switch {
 	case is2K && isMedium:

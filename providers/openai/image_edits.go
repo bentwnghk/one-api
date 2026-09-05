@@ -55,7 +55,8 @@ func (p *OpenAIProvider) getRequestImageBody(relayMode int, ModelName string, re
 	// 创建请求
 	var req *http.Request
 	var err error
-	if p.OriginalModel != request.Model {
+	// 按请求参数计费的模型需要重建表单，以便注入默认 quality
+	if p.OriginalModel != request.Model || common.IsPerImageBillingModel(request.Model) {
 		var formBody bytes.Buffer
 		builder := p.Requester.CreateFormBuilder(&formBody)
 		if err := imagesEditsMultipartForm(request, builder); err != nil {
@@ -141,6 +142,18 @@ func imagesEditsMultipartForm(request *types.ImageEditRequest, b requester.FormB
 		err = b.WriteField("size", request.Size)
 		if err != nil {
 			return fmt.Errorf("writing size: %w", err)
+		}
+	}
+
+	quality := request.Quality
+	if quality == "" && common.IsPerImageBillingModel(request.Model) {
+		quality = "low"
+	}
+
+	if quality != "" {
+		err = b.WriteField("quality", quality)
+		if err != nil {
+			return fmt.Errorf("writing quality: %w", err)
 		}
 	}
 

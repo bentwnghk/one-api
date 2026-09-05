@@ -42,6 +42,7 @@ type ImageEditRequest struct {
 	Prompt         string                  `form:"prompt"`
 	N              int                     `form:"n"`
 	Size           string                  `form:"size"`
+	Quality        string                  `form:"quality"`
 	ResponseFormat string                  `form:"response_format"`
 	User           string                  `form:"user"`
 }

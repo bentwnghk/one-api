@@ -48,7 +48,7 @@ func TestCountTokenImageGrokImagine(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Equal(t, 3000, tokens)
 
-	// edit: 1K Low output + 3 input images -> $0.04 + 3 * $0.01
+	// edit: unspecified quality defaults to low -> 1K Low + 3 input images -> $0.04 + 3 * $0.01
 	tokens, err = common.CountTokenImage(types.ImageEditRequest{
 		Model:  "grok-imagine-image-2.0",
 		Size:   "1024x1024",
@@ -58,6 +58,27 @@ func TestCountTokenImageGrokImagine(t *testing.T) {
 	})
 	assert.NoError(t, err)
 	assert.Equal(t, 1750, tokens)
+
+	// edit: unspecified quality defaults to low -> 2K Low + 1 input image -> $0.06 + $0.01
+	tokens, err = common.CountTokenImage(types.ImageEditRequest{
+		Model: "grok-imagine-image-2.0", Size: "2048x2048", N: 1, Image: &multipart.FileHeader{},
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, 1750, tokens)
+
+	// edit: explicit low quality -> 1K Low + 1 input image -> $0.04 + $0.01
+	tokens, err = common.CountTokenImage(types.ImageEditRequest{
+		Model: "grok-imagine-image-2.0", Size: "1024x1024", N: 1, Quality: "low", Image: &multipart.FileHeader{},
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, 1250, tokens)
+
+	// edit: explicit medium quality, case-insensitive -> 1K Medium
+	tokens, err = common.CountTokenImage(types.ImageEditRequest{
+		Model: "grok-imagine-image-2.0", Size: "1024x1024", N: 1, Quality: "Medium",
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, 1500, tokens)
 
 	// edit: non-grok model keeps legacy behavior
 	tokens, err = common.CountTokenImage(types.ImageEditRequest{
