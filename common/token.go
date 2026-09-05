@@ -445,7 +445,7 @@ func CountTokenImage(input interface{}) (int, error) {
 		if err != nil {
 			return 0, err
 		}
-		if ratio, ok := ImageEditInputImageRatios[v.Model]; ok {
+		if ratio, ok := ImageEditInputImageRatios[perImageBaseModel(v.Model)]; ok {
 			inputImages := len(v.Images)
 			if v.Image != nil {
 				inputImages++
@@ -463,13 +463,13 @@ func calculateToken(model string, size string, n int, quality, style string) (in
 	imageCostRatio := 1.0
 	hasValidSize := false
 
-	switch model {
-	case "recraft20b", "recraftv3":
+	switch {
+	case model == "recraft20b" || model == "recraftv3":
 		if style == "vector_illustration" {
 			imageCostRatio = 2
 		}
 
-	case "grok-imagine-image-2.0":
+	case IsPerImageBillingModel(model):
 		imageCostRatio = GrokImagineTierRatio(size, quality)
 
 	default:

@@ -62,6 +62,14 @@ var ImageEditInputImageRatios = map[string]float64{
 	"grok-imagine-image-2.0": 0.25,
 }
 
+// 去除供应商前缀（如 x-ai/grok-imagine-image-2.0 -> grok-imagine-image-2.0）
+func perImageBaseModel(model string) string {
+	if idx := strings.LastIndex(model, "/"); idx >= 0 {
+		return model[idx+1:]
+	}
+	return model
+}
+
 func IsPerImageBillingModel(model string) bool {
-	return PerImageBillingModels[model]
+	return PerImageBillingModels[perImageBaseModel(model)]
 }

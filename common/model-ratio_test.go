@@ -22,6 +22,7 @@ func TestGrokImagineTierRatio(t *testing.T) {
 
 func TestIsPerImageBillingModel(t *testing.T) {
 	assert.True(t, common.IsPerImageBillingModel("grok-imagine-image-2.0"))
+	assert.True(t, common.IsPerImageBillingModel("x-ai/grok-imagine-image-2.0"))
 	assert.False(t, common.IsPerImageBillingModel("dall-e-3"))
 	assert.False(t, common.IsPerImageBillingModel(""))
 }
@@ -79,6 +80,19 @@ func TestCountTokenImageGrokImagine(t *testing.T) {
 	})
 	assert.NoError(t, err)
 	assert.Equal(t, 1500, tokens)
+
+	// vendor-prefixed model name gets the same billing
+	tokens, err = common.CountTokenImage(types.ImageEditRequest{
+		Model: "x-ai/grok-imagine-image-2.0", Size: "1024x1024", N: 1, Quality: "low", Image: &multipart.FileHeader{},
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, 1250, tokens)
+
+	tokens, err = common.CountTokenImage(types.ImageRequest{
+		Model: "x-ai/grok-imagine-image-2.0", Size: "2048x2048", N: 1, Quality: "medium",
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, 2000, tokens)
 
 	// edit: non-grok model keeps legacy behavior
 	tokens, err = common.CountTokenImage(types.ImageEditRequest{
